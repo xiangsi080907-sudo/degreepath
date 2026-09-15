@@ -1,0 +1,274 @@
+generator client {
+  provider = "prisma-client-js"
+}
+datasource db {
+  provider = "postgresql"
+  url = env("DATABASE_URL")
+}
+enum ParseStatus {
+ VERIFIED
+ PARSED
+ NEEDS_REVIEW
+ UNSUPPORTED
+}
+enum CourseStatus {
+ COMPLETED
+ IN_PROGRESS
+ PLANNED
+}
+enum OfferingStatus {
+ CONFIRMED
+ HISTORICAL_PATTERN
+}
+model Institution {
+ id String @id
+ name String
+ slug String @unique
+ campuses Campus[]
+}
+model Campus {
+ id String @id
+ institutionId String
+ institution Institution @relation(fields:[institutionId],references:[id])
+ name String
+ calendar Json
+ departments Department[]
+ terms AcademicTerm[]
+ catalogs CatalogVersion[]
+ courses Course[]
+ programs Program[]
+ profiles StudentProfile[]
+ @@unique([institutionId,name])
+}
+model AcademicTerm {
+ id String @id
+ campusId String
+ campus Campus @relation(fields:[campusId],references:[id])
+ year Int
+ termType String
+ startDate DateTime?
+ endDate DateTime?
+ offerings CourseOffering[]
+ planTerms SavedPlanTerm[]
+ @@unique([campusId,year,termType])
+}
+model CatalogVersion {
+ id String @id
+ campusId String
+ campus Campus @relation(fields:[campusId],references:[id])
+ label String
+ startYear Int?
+ endYear Int?
+ programCatalogs ProgramCatalog[]
+ @@unique([campusId,label])
+}
+model Department {
+ id String @id
+ campusId String
+ campus Campus @relation(fields:[campusId],references:[id])
+ code String
+ name String
+ courses Course[]
+ @@unique([campusId,code])
+}
+model Course {
+ id String @id
+ campusId String
+ campus Campus @relation(fields:[campusId],references:[id])
+ departmentId String
+ department Department @relation(fields:[departmentId],references:[id])
+ subject String
+ number String
+ title String
+ description String
+ minCredits Float
+ maxCredits Float
+ recommended String
+ offeringPattern String
+ overlaps String[]
+ restrictions String?
+ sourceUrl String
+ sourceUpdatedAt DateTime
+ attributes CourseAttribute[]
+ prerequisite PrerequisiteRule?
+ offerings CourseOffering[]
+ requirementCourses RequirementCourse[]
+ studentCourses StudentCourse[]
+ plannedCourses SavedPlanCourse[]
+ @@unique([campusId,subject,number])
+ @@index([campusId,subject,number])
+}
+model CourseAttribute {
+ courseId String
+ course Course @relation(fields:[courseId],references:[id],onDelete:Cascade)
+ attribute String
+ @@id([courseId,attribute])
+}
+model PrerequisiteRule {
+ id String @id @default(cuid())
+ courseId String @unique
+ course Course @relation(fields:[courseId],references:[id],onDelete:Cascade)
+ rawText String
+ normalizedRule Json
+ parseStatus ParseStatus
+ sourceUrl String
+ retrievedAt DateTime
+}
+model CourseOffering {
+ id String @id @default(cuid())
+ courseId String
+ course Course @relation(fields:[courseId],references:[id])
+ termId String
+ term AcademicTerm @relation(fields:[termId],references:[id])
+ status OfferingStatus
+ sourceUrl String
+ importedAt DateTime
+ sections Section[]
+ @@unique([courseId,termId])
+}
+model Section {
+ id String @id @default(cuid())
+ offeringId String
+ offering CourseOffering @relation(fields:[offeringId],references:[id],onDelete:Cascade)
+ sectionCode String
+ meetings Json
+ sourceUrl String
+ @@unique([offeringId,sectionCode])
+}
+model Program {
+ id String @id
+ campusId String
+ campus Campus @relation(fields:[campusId],references:[id])
+ name String
+ degreeType String
+ catalogs ProgramCatalog[]
+ @@unique([campusId,name,degreeType])
+}
+model ProgramCatalog {
+ id String @id
+ programId String
+ program Program @relation(fields:[programId],references:[id])
+ catalogVersionId String
+ catalogVersion CatalogVersion @relation(fields:[catalogVersionId],references:[id])
+ sourceUrl String
+ retrievedAt DateTime
+ status ParseStatus
+ requirements RequirementGroup[]
+ profiles StudentProfile[]
+ @@unique([programId,catalogVersionId])
+}
+model RequirementGroup {
+ id String @id
+ programCatalogId String
+ programCatalog ProgramCatalog @relation(fields:[programCatalogId],references:[id],onDelete:Cascade)
+ parentId String?
+ parent RequirementGroup? @relation("RequirementTree",fields:[parentId],references:[id],onDelete:Cascade)
+ children RequirementGroup[] @relation("RequirementTree")
+ title String
+ type String
+ minCredits Float?
+ chooseCount Int?
+ normalizedRule Json
+ sourceText String
+ sourceUrl String
+ parseStatus ParseStatus
+ courses RequirementCourse[]
+}
+model RequirementCourse {
+ requirementGroupId String
+ group RequirementGroup @relation(fields:[requirementGroupId],references:[id],onDelete:Cascade)
+ courseId String
+ course Course @relation(fields:[courseId],references:[id])
+ @@id([requirementGroupId,courseId])
+}
+model User {
+ id String @id @default(cuid())
+ name String?
+ email String @unique
+ emailVerified DateTime?
+ image String?
+ passwordHash String
+ createdAt DateTime @default(now())
+ profile StudentProfile?
+ courses StudentCourse[]
+ plans SavedPlan[]
+}
+model StudentProfile {
+ id String @id @default(cuid())
+ userId String @unique
+ user User @relation(fields:[userId],references:[id],onDelete:Cascade)
+ campusId String
+ campus Campus @relation(fields:[campusId],references:[id])
+ programCatalogId String
+ programCatalog ProgramCatalog @relation(fields:[programCatalogId],references:[id])
+ preferences Json
+ draftPlans Json?
+ programStatuses String[]
+ updatedAt DateTime @updatedAt
+}
+model StudentCourse {
+ id String @id @default(cuid())
+ userId String
+ user User @relation(fields:[userId],references:[id],onDelete:Cascade)
+ courseId String
+ course Course @relation(fields:[courseId],references:[id])
+ status CourseStatus
+ term Json?
+ grade Float?
+ credits Float?
+ @@unique([userId,courseId])
+ @@index([userId,status])
+}
+model SavedPlan {
+ id String @id @default(cuid())
+ userId String
+ user User @relation(fields:[userId],references:[id],onDelete:Cascade)
+ name String
+ createdAt DateTime @default(now())
+ score Float
+ config Json
+ result Json
+ terms SavedPlanTerm[]
+ @@index([userId,createdAt])
+}
+model SavedPlanTerm {
+ id String @id @default(cuid())
+ savedPlanId String
+ plan SavedPlan @relation(fields:[savedPlanId],references:[id],onDelete:Cascade)
+ academicTermId String
+ term AcademicTerm @relation(fields:[academicTermId],references:[id])
+ courses SavedPlanCourse[]
+ @@unique([savedPlanId,academicTermId])
+}
+model SavedPlanCourse {
+ savedPlanTermId String
+ term SavedPlanTerm @relation(fields:[savedPlanTermId],references:[id],onDelete:Cascade)
+ courseId String
+ course Course @relation(fields:[courseId],references:[id])
+ @@id([savedPlanTermId,courseId])
+}
+model ImportRun {
+ id String @id @default(cuid())
+ source String
+ startedAt DateTime @default(now())
+ completedAt DateTime?
+ status String
+ recordsProcessed Int @default(0)
+ errors Json?
+}
+model SourceSnapshot {
+ id String @id @default(cuid())
+ sourceUrl String
+ retrievedAt DateTime
+ checksum String
+ rawText String
+ status ParseStatus
+ notes String
+ @@unique([sourceUrl,checksum])
+ @@index([retrievedAt])
+}
+model AuthAttempt {
+ key String @id
+ count Int
+ windowStart DateTime
+}

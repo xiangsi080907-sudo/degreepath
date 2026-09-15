@@ -1,0 +1,640 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed:wght@400;600;800&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+body {
+  font-family: 'Open Sans', Helvetica, Arial, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 17px;
+  line-height: 1.72222;
+  background-color: #eee;
+  margin: 0;
+  padding: 0;
+}
+
+.uw-thinstrip a,
+.uw-footer a {
+  text-decoration: none;
+}
+/* https://github.com/uweb/UW-Header-Templates/blob/master/css/structure.css */
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/* https://github.com/uweb/UW-Header-Templates/blob/master/css/full.css */
+.uw-thinstrip {
+  height: 90px;
+  width: 100%;
+  background: #4b2e83;
+  padding-top: 22px;
+  position: relative;
+  z-index: 2;
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+}
+.uw-thinstrip .container {
+  position: relative;
+}
+.uw-thinstrip .align-right{
+  float: right;
+}
+.uw-thinstrip nav {
+  margin-top: 8px;
+  display: inline-block;
+}
+.uw-thinstrip .uw-patch {
+  display: block;
+  text-indent: -9999px;
+  width: 163px;
+  height: 110px;
+  background: url('https://www.washington.edu/static/home/wp-content/themes/uw-2014/assets/svg/uw-sprite.svg') no-repeat 0 0 transparent;
+  position: absolute;
+  top: -22px;
+  left: 0;
+  z-index: 1;
+}
+.uw-thinstrip .uw-wordmark {
+  display: block;
+  position: absolute;
+  top: 12px;
+  left: 150px;
+  text-indent: -9999px;
+  width: 330px;
+  height: 24px;
+  background: url('https://www.washington.edu/static/home/wp-content/themes/uw-2014/assets/svg/uw-sprite.svg') no-repeat 0 -431px transparent;
+}
+.uw-thinstrip ul.uw-thin-links {
+  margin: 0;
+  position: relative;
+  z-index: 1;
+  font-weight: 700;
+  padding: 0;
+}
+.uw-thinstrip ul.uw-thin-links li {
+  display:inline-block;
+  list-style: none;
+}
+.uw-thinstrip ul.uw-thin-links li:last-child a:after {
+  display: none;
+}
+.uw-thinstrip ul.uw-thin-links li a {
+  font-family: "Encode Sans Condensed", sans-serif;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 600;
+  position: relative;
+  padding: 8px 25px 10px 0;
+  letter-spacing: .01em;
+}
+.uw-thinstrip ul.uw-thin-links li a:after{
+  position: absolute;
+  right: 6px;
+  height: 32px;
+  width: 12px;
+  top: 3px;
+  content: "";
+  background: url('https://www.washington.edu/static/home/wp-content/themes/uw-2014/assets/svg/uw-sprite.svg') no-repeat -696px 0;
+}
+.uw-thinstrip ul.uw-thin-links li a:hover,
+.uw-thinstrip ul.uw-thin-links li a:focus {
+  color: #b7a57a;
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width: 767px) {
+  .uw-thinstrip {
+    padding: 0;
+    height: 45px;
+  }
+  .uw-thinstrip .container {
+    position: static;
+  }
+  .uw-thinstrip .uw-patch {
+    width: 73px;
+    height: 45px;
+    top: 0;
+    left: 0;
+    background-size: 470px;
+  }
+  .uw-thinstrip .uw-wordmark {
+    width: 155px;
+    height: 34px;
+    background: url('https://www.washington.edu/static/home/wp-content/themes/uw-2014/assets/svg/uw-sprite.svg') no-repeat 0 -185px transparent;
+    margin: 0;
+    float: none;
+    position: absolute;
+    left: 78px;
+    top: 4px;
+    background-size: 397px;
+  }
+  .uw-thinstrip ul.uw-thin-links {
+    height: 50px;
+  }
+  .uw-thinstrip ul.uw-thin-links li {
+    float: none;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .uw-thinstrip ul.uw-thin-links li {
+    display: none;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .uw-thinstrip {
+    height: 140px;
+  }
+  .uw-thinstrip ul.uw-thin-links li {
+    float: none;
+  }
+  .uw-thinstrip ul.uw-thin-links:before {
+    position: absolute;
+    top: 0;
+    height: 50px;
+    width: 100%;
+    content: "";
+  }
+  .uw-thinstrip ul.uw-thin-links li a,
+  .uw-thinstrip button {
+    font-size: 16px;
+    padding: 10px 25px 10px 0;
+    color: white;
+  }
+  .uw-thinstrip li {
+    margin-top: 68px;
+  }
+  .uw-thinstrip .align-right {
+    position: relative;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  .uw-thinstrip ul.uw-thin-links li a,
+  .uw-thinstrip ul.uw-thin-links li button {
+    font-size: 16px;
+    padding: 10px 25px 10px 0;
+  }
+  .uw-thinstrip .uw-wordmark {
+    background-size: 670px;
+    background-position: 0 -331px;
+  }
+}
+
+/* https://github.com/uweb/uw-footer/blob/master/css/footer.css */
+.uw-footer {
+  background: url('https://www.washington.edu/static/home/wp-content/themes/uw-2014/assets/images/footer.jpg') center bottom;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding: 0 0 30px 0;
+  background-color: #4b2e83;
+  border-top: 7px solid #d1d1d1;
+  text-align: center;
+  position: relative;
+}
+
+.uw-footer .footer-wordmark {
+  display: inline-block;
+  width: 335px;
+  background: url('https://www.washington.edu/static/home/wp-content/themes/uw-2014/assets/svg/uw-sprite.svg') no-repeat 0 -434px transparent;
+  text-indent: -9999px;
+  overflow: hidden;
+  margin-top: 50px;
+}
+
+.uw-footer .footer-wordmark:focus,.uw-footer .footer-wordmark:hover {
+  background: url('https://www.washington.edu/static/home/wp-content/themes/uw-2014/assets/svg/uw-sprite-focus.svg') no-repeat 0 -434px transparent
+}
+
+.uw-footer .be-boundless {
+  color: #fff;
+  line-height: 24px;
+  background: url('https://www.washington.edu/static/home/wp-content/themes/uw-2014/assets/images/boundless.png') no-repeat center top transparent;
+  display: block;
+  text-indent: -99999px;
+  margin: 10px 0 60px;
+  opacity: 1;
+  -o-transition: opacity .25s;
+  -webkit-transition: opacity .25s;
+  transition: opacity .25s;
+}
+
+.uw-footer .be-boundless:hover,.uw-footer .be-boundless:focus {
+  opacity: .6
+}
+
+.uw-footer h4 {
+  font-family: "Encode Sans Condensed",sans-serif;
+  color: #fff;
+  font-weight: 400;
+  font-size: 20px;
+  position: relative;
+  margin: 41px 0 11px 0;
+}
+
+.uw-footer h4:before,.uw-footer h4:after {
+  content: "";
+  position: absolute;
+  width: 85px;
+  height: 1px;
+  background-color: #9184aa;
+  left: 50%;
+  margin-left: -40px
+}
+
+.uw-footer h4:before {
+  top: -27px
+}
+
+.uw-footer h4:after {
+  bottom: -85px
+}
+
+.uw-footer ul.footer-social li {
+  list-style: none;
+  display: inline-block
+}
+
+.uw-footer ul.footer-social li a {
+  color: #fff;
+  text-indent: -9999px;
+  overflow: hidden;
+  display: inline-block;
+  background: url('https://www.washington.edu/static/home/wp-content/themes/uw-2014/assets/svg/uw-sprite.svg') no-repeat 0 -185px transparent;
+  padding: 8px 21px
+}
+
+.uw-footer ul.footer-social li a.facebook {
+  background-position: 0 -185px
+}
+
+.uw-footer ul.footer-social li a.twitter {
+  background-position: -46px -185px
+}
+
+.uw-footer ul.footer-social li a.youtube {
+  background-position: -138px -185px
+}
+
+.uw-footer ul.footer-social li a.linkedin {
+  background-position: -184px -185px
+}
+
+.uw-footer ul.footer-social li a.pinterest {
+  background-position: -92px -185px
+}
+
+.uw-footer ul.footer-social li a.instagram {
+  background-position: -322px -185px
+}
+
+.uw-footer ul.footer-social li a:hover.facebook,.uw-footer ul.footer-social li a:focus.facebook {
+  background-position: 0 -225px
+}
+
+.uw-footer ul.footer-social li a:hover.twitter,.uw-footer ul.footer-social li a:focus.twitter {
+  background-position: -46px -225px
+}
+
+.uw-footer ul.footer-social li a:hover.youtube,.uw-footer ul.footer-social li a:focus.youtube {
+  background-position: -138px -225px
+}
+
+.uw-footer ul.footer-social li a:hover.linkedin,.uw-footer ul.footer-social li a:focus.linkedin {
+  background-position: -184px -225px
+}
+
+.uw-footer ul.footer-social li a:hover.pinterest,.uw-footer ul.footer-social li a:focus.pinterest {
+  background-position: -92px -225px
+}
+
+.uw-footer ul.footer-social li a:hover.instagram,.uw-footer ul.footer-social li a:focus.instagram {
+  background-position: -322px -225px
+}
+
+.uw-footer ul.footer-links {
+  margin: 45px 0 0 0
+}
+
+.uw-footer ul.footer-links li {
+  list-style: none;
+  display: inline-block
+}
+
+.uw-footer ul.footer-links li:last-child a:after {
+  display: none
+}
+
+.uw-footer ul.footer-links li a {
+  color: #fff;
+  position: relative;
+  margin-right: 20px
+}
+
+.uw-footer ul.footer-links li a:after {
+  content: "/";
+  opacity: .5;
+  position: relative;
+  right: -14px;
+}
+
+.uw-footer ul.footer-links li a:focus,.uw-footer ul.footer-links li a:hover {
+  color: #b7a57a;
+  text-decoration: none
+}
+
+.uw-footer ul.footer-links li a:focus:after,.uw-footer ul.footer-links li a:hover:after {
+  color: #fff
+}
+
+.uw-footer p {
+  color: #fff;
+  font-size: .8em;
+  margin-top: 15px
+}
+
+@media only screen and (max-width: 767px) {
+  .uw-footer .footer-wordmark {
+    background-position: 25px -338px;
+    background-size: 690px;
+  }
+  .uw-footer h4:after {
+    display: none;
+  }
+}
+
+h1 {
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+span#top {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 1.6rem;
+  font-weight: normal !important;
+}
+h1, h2 {
+  margin: 0px;
+}
+h3 {
+  margin: 10px 0px 10px 0px;
+}
+div.expandableGroup {
+  display: inline-block;
+}
+
+.collapsed span, .expanded span {
+  background-image: url('https://www.washington.edu/static/home/wp-content/themes/uw-2014/assets/svg/uw-sprite.svg');
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 24px;
+  height:24px;
+}
+
+.collapsed span {
+  background-position: -287px 1px;
+}
+
+.collapsed span:hover {
+  background-position: -314px 1px;
+  cursor: pointer;
+}
+
+.expanded span {
+  background-position: -287px -24px
+}
+
+.expanded span:hover {
+  background-position: -314px -24px;
+  cursor: pointer;
+}
+
+ul.toc {
+  list-style-type: none;
+}
+.page-wrapper {
+  max-width: 1200px;
+  min-width: 320px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 20px;
+}
+.inner-block {
+  padding: 0px 10px 10px 10px;
+}
+.socialMediaList {
+  list-style: none;
+  padding-left: 0px;
+}
+.socialMediaList li {
+  display: inline;
+}
+.svg-inline {
+  width: 44;
+  margin: 0px 10px 0px 10px;
+}
+</style>
+</head>
+<body>
+<header class="uw-thinstrip">
+  <div class="container">
+    <a class="uw-patch" href="https://uw.edu" tabindex="-1" title="University of Washington Home">Home</a>
+    <a class="uw-wordmark" href="https://uw.edu" title="University of Washington Home">Home</a>
+  </div>
+  <div class='align-right'>
+    <nav class="uw-thin-strip-nav">
+      <ul class="uw-thin-links">
+        <li><a href="https://uw.edu/studentlife" title="Students">Students</a></li>
+        <li><a href="https://uw.edu/parents" title="Parents">Parents</a></li>
+        <li><a href="https://uw.edu/facultystaff" title="Faculty &amp; Staff">Faculty &amp; Staff</a></li>
+        <li><a href="https://uw.edu/alumni" title="Alumni">Alumni</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<div class='page-wrapper'>
+
+<span id="top">College of Arts and Sciences</span>
+<div>
+<h1>Computer Science</h1>
+AC 101 <a href="http://uw.edu/maps/?CSE">Paul G. Allen Center for Computer Science & Engineering</a><br/>
+206-543-1695<br/>
+<a href="https://www.cs.washington.edu/">Website</a><br/>
+<a href="https://www.cs.washington.edu/people/faculty">Faculty Website</a><br/>
+</div>
+<p>Computer Science &amp; Engineering (CSE) educates students to become leaders in the design and implementation of the computing systems that touch every aspect of modern society. Our courses cover everything from the mathematical foundations of what computers can and cannot do; to hands-on experiences building software and hardware artifacts with a range of programming languages and tools; to advanced courses in software engineering, human-computer interaction, computer graphics and animation, artificial intelligence, machine learning, large-scale data management, natural language processing, computer networking, computational biology, robotics, computer security and privacy, and much more. Computer scientists and computer engineers combine creative problem-solving, rigorous design, and the creation of algorithms, software, and hardware systems to build solutions that change the world.</p>
+<nav>
+<ul class="toc">
+<li><a class="toc-link" href="#undergradPrograms" data-expand="undergradPrograms-block">Undergraduate Programs</a></li>
+<ul class="toc">
+<li><a class="toc-link" data-expand="undergradPrograms|program-UG-C SCI-MAJOR" href="#program-UG-C SCI-MAJOR">Program of Study: Major:  Computer Science</a></li>
+<ul class="toc">
+<li><a class="toc-link" data-expand="undergradPrograms|program-UG-C SCI-MAJOR|credential-282f765e-0bf9-45db-80f7-1738b8ce7862" href="#credential-282f765e-0bf9-45db-80f7-1738b8ce7862">Bachelor of Science degree with a major in Computer Science</a></li>
+<li><a class="toc-link" data-expand="undergradPrograms|program-UG-C SCI-MAJOR|credential-67dd818d0c792892baf0e37d" href="#credential-67dd818d0c792892baf0e37d">Bachelor of Science degree with a major in Computer Science: Data Science</a></li>
+</ul>
+</ul>
+</ul>
+</nav>
+<div class="expandableGroup" data-expand="undergradPrograms">
+<h2 class="expanded" id="undergradPrograms"><span></span>&nbsp;Undergraduate Program</h2>
+</div><br/>
+<div id="undergradPrograms-block" class="inner-block" style="display:block">
+
+<div>
+<h1>Computer Science</h1>
+101 <a href="http://uw.edu/maps/?CSE">Paul G. Allen Center for Computer Science & Engineering</a><br/>
+206-543-1695<br/>
+<a href="mailto:ugrad-advisor@cs.washington.edu">ugrad-advisor@cs.washington.edu</a><br/>
+</div>
+<br/>
+<div class="expandableGroup" data-expand="program-UG-C SCI-MAJOR">
+<h3 class="expanded" id="program-UG-C SCI-MAJOR"><span></span>&nbsp;Program of Study: Major:  Computer Science</h3>
+</div><br/>
+<div id="program-UG-C SCI-MAJOR-block" class="inner-block" style="display:block">
+<div class="programOverview"><b>Program Overview</b><br/><p>CSE offers two undergraduate degrees: Computer Science (through the College of Arts and Sciences) and Computer Engineering (through the College of Engineering). Students working toward either degree have the same broad opportunities to take the wide array of courses that CSE offers. The Computer Science major may be more appropriate for students who are primarily interested in the design of software systems and applications, or who want to earn a double major with another College of Arts and  Sciences program.</p></div>
+<div class="programsOfStudy"><span>This program of study leads to the following credentials:</span>
+<ul class="credentialsList">
+<li>Bachelor of Science degree with a major in Computer Science</li>
+<li>Bachelor of Science degree with a major in Computer Science: Data Science</li>
+</ul>
+</div>
+<div class="programAdmissionRequirements"><b>Admission Requirements</b><br/><p>Applicants are considered in three groups - Entering Freshmen, Currently Enrolled UW Students, and Entering Transfers. Admission is capacity constrained. Completion of minimum requirements does not guarantee admission.</p> <ol> <li><em>Entering Freshmen:</em> The largest pathway for admission to Computer Science is directly out of high school, prior to completion of university-level prerequisites. Freshman applicants listing Computer Science as their intended major are automatically considered. Competitive applicants have usually taken the equivalent of four years of high school mathematics and at least one year of high school laboratory science upon entering the University. Admission is for autumn only.</li> <li><em>Currently Enrolled UW Students:</em> A portion of each year's class is admitted after matriculating to UW. <ol style="list-style-type: lower-alpha;"> <li>Admission is for autumn or spring quarter. Application deadlines: July 1 for autumn quarter and January 15 for spring quarter.</li> <li>Minimum course requirements for application: MATH 124, MATH 125, MATH 126 (or MATH 134, MATH 135, MATH 136); CSE 123 or CSE 143; 5 credits from the list of approved natural science courses for Computer Science on the Allen School website; five credits of English composition; all courses completed prior to the application deadline.</li> <li>Minimum 30 graded college credits completed by application deadline</li> <li>Grade requirements: Minimum 2.0 grade for each course required for application.</li> <li>Minimum 12 credits as a matriculated UW student by the application deadline.</li> </ol> </li> <li><em>Entering Transfers:</em> A portion of each year's class is admitted from students transferring from another college or university. <ol style="list-style-type: lower-alpha;"> <li>Admission is for autumn or spring quarter. Application deadlines: April 5 for autumn quarter and January 15 for spring quarter.</li> <li>Minimum course requirements for application: MATH 124, MATH 125, MATH 126; CSE 123 or CSE 143; 5 credits from the list of approved natural science courses for Computer Science on the Allen School website; five credits of English composition; all courses completed prior to the Allen School supplemental application deadline.</li> <li>Minimum 30 graded college credits completed by the Allen School supplemental application deadline.</li> <li>Grade requirements: Minimum 2.0 grade for each course required for application.</li> </ol> </li> </ol></div>
+<div class="continuationPolicy"><b>Continuation Policy</b><br/><p>All students must make satisfactory academic progress in the major. Failure to do so results in major-level academic notification, major-level warning, and major-level alerts, which can lead to dismissal from the major and being precluded from subsequently declaring the major in a future quarter. For the complete continuation policy, contact the departmental adviser or refer to the department website.</p></div>
+<div class="expandableGroup" data-expand="credential-282f765e-0bf9-45db-80f7-1738b8ce7862">
+<h4 class="expanded" id="credential-282f765e-0bf9-45db-80f7-1738b8ce7862"><span></span>&nbsp;Bachelor of Science degree with a major in Computer Science</h4>
+</div><br/>
+<div id="credential-282f765e-0bf9-45db-80f7-1738b8ce7862-block" class="inner-block" style="display:block">
+<div class="credentialOverview"><b>Credential Overview</b><br/><p>CSE offers two undergraduate degrees: Computer Science (through the College of Arts and Sciences) and Computer Engineering (through the College of Engineering). Students working toward either degree have the same broad opportunities to take the wide array of courses that CSE offers. The Computer Science major may be more appropriate for students who are primarily interested in the design of software systems and applications, or who want to earn a double major with another College of Arts and Sciences program.</p></div>
+<div class="programCompletionRequirements"><b>Completion Requirements</b><br/><p>77-82 Credits</p> <ol> <li><em>Science (5 credits):</em> 5 credits from the list of approved natural science courses for Computer Science on the Allen School website.</li> <li><em>Mathematics (15-19 credits):</em> one of the following options: (1) MATH 124, MATH 125, MATH 126, MATH 208; (2) MATH 134, MATH 135, MATH 136. Minimum 2.0 grade in each course.</li> <li><em>Fundamental Courses (24-25 credits):</em> CSE 123 or CSE 143, CSE 311, CSE 312, CSE 331, CSE 332, CSE 351. Minimum 2.0 grade in each course.</li> <li><em>Core and Electives:</em> 33 additional 300-level and 400-level credits as follows: <ol style="list-style-type: lower-alpha;"> <li>Six courses from the CSE Core Courses list on the Allen School website of which at least four courses must be 400-level CSE courses.</li> <li>Either one additional course from the CSE Core Courses list or one course from the CSE Capstone list on the Allen School website.</li> <li>Additional courses from the CSE Electives list (which includes the CSE Core Courses list) on the Allen School website to bring the total for core and electives to 33 credits.</li> </ol> </li> <li>Minimum 2.00 cumulative GPA in all CSE courses</li> </ol></div>
+<div class="backToTop"><a href="#top">Back to Top</a></div>
+</div>
+<div class="expandableGroup" data-expand="credential-67dd818d0c792892baf0e37d">
+<h4 class="expanded" id="credential-67dd818d0c792892baf0e37d"><span></span>&nbsp;Bachelor of Science degree with a major in Computer Science: Data Science</h4>
+</div><br/>
+<div id="credential-67dd818d0c792892baf0e37d-block" class="inner-block" style="display:block">
+<div class="credentialOverview"><b>Credential Overview</b><br/><p>Computer Science and Engineering (CSE) offers two undergraduate degrees: Computer Science (through the College of Arts &amp; Sciences) and Computer Engineering (through the College of Engineering). Students working toward either degree have the same broad opportunities to take the wide array of courses that CSE offers. The Computer Science major may be more appropriate for students who are primarily interested in the design of software systems and applications, or who want to earn a double major with another College of Arts &amp; Sciences program.  Students in Computer Science may also decide to pursue a data science option.</p></div>
+<div class="programCompletionRequirements"><b>Completion Requirements</b><br/><p>77-82 Credits</p> <ol> <li><em>Science (5 credits):</em> 5 credits from the list of approved natural science courses for Computer Science on the Allen School website.</li> <li><em>Mathematics (15-19 credits):</em> one of the following options: (1) MATH 124, MATH 125, MATH 126, MATH 208; (2) MATH 134, MATH 135, MATH 136. Minimum 2.0 grade in each course.</li> <li><em>Fundamental Courses (24-25 credits):</em> CSE 123 or CSE 143, CSE 311, CSE 312, CSE 331, CSE 332, CSE 351. Minimum 2.0 grade in each course.</li> <li><em>Core and Electives:</em> 33 additional 300-level and 400-level credits as follows: <ol style="list-style-type: lower-alpha;"> <li>Six courses from the CSE Core Courses list on the Allen School website of which at least four courses must be 400-level CSE courses.</li> <li>Either one additional course from the CSE Core Courses list or one course from the CSE Capstone list on the Allen School website.</li> <li>Additional courses from the CSE Electives list (which includes the CSE Core Courses list) on the Allen School website to bring the total for core and electives to 33 credits.</li> </ol> </li> <li>Minimum 2.00 cumulative GPA in all CSE courses</li> </ol></div>
+<div class="additionalCompletionRequirements"><b>Additional Completion Requirements</b><br/><p>Additional credits required for the Data Science Option increase total major requirements to 80-87 credits. Requirements #1 and #3 below also apply toward the <em>Core and Electives</em> major requirement #4 shown above.</p> <ol> <li>CSE 421, CSE 442, CSE 444, CSE 446 (15 credits)</li> <li>SOC 225 (3/5 credits)</li> <li>One additional course from the data science elective list (see the Allen School website for list) (3-4 credits)</li> </ol></div>
+<div class="backToTop"><a href="#top">Back to Top</a></div>
+</div>
+</div>
+<div id="undergradDepartmentAdditionalInfo"><b>Additional Information</b><br/>
+<p><p>Student Outcomes and Opportunities</p> <ul> <li><em>Learning Objectives and Expected Outcomes:</em> The computer science field has a broad base of private- and public-sector jobs suitable for the Bachelor of Science graduate: systems analyst, systems programmer, applications programmer, technical sales and marketing, and hardware or software engineering specialist. In addition, there are jobs for which graduate education may be appropriate: producers and developers of computer systems, and teachers and researchers. The field is also highly valued for practicing entrepreneurship.</li> <li><em>Instructional and Research Facilities:</em> Paul G. Allen Center for Computer Science and Engineering includes more than 20,000 square feet of laboratories, nearly 1,000 computer systems, and more than 50 terabytes of storage. Gigabit connectivity is provided to every desktop by more than 60 miles of data cabling, and wireless access is available throughout the building. <p>The Allen School general-purpose laboratories support the diverse set of hardware and software platforms required for a cutting-edge education in the field. The special-purpose laboratories provide tailored support for activities such as mobile robotics, computer graphics, digital design, motion capture, embedded systems, laser scanning, educational technology, networking, and artificial intelligence.</p> <p>The Allen Center and Gates Center are two of the finest computer science and computer engineering facilities in the nation. All Allen School students have access to these resources.</p> </li> <li><em>Honors Options Available:</em> With College Honors (Completion of Honors Core Curriculum and Departmental Honors); With Honors (Completion of Departmental Honors requirements in the major). See adviser for requirements.</li> <li><em>Research, Internships, and Service Learning:</em> Internships and co-op opportunities are available for computer science undergraduates. Refer to department website for more information.</li> <li><em>Departmental Scholarships:</em> The Allen School has a limited number of scholarships available to current Allen School majors. Refer to department website for more information.</li> <li><em>Student Organizations/Associations:</em> A student chapter of the Association for Computing Machinery (ACM) operates within the Allen School.</li> </ul></p></div>
+
+</div>
+
+
+</div>
+<div class="uw-footer" role="contentinfo">
+  <a class="footer-wordmark" href="https://www.washington.edu">University of Washington</a>
+  <a href="https://www.washington.edu/boundless/"><h3 class="be-boundless">Be boundless</h3></a>
+  <h4>Connect with us:</h4>
+  <nav aria-label="social networking">
+    <ul class="footer-social">
+      <li><a class="facebook" href="https://www.facebook.com/UofWA">Facebook</a></li>
+      <li><a class="twitter" href="https://x.com/UW">Twitter</a></li>
+      <li><a class="instagram" href="https://instagram.com/uofwa">Instagram</a></li>
+      <li><a class="youtube" href="https://www.youtube.com/user/uwhuskies">YouTube</a></li>
+      <li><a class="linkedin" href="https://www.linkedin.com/school/university-of-washington/posts/">LinkedIn</a></li>
+      <li><a class="pinterest" href="https://www.pinterest.com/uofwa/">Pinterest</a></li>
+    </ul>
+  </nav>
+  <nav aria-label="footer navigation">
+    <ul class="footer-links">
+      <li><a href="https://www.uw.edu/accessibility">Accessibility</a></li>
+      <li><a href="https://uw.edu/contact">Contact Us</a></li>
+      <li><a href="https://www.washington.edu/jobs">Jobs</a></li>
+      <li><a href="https://www.washington.edu/safety">Campus Safety</a></li>
+      <li><a href="https://my.uw.edu/">My UW</a></li>
+      <li><a href="https://www.washington.edu/rules/wac">Rules Docket</a></li>
+      <li><a href="https://www.washington.edu/online/privacy/">Privacy</a></li>
+      <li><a href="https://www.washington.edu/online/terms/">Terms</a></li>
+      <li><a href="https://www.washington.edu/newsletter/">Newsletter</a></li>
+    </ul>
+  </nav>
+  <p>&copy; <script>document.write(new Date().getFullYear())</script> University of Washington | Seattle, WA</p>
+</div>
+<script>
+  const expandElement = function(elementId) {
+    let toExpand = document.getElementById(elementId);
+    if (toExpand.style.display === 'none') {
+      toExpand.style.display = 'block';
+    }
+  }
+
+  const toggleElement = function(elementId) {
+    let toToggle = document.getElementById(elementId);
+    if (toToggle.style.display === 'none') {
+      toToggle.style.display = 'block';
+    }
+    else {
+      toToggle.style.display = 'none';
+    }
+  }
+
+  let linkElements = document.getElementsByClassName('toc-link');
+  let i = 0;
+  for (i = 0; i < linkElements.length; i++) {
+    linkElements[i].addEventListener('click', function() {
+      let namesToExpand = this.getAttribute('data-expand').split('|');
+      let j = 0;
+      for ( j = 0; j < namesToExpand.length; j++) {
+        let baseName = namesToExpand[j];
+
+        let titleElement = document.getElementById(baseName);
+
+        if (titleElement.classList.contains('collapsed')) {
+          titleElement.classList.toggle('collapsed');
+          titleElement.classList.toggle('expanded');
+          expandElement(`${baseName}-block`);
+        }
+      }
+    });
+  }
+
+  let expandIcons = document.getElementsByClassName('expandableGroup');
+  for (i = 0; i < expandIcons.length; i++) {
+    expandIcons[i].addEventListener('click', function() {
+      let baseName = this.getAttribute('data-expand');
+
+      let titleElement = document.getElementById(baseName);
+      titleElement.classList.toggle('collapsed');
+      titleElement.classList.toggle('expanded');
+      toggleElement(`${baseName}-block`);
+    });
+  }</script>
+</body>
+</html>

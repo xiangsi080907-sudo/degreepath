@@ -1,0 +1,32 @@
+[
+  {
+    "name": "cse",
+    "url": "https://www.washington.edu/students/crscat/cse.html",
+    "retrievedAt": "2026-09-14T05:35:52.595Z"
+  },
+  {
+    "name": "math",
+    "url": "https://www.washington.edu/students/crscat/math.html",
+    "retrievedAt": "2026-09-14T05:35:54.200Z"
+  },
+  {
+    "name": "offerings",
+    "url": "https://www.washington.edu/students/timeschd/pub/AUT2026/cse.html",
+    "retrievedAt": "2026-09-14T05:35:55.829Z"
+  },
+  {
+    "name": "programs",
+    "url": "https://www.cs.washington.edu/academics/undergraduate/degree-requirements/",
+    "retrievedAt": "2026-09-14T05:35:57.983Z"
+  },
+  {
+    "name": "lists",
+    "url": "https://www.cs.washington.edu/academics/undergraduate/degree-requirements/courses/",
+    "retrievedAt": "2026-09-14T05:35:59.559Z"
+  },
+  {
+    "name": "cs-program",
+    "url": "https://www.washington.edu/students/gencat/program/S/ComputerScience-210.html",
+    "retrievedAt": "2026-09-14T05:42:09.187Z"
+  }
+]
