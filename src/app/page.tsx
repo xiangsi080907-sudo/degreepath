@@ -28,7 +28,7 @@ export default function Home() {
         <section className="hero">
           <div className="hero-copy">
             <span className="eyebrow">
-              A LITTLE CLARITY. A LOT OF POSSIBILITY.
+              UW SEATTLE · A LITTLE CLARITY. A LOT OF POSSIBILITY.
             </span>
             <h1>
               Plan the path

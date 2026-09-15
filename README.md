@@ -83,6 +83,12 @@ Open [DegreePath locally](http://127.0.0.1:3000) or the [public demo](http://127
 
 `.env` is ignored. Never deploy the example development credentials. Auth.js handles encrypted JWT session cookies; the application does not need database session or OAuth account tables for the configured credentials provider.
 
+## School theme system
+
+DegreePath currently ships one supported school theme: UW Seattle. Its semantic color tokens live in [`src/themes/schools.ts`](src/themes/schools.ts), and the active theme is applied to the document root as CSS custom properties. Components use token names such as `--school-primary`, `--school-secondary-soft`, and `--school-border` instead of scattering school-specific hex values.
+
+To add a future institution, add its token set to `SCHOOL_THEMES` and select it from the future campus context. No planner, account, or academic-data behavior is coupled to the theme registry.
+
 ## Official data pipeline
 
 ```mermaid

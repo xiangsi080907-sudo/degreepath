@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import type { CSSProperties } from "react";
 import "./globals.css";
+import { activeSchoolTheme } from "@/themes/schools";
 export const metadata: Metadata = {
   title: {
     default: "DegreePath — Plan the path to graduation",
@@ -14,7 +16,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      data-school={activeSchoolTheme.id}
+      style={activeSchoolTheme.cssVariables as CSSProperties}
+    >
       <body>
         <a className="skip-link" href="#main">
           Skip to content
