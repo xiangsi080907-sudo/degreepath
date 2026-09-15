@@ -210,16 +210,21 @@ Tests cover prerequisite Boolean logic, grade/permission uncertainty, concurrenc
 
 A 60-course synthetic benchmark is included with a four-second budget; synthetic academic data is confined to tests. See `IMPLEMENTATION_REPORT.md` for the final run results.
 
-## Vercel deployment preparation
+## Updating an existing Vercel deployment
 
-Nothing has been deployed, committed or pushed.
+Before the first production update, confirm that the existing Vercel project has `DATABASE_URL`, `AUTH_SECRET`, `AUTH_URL` set to the final HTTPS domain, and `AUTH_TRUST_HOST=true`. Use a TLS PostgreSQL connection string supported by the database provider; the embedded local PostgreSQL server must never run on Vercel.
 
-1. Provision a PostgreSQL database reachable from Vercel; use its TLS connection string and provider-supported connection pooling.
-2. Configure `DATABASE_URL`, `AUTH_SECRET`, `AUTH_URL` for the final HTTPS domain and `AUTH_TRUST_HOST=true` in the trusted Vercel environment.
-3. Run `npm ci`; postinstall generates the Prisma client. Run `npm run db:migrate` against the deployment database as a controlled release step, not from every application request.
-4. Run the intentional UW importer against that database. Review the Source Status page and unsupported rules before inviting users.
-5. Configure the Vercel project as Next.js with `npm run build`. Vercel handles the Next.js application server. Embedded PostgreSQL is development-only and must not be started in Vercel.
-6. Re-run authentication and ownership smoke tests on the deployed domain. Update the canonical AUTH_URL after preview testing.
+For each release, run the checks below locally, push the reviewed changes to the connected Git repository, then use Vercel's deployment preview before promoting it. Apply `npm run db:migrate` only when a new committed migration is present, and run it once against the intended database as a controlled release step. This polish pass adds no migration. The UW importer is an explicit operational task, not an application-startup action; review the Source Status page and unsupported rules after any production import.
+
+```sh
+npm ci
+npm run typecheck
+npm run lint
+npm test
+npm run build
+```
+
+After deployment, smoke-test sign in, saved-plan isolation, and the public demo on the production domain. Keep `AUTH_URL` aligned with that canonical domain.
 
 Scheduled refresh can later call the same importer from a protected job runner with appropriate database credentials, rate limits and alerting. No scheduler or publicly callable import endpoint is enabled by default.
 

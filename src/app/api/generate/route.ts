@@ -5,7 +5,7 @@ import { auth } from "@/auth";
 import { stateSchema } from "@/server/validation";
 import { demoData, getAcademicData } from "@/server/academic";
 import { generatePlans } from "@/domain/planner";
-import { sameOrigin, errorResponse } from "@/server/http";
+import { sameOrigin, errorResponse, PublicRequestError } from "@/server/http";
 export async function POST(req: NextRequest) {
   try {
     sameOrigin(req);
@@ -20,15 +20,15 @@ export async function POST(req: NextRequest) {
       (state.preferences.target &&
         !data.campus.calendar.seasons.includes(state.preferences.target.season))
     )
-      throw Error("Invalid term");
+      throw new PublicRequestError("Invalid term");
     const program = data.programs.find(
       (p) => `${p.id}:${p.catalogId}` === state.programCatalogId,
     );
-    if (!program) throw Error("Unsupported program/catalog");
+    if (!program) throw new PublicRequestError("Unsupported program/catalog");
     if (
       state.courses.some((c) => !data.courses.some((x) => x.id === c.courseId))
     )
-      throw Error("Unknown course");
+      throw new PublicRequestError("Unknown course");
     const plans = generatePlans(
       data,
       program,

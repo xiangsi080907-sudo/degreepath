@@ -179,7 +179,7 @@ test("protected endpoints and origin validation", async ({ request }) => {
   expect((await request.get("/api/state")).status()).toBe(401);
   expect((await request.get("/api/plans?id=anything")).status()).toBe(401);
   expect((await request.post("/api/generate", { data: {} })).status()).toBe(
-    400,
+    403,
   );
 });
 test("responsive demo has no horizontal overflow", async ({ page }) => {

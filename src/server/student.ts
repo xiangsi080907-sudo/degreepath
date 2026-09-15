@@ -2,6 +2,7 @@ import { Prisma } from "@prisma/client";
 import { db } from "./db";
 import { StudentState, stateSchema } from "./validation";
 import { getAcademicData } from "./academic";
+import { PublicRequestError } from "./http";
 import { StudentCourse } from "../domain/types";
 export const defaultPreferences = {
   start: { year: 2026, season: "Autumn" },
@@ -81,22 +82,22 @@ export async function saveStudent(userId: string, input: unknown) {
       (c) => c.term && !data.campus.calendar.seasons.includes(c.term.season),
     )
   )
-    throw Error("Invalid term for this campus");
+    throw new PublicRequestError("Invalid term for this campus");
   const program = data.programs.find(
     (p) => `${p.id}:${p.catalogId}` === state.programCatalogId,
   );
   if (!program)
-    throw Error(
+    throw new PublicRequestError(
       "Unsupported program/catalog; run the official data import first",
     );
   for (const row of state.courses) {
     const c = data.courses.find((c) => c.id === row.courseId);
-    if (!c) throw Error("Unknown course");
+    if (!c) throw new PublicRequestError("Unknown course");
     if (
       row.credits !== undefined &&
       (row.credits < c.minCredits || row.credits > c.maxCredits)
     )
-      throw Error("Credits outside official course range");
+      throw new PublicRequestError("Credits outside official course range");
   }
   await db.$transaction(async (tx) => {
     await tx.studentProfile.upsert({

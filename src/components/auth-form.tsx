@@ -9,6 +9,7 @@ export function AuthForm({ register = false }: { register?: boolean }) {
   const router = useRouter();
   const [busy, setBusy] = useState(false),
     [error, setError] = useState("");
+  const errorId = "auth-form-error";
   return (
     <main id="main" className="auth-page">
       <div className="auth-aside">
@@ -41,6 +42,7 @@ export function AuthForm({ register = false }: { register?: boolean }) {
             : "Pick up where you left off."}
         </p>
         <form
+          aria-busy={busy}
           onSubmit={async (e) => {
             e.preventDefault();
             setError("");
@@ -87,13 +89,29 @@ export function AuthForm({ register = false }: { register?: boolean }) {
           )}
           <label>
             Email
-            <input name="email" type="email" autoComplete="email" required />
+            <input
+              name="email"
+              type="email"
+              autoComplete="email"
+              maxLength={254}
+              aria-invalid={Boolean(error)}
+              aria-describedby={error ? errorId : undefined}
+              required
+            />
           </label>
           <label>
             Password
             <input
               aria-label="Password"
-              aria-describedby={register ? "password-help" : undefined}
+              aria-invalid={Boolean(error)}
+              aria-describedby={
+                [
+                  register ? "password-help" : undefined,
+                  error ? errorId : undefined,
+                ]
+                  .filter(Boolean)
+                  .join(" ") || undefined
+              }
               name="password"
               type="password"
               autoComplete={register ? "new-password" : "current-password"}
@@ -106,11 +124,11 @@ export function AuthForm({ register = false }: { register?: boolean }) {
             )}
           </label>
           {error && (
-            <p role="alert" className="error">
+            <p id={errorId} role="alert" className="error">
               {error}
             </p>
           )}
-          <button className="button primary" disabled={busy}>
+          <button type="submit" className="button primary" disabled={busy}>
             {busy ? "Please wait…" : register ? "Create account" : "Sign in"}
             <ArrowRight size={18} />
           </button>

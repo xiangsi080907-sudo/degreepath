@@ -9,6 +9,7 @@ import {
 } from "../domain/types";
 import { validatePlan } from "../domain/planner";
 import { availability } from "../domain/eligibility";
+import { PublicRequestError } from "./http";
 export function prepareEditedPlan(
   base: Plan,
   terms: { term: Term; courseIds: string[] }[],
@@ -43,7 +44,7 @@ export function prepareEditedPlan(
   }));
   const issues = validatePlan({ terms: normalized }, data, record, prefs);
   if (issues.some((v) => v.severity === "ERROR"))
-    throw Error(
+    throw new PublicRequestError(
       `Repair plan before saving: ${issues
         .filter((v) => v.severity === "ERROR")
         .map((v) => `${v.courseId ?? ""}: ${v.message}`)

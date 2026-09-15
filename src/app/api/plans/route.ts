@@ -8,7 +8,7 @@ import { getAcademicData } from "@/server/academic";
 import { termSchema } from "@/server/validation";
 import { prepareEditedPlan } from "@/server/plans";
 import { generatePlan } from "@/domain/planner";
-import { sameOrigin, errorResponse } from "@/server/http";
+import { sameOrigin, errorResponse, PublicRequestError } from "@/server/http";
 export async function GET(req: NextRequest) {
   const userId = (await auth())?.user?.id;
   if (!userId)
@@ -62,12 +62,12 @@ export async function POST(req: NextRequest) {
       .strict()
       .parse(await req.json());
     const { state, onboarded } = await readStudent(userId);
-    if (!onboarded) throw Error("Complete setup first");
+    if (!onboarded) throw new PublicRequestError("Complete setup first");
     const data = await getAcademicData();
     const program = data.programs.find(
       (p) => `${p.id}:${p.catalogId}` === state.programCatalogId,
     );
-    if (!program) throw Error("Program no longer supported");
+    if (!program) throw new PublicRequestError("Program no longer supported");
     let plan = generatePlan(
       data,
       program,
