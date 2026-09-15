@@ -5,6 +5,7 @@ import { auth } from "@/auth";
 import { stateSchema } from "@/server/validation";
 import { demoData, getAcademicData } from "@/server/academic";
 import { generatePlans } from "@/domain/planner";
+import { planningData } from "@/data/majors";
 import { sameOrigin, errorResponse, PublicRequestError } from "@/server/http";
 export async function POST(req: NextRequest) {
   try {
@@ -30,7 +31,7 @@ export async function POST(req: NextRequest) {
     )
       throw new PublicRequestError("Unknown course");
     const plans = generatePlans(
-      data,
+      planningData(data, program.id, state.courses),
       program,
       { courses: state.courses, programs: state.programs },
       state.preferences,

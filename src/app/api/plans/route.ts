@@ -5,9 +5,10 @@ import { auth } from "@/auth";
 import { db } from "@/server/db";
 import { readStudent, readSavedPlan, deleteSavedPlan } from "@/server/student";
 import { getAcademicData } from "@/server/academic";
-import { termSchema } from "@/server/validation";
+import { termSchema, programKeySchema } from "@/server/validation";
 import { prepareEditedPlan } from "@/server/plans";
 import { generatePlan } from "@/domain/planner";
+import { planningData } from "@/data/majors";
 import { sameOrigin, errorResponse, PublicRequestError } from "@/server/http";
 export async function GET(req: NextRequest) {
   const userId = (await auth())?.user?.id;
@@ -43,8 +44,9 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Sign in required" }, { status: 401 });
   try {
     sameOrigin(req);
-    const { name, workload, terms } = z
+    const { name, workload, terms, programCatalogId } = z
       .object({
+        programCatalogId: programKeySchema.optional(),
         terms: z
           .array(
             z
@@ -62,6 +64,11 @@ export async function POST(req: NextRequest) {
       .strict()
       .parse(await req.json());
     const { state, onboarded } = await readStudent(userId);
+    if (programCatalogId && programCatalogId !== state.programCatalogId)
+      throw new PublicRequestError(
+        "Your active major changed. Reload before saving this plan.",
+        409,
+      );
     if (!onboarded) throw new PublicRequestError("Complete setup first");
     const data = await getAcademicData();
     const program = data.programs.find(
@@ -69,7 +76,7 @@ export async function POST(req: NextRequest) {
     );
     if (!program) throw new PublicRequestError("Program no longer supported");
     let plan = generatePlan(
-      data,
+      planningData(data, program.id, state.courses),
       program,
       { courses: state.courses, programs: state.programs },
       { ...state.preferences, workload },

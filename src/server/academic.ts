@@ -1,7 +1,13 @@
 import { AcademicData, Course, Program, Requirement } from "../domain/types";
 import snapshot from "../data/uw/snapshot.json";
+import business from "../data/uw/business.json";
 import { db } from "./db";
-export const demoData = snapshot as AcademicData;
+export const demoData = {
+  ...snapshot,
+  courses: [...snapshot.courses, ...business.courses],
+  programs: [...snapshot.programs, ...business.programs],
+  sources: [...snapshot.sources, ...business.sources],
+} as AcademicData;
 export async function getAcademicData(): Promise<AcademicData> {
   const campus = await db.campus.findUnique({
     where: { id: "uw-seattle" },

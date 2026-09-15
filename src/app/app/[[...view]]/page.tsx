@@ -4,6 +4,7 @@ import { getAcademicData } from "@/server/academic";
 import { readStudent } from "@/server/student";
 import { Plan } from "@/domain/types";
 import { Workspace } from "@/components/workspace";
+import { savedProgramKey } from "@/data/majors";
 export const dynamic = "force-dynamic";
 export default async function Application({
   params,
@@ -26,7 +27,11 @@ export default async function Application({
       onboarded={student.onboarded}
       name={session.user.name ?? "Student"}
       initialPlans={student.draftPlans as unknown as Plan[]}
-      savedPlans={student.plans.map((p) => ({ id: p.id, name: p.name }))}
+      savedPlans={student.plans.map((p) => ({
+        id: p.id,
+        name: p.name,
+        programCatalogId: savedProgramKey(p.config),
+      }))}
     />
   );
 }

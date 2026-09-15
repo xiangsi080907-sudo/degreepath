@@ -1,0 +1,57 @@
+[
+  {
+    "name": "program",
+    "url": "https://www.washington.edu/students/gencat/program/S/Business-300.html",
+    "retrievedAt": "2026-09-15T05:47:05.473Z"
+  },
+  {
+    "name": "acctg",
+    "url": "https://www.washington.edu/students/crscat/acctg.html",
+    "retrievedAt": "2026-09-15T05:47:06.929Z"
+  },
+  {
+    "name": "econ",
+    "url": "https://www.washington.edu/students/crscat/econ.html",
+    "retrievedAt": "2026-09-15T05:47:08.497Z"
+  },
+  {
+    "name": "finance",
+    "url": "https://www.washington.edu/students/crscat/finance.html",
+    "retrievedAt": "2026-09-15T05:47:09.923Z"
+  },
+  {
+    "name": "infosys",
+    "url": "https://www.washington.edu/students/crscat/infosys.html",
+    "retrievedAt": "2026-09-15T05:47:11.456Z"
+  },
+  {
+    "name": "intlbus",
+    "url": "https://www.washington.edu/students/crscat/intlbus.html",
+    "retrievedAt": "2026-09-15T05:47:12.958Z"
+  },
+  {
+    "name": "mgmt",
+    "url": "https://www.washington.edu/students/crscat/mgmt.html",
+    "retrievedAt": "2026-09-15T05:47:14.469Z"
+  },
+  {
+    "name": "mktg",
+    "url": "https://www.washington.edu/students/crscat/mktg.html",
+    "retrievedAt": "2026-09-15T05:47:15.951Z"
+  },
+  {
+    "name": "opmgmt",
+    "url": "https://www.washington.edu/students/crscat/opmgmt.html",
+    "retrievedAt": "2026-09-15T05:47:17.430Z"
+  },
+  {
+    "name": "qmeth",
+    "url": "https://www.washington.edu/students/crscat/qmeth.html",
+    "retrievedAt": "2026-09-15T05:47:18.908Z"
+  },
+  {
+    "name": "busecon",
+    "url": "https://www.washington.edu/students/crscat/busecon.html",
+    "retrievedAt": "2026-09-15T05:47:20.408Z"
+  }
+]

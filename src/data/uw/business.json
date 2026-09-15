@@ -1,0 +1,740 @@
+{
+  "courses": [
+    {
+      "id": "ACCTG 215",
+      "subject": "ACCTG",
+      "number": "215",
+      "title": "Introduction to Accounting and Financial Reporting",
+      "minCredits": 5,
+      "maxCredits": 5,
+      "attributes": [],
+      "description": "Nature and social setting of accounting; uses of accounting information; introduction of basic accounting concepts and procedures; interpretation of financial statements. May not be repeated. Maximum 15 credits allowed between ACCTG 215; ACCTG 225; T ACCT 210; T ACCT 220; and T ACCT 230 (or equivalents). Course equivalent to: B BUS 210.",
+      "rawPrerequisite": "",
+      "prerequisite": {
+        "type": "TRUE"
+      },
+      "parseStatus": "PARSED",
+      "recommended": "",
+      "offeringPattern": "",
+      "sourceUrl": "https://www.washington.edu/students/crscat/acctg.html",
+      "retrievedAt": "2026-09-15T05:47:06.929Z",
+      "overlaps": []
+    },
+    {
+      "id": "ACCTG 225",
+      "subject": "ACCTG",
+      "number": "225",
+      "title": "Fundamentals of Managerial Accounting",
+      "minCredits": 5,
+      "maxCredits": 5,
+      "attributes": [],
+      "description": "Covers application of basic costing concepts and tools for planning, control, and strategic decision making. Concentrates on information useful to enterprise managers. May not be repeated. Maximum 15 credits allowed between ACCTG 215; ACCTG 225; T ACCT 210; T ACCT 220; and T ACCT 230 (or equivalents). Course equivalent to: B BUS 211. Prerequisite: ACCTG 215 and ECON 200.",
+      "rawPrerequisite": "ACCTG 215 and ECON 200.",
+      "prerequisite": {
+        "type": "AND",
+        "rules": [
+          {
+            "type": "COURSE_COMPLETED",
+            "course": "ACCTG 215"
+          },
+          {
+            "type": "COURSE_COMPLETED",
+            "course": "ECON 200"
+          }
+        ]
+      },
+      "parseStatus": "PARSED",
+      "recommended": "",
+      "offeringPattern": "",
+      "sourceUrl": "https://www.washington.edu/students/crscat/acctg.html",
+      "retrievedAt": "2026-09-15T05:47:06.929Z",
+      "overlaps": []
+    },
+    {
+      "id": "ECON 200",
+      "subject": "ECON",
+      "number": "200",
+      "title": "Introduction to Microeconomics",
+      "minCredits": 5,
+      "maxCredits": 5,
+      "attributes": [
+        "SSc",
+        "RSN"
+      ],
+      "description": "Analysis of markets: consumer demand, production, exchange, the price system, resource allocation, government intervention. Course equivalent to: B BUS 220/BIS 200; TBECON 220; and TECON 200. Offered: AWSpS.",
+      "rawPrerequisite": "",
+      "prerequisite": {
+        "type": "TRUE"
+      },
+      "parseStatus": "PARSED",
+      "recommended": "",
+      "offeringPattern": "AWSpS.",
+      "sourceUrl": "https://www.washington.edu/students/crscat/econ.html",
+      "retrievedAt": "2026-09-15T05:47:08.497Z",
+      "overlaps": []
+    },
+    {
+      "id": "ECON 201",
+      "subject": "ECON",
+      "number": "201",
+      "title": "Introduction to Macroeconomics",
+      "minCredits": 5,
+      "maxCredits": 5,
+      "attributes": [
+        "SSc",
+        "RSN"
+      ],
+      "description": "Analysis of the aggregate economy: national income, inflation, business fluctuations, unemployment, monetary system, federal budget, international trade and finance. Course equivalent to: B BUS 221/BIS 201; TBECON 221; and TECON 201. Prerequisite: ECON 200. Offered: AWSpS.",
+      "rawPrerequisite": "ECON 200.",
+      "prerequisite": {
+        "type": "COURSE_COMPLETED",
+        "course": "ECON 200"
+      },
+      "parseStatus": "PARSED",
+      "recommended": "",
+      "offeringPattern": "AWSpS.",
+      "sourceUrl": "https://www.washington.edu/students/crscat/econ.html",
+      "retrievedAt": "2026-09-15T05:47:08.497Z",
+      "overlaps": []
+    },
+    {
+      "id": "FIN 350",
+      "subject": "FIN",
+      "number": "350",
+      "title": "Business Finance",
+      "minCredits": 4,
+      "maxCredits": 4,
+      "attributes": [],
+      "description": "Evaluating and funding projects within the firm. Time value of money, inflation, capital budgeting; risk and return in the financial markets, stocks, bonds, portfolios and diversifiable risk, market efficiency and the balance between debt and equity to fund the firm. Course overlaps with: B BUS 350; STMATH 330; and T BUS 350. Prerequisite: ACCTG 225; ECON 201; either MATH 112, MATH 124, MATH 125, MATH 134, or Q SCI 291; either IND E 315, QMETH 201, Q SCI 381, PSYCH 315, PSYCH 318, STAT 220, STAT 221/SOC 221/CS&SS 221, STAT 311, or STAT 390/MATH 390.",
+      "rawPrerequisite": "ACCTG 225; ECON 201; either MATH 112, MATH 124, MATH 125, MATH 134, or Q SCI 291; either IND E 315, QMETH 201, Q SCI 381, PSYCH 315, PSYCH 318, STAT 220, STAT 221/SOC 221/CS&SS 221, STAT 311, or STAT 390/MATH 390.",
+      "prerequisite": {
+        "type": "RAW_UNSUPPORTED",
+        "text": "ACCTG 225; ECON 201; either MATH 112, MATH 124, MATH 125, MATH 134, or Q SCI 291; either IND E 315, QMETH 201, Q SCI 381, PSYCH 315, PSYCH 318, STAT 220, STAT 221/SOC 221/CS&SS 221, STAT 311, or STAT 390/MATH 390."
+      },
+      "parseStatus": "NEEDS_REVIEW",
+      "recommended": "",
+      "offeringPattern": "",
+      "sourceUrl": "https://www.washington.edu/students/crscat/finance.html",
+      "retrievedAt": "2026-09-15T05:47:09.923Z",
+      "overlaps": [
+        "B BUS 350",
+        "STMATH 330",
+        "T BUS 350"
+      ]
+    },
+    {
+      "id": "I S 300",
+      "subject": "I S",
+      "number": "300",
+      "title": "Introduction to Information Systems",
+      "minCredits": 5,
+      "maxCredits": 5,
+      "attributes": [],
+      "description": "Fundamentals of information systems, what they are, how they affect organizations. Technical and organizational foundations of information systems, building information systems, managing information system resources. Laboratory emphasizes using computer to analyze, coordinate, solve organizational decision-making problems. Prerequisite: ACCTG 225; ECON 200; either MATH 112, MATH 124, MATH 125, MATH 134, MATH 135, or Q SCI 291; either ECON 311, IND E 315, QMETH 201, Q SCI 291, Q SCI 381, PSYCH 315, PSYCH 318, STAT 220, STAT 221/SOC 221/CS&SS 221, STAT 311, or STAT 390; may not be repeated. Offered: AWSpS.",
+      "rawPrerequisite": "ACCTG 225; ECON 200; either MATH 112, MATH 124, MATH 125, MATH 134, MATH 135, or Q SCI 291; either ECON 311, IND E 315, QMETH 201, Q SCI 291, Q SCI 381, PSYCH 315, PSYCH 318, STAT 220, STAT 221/SOC 221/CS&SS 221, STAT 311, or STAT 390; may not be repeated.",
+      "prerequisite": {
+        "type": "RAW_UNSUPPORTED",
+        "text": "ACCTG 225; ECON 200; either MATH 112, MATH 124, MATH 125, MATH 134, MATH 135, or Q SCI 291; either ECON 311, IND E 315, QMETH 201, Q SCI 291, Q SCI 381, PSYCH 315, PSYCH 318, STAT 220, STAT 221/SOC 221/CS&SS 221, STAT 311, or STAT 390; may not be repeated."
+      },
+      "parseStatus": "NEEDS_REVIEW",
+      "recommended": "",
+      "offeringPattern": "AWSpS.",
+      "sourceUrl": "https://www.washington.edu/students/crscat/infosys.html",
+      "retrievedAt": "2026-09-15T05:47:11.456Z",
+      "overlaps": []
+    },
+    {
+      "id": "I BUS 300",
+      "subject": "I BUS",
+      "number": "300",
+      "title": "Introduction to Global Business",
+      "minCredits": 4,
+      "maxCredits": 4,
+      "attributes": [],
+      "description": "Prepares students to understand the most important aspects of the international political economy. Emphasis on the important relationships among nations and business and economic institutions that influence students' performances as managers, consumers, and citizens. Prerequisite: ECON 200.",
+      "rawPrerequisite": "ECON 200.",
+      "prerequisite": {
+        "type": "COURSE_COMPLETED",
+        "course": "ECON 200"
+      },
+      "parseStatus": "PARSED",
+      "recommended": "",
+      "offeringPattern": "",
+      "sourceUrl": "https://www.washington.edu/students/crscat/intlbus.html",
+      "retrievedAt": "2026-09-15T05:47:12.958Z",
+      "overlaps": []
+    },
+    {
+      "id": "MGMT 200",
+      "subject": "MGMT",
+      "number": "200",
+      "title": "Introduction to Law",
+      "minCredits": 5,
+      "maxCredits": 5,
+      "attributes": [
+        "SSc"
+      ],
+      "description": "Legal institutions and processes; law as a system of social thought and behavior and a frame of order within which rival claims are resolved and compromised; legal reasoning; law as a process of protecting and facilitating voluntary arrangements in a business society. Course equivalent to: BIS 283 and T BGEN 218. Course overlaps with: B BUS 230.",
+      "rawPrerequisite": "",
+      "prerequisite": {
+        "type": "TRUE"
+      },
+      "parseStatus": "PARSED",
+      "recommended": "",
+      "offeringPattern": "",
+      "sourceUrl": "https://www.washington.edu/students/crscat/mgmt.html",
+      "retrievedAt": "2026-09-15T05:47:14.469Z",
+      "overlaps": [
+        "B BUS 230"
+      ]
+    },
+    {
+      "id": "MGMT 300",
+      "subject": "MGMT",
+      "number": "300",
+      "title": "Leadership and Organizational Behavior",
+      "minCredits": 4,
+      "maxCredits": 4,
+      "attributes": [],
+      "description": "Focuses on how managers become effective leaders. Examines basic principles of managing people, making use of theories that transcend the workplace, including the psychology of individual and group behavior. Emphasizes leadership, strategic thinking, team building, and performance. Course overlaps with: B BUS 300 and ELCBUS 300.",
+      "rawPrerequisite": "",
+      "prerequisite": {
+        "type": "TRUE"
+      },
+      "parseStatus": "PARSED",
+      "recommended": "",
+      "offeringPattern": "",
+      "sourceUrl": "https://www.washington.edu/students/crscat/mgmt.html",
+      "retrievedAt": "2026-09-15T05:47:14.469Z",
+      "overlaps": [
+        "B BUS 300",
+        "ELCBUS 300"
+      ]
+    },
+    {
+      "id": "MGMT 320",
+      "subject": "MGMT",
+      "number": "320",
+      "title": "Business, Government, and Society",
+      "minCredits": 4,
+      "maxCredits": 4,
+      "attributes": [],
+      "description": "Political, social, and legal environment of business. Critical managerial issues from historical, theoretical, ethical perspectives; their impact on organization. Corporate political power, boards of directors, capitalism, industrial policy, business ethics and social responsibility, alternative corporate roles in society.",
+      "rawPrerequisite": "",
+      "prerequisite": {
+        "type": "TRUE"
+      },
+      "parseStatus": "PARSED",
+      "recommended": "",
+      "offeringPattern": "",
+      "sourceUrl": "https://www.washington.edu/students/crscat/mgmt.html",
+      "retrievedAt": "2026-09-15T05:47:14.469Z",
+      "overlaps": []
+    },
+    {
+      "id": "MGMT 430",
+      "subject": "MGMT",
+      "number": "430",
+      "title": "Strategic Management",
+      "minCredits": 4,
+      "maxCredits": 4,
+      "attributes": [],
+      "description": "Develops strategic thinking skills for balancing opportunities and risks of business competition to generate superior value for stakeholders. Performs in-depth analyses of industries and competitors, predicts competitive behavior, and explores how firms develop and sustain competitive advantage over time. Prerequisite: FIN 350; MKTG 301; either HRMOB 300 or MGMT 300.",
+      "rawPrerequisite": "FIN 350; MKTG 301; either HRMOB 300 or MGMT 300.",
+      "prerequisite": {
+        "type": "AND",
+        "rules": [
+          {
+            "type": "COURSE_COMPLETED",
+            "course": "FIN 350"
+          },
+          {
+            "type": "COURSE_COMPLETED",
+            "course": "MKTG 301"
+          },
+          {
+            "type": "OR",
+            "rules": [
+              {
+                "type": "COURSE_COMPLETED",
+                "course": "HRMOB 300"
+              },
+              {
+                "type": "COURSE_COMPLETED",
+                "course": "MGMT 300"
+              }
+            ]
+          }
+        ]
+      },
+      "parseStatus": "PARSED",
+      "recommended": "",
+      "offeringPattern": "",
+      "sourceUrl": "https://www.washington.edu/students/crscat/mgmt.html",
+      "retrievedAt": "2026-09-15T05:47:14.469Z",
+      "overlaps": []
+    },
+    {
+      "id": "MKTG 301",
+      "subject": "MKTG",
+      "number": "301",
+      "title": "Marketing Concepts",
+      "minCredits": 4,
+      "maxCredits": 4,
+      "attributes": [],
+      "description": "Tools, factors, and concepts used by management in planning, establishing policies, and solving marketing problems. Marketing concepts, consumer demand and behavior, location analysis, marketing, functions, institutions, channels, prices, and public policy. Course overlaps with: MKTG 305. Prerequisite: ECON 200.",
+      "rawPrerequisite": "ECON 200.",
+      "prerequisite": {
+        "type": "COURSE_COMPLETED",
+        "course": "ECON 200"
+      },
+      "parseStatus": "PARSED",
+      "recommended": "",
+      "offeringPattern": "",
+      "sourceUrl": "https://www.washington.edu/students/crscat/mktg.html",
+      "retrievedAt": "2026-09-15T05:47:15.951Z",
+      "overlaps": [
+        "MKTG 305"
+      ]
+    },
+    {
+      "id": "OPMGT 301",
+      "subject": "OPMGT",
+      "number": "301",
+      "title": "Principles of Operations Management",
+      "minCredits": 4,
+      "maxCredits": 4,
+      "attributes": [],
+      "description": "Examines problems encountered in planning, operating, and controlling production of goods and services. Topics include: waiting-line management, quality assurance, production systems, project management, and inventory management. Computer and quantitative models used in formulating managerial problems. Prerequisite: ACCTG 225; ECON 200; either MATH 112, MATH 124, MATH125, MATH 134, or Q SCI 291; either ECON 311, IND E 315, QMETH 201, Q SCI 381, PSYCH 315, PSYCH 318, STAT 220, STAT 301, STAT 221/SOC 221/CS&SS 221, STAT 311, or STAT 390.",
+      "rawPrerequisite": "ACCTG 225; ECON 200; either MATH 112, MATH 124, MATH125, MATH 134, or Q SCI 291; either ECON 311, IND E 315, QMETH 201, Q SCI 381, PSYCH 315, PSYCH 318, STAT 220, STAT 301, STAT 221/SOC 221/CS&SS 221, STAT 311, or STAT 390.",
+      "prerequisite": {
+        "type": "RAW_UNSUPPORTED",
+        "text": "ACCTG 225; ECON 200; either MATH 112, MATH 124, MATH125, MATH 134, or Q SCI 291; either ECON 311, IND E 315, QMETH 201, Q SCI 381, PSYCH 315, PSYCH 318, STAT 220, STAT 301, STAT 221/SOC 221/CS&SS 221, STAT 311, or STAT 390."
+      },
+      "parseStatus": "NEEDS_REVIEW",
+      "recommended": "",
+      "offeringPattern": "",
+      "sourceUrl": "https://www.washington.edu/students/crscat/opmgmt.html",
+      "retrievedAt": "2026-09-15T05:47:17.430Z",
+      "overlaps": []
+    },
+    {
+      "id": "QMETH 201",
+      "subject": "QMETH",
+      "number": "201",
+      "title": "Introduction to Statistical Methods",
+      "minCredits": 4,
+      "maxCredits": 4,
+      "attributes": [
+        "NSc",
+        "RSN"
+      ],
+      "description": "Survey of principles of data analysis and their applications for management problems. Elementary techniques of classification, summarization, and visual display of data. Applications of probability models for inference and decision making are illustrated through examples. Prerequisite: either MATH 112, MATH 124, MATH 125, MATH 134, or MATH 145.",
+      "rawPrerequisite": "either MATH 112, MATH 124, MATH 125, MATH 134, or MATH 145.",
+      "prerequisite": {
+        "type": "OR",
+        "rules": [
+          {
+            "type": "COURSE_COMPLETED",
+            "course": "MATH 112"
+          },
+          {
+            "type": "COURSE_COMPLETED",
+            "course": "MATH 124"
+          },
+          {
+            "type": "COURSE_COMPLETED",
+            "course": "MATH 125"
+          },
+          {
+            "type": "COURSE_COMPLETED",
+            "course": "MATH 134"
+          },
+          {
+            "type": "COURSE_COMPLETED",
+            "course": "MATH 145"
+          }
+        ]
+      },
+      "parseStatus": "PARSED",
+      "recommended": "",
+      "offeringPattern": "",
+      "sourceUrl": "https://www.washington.edu/students/crscat/qmeth.html",
+      "retrievedAt": "2026-09-15T05:47:18.908Z",
+      "overlaps": []
+    },
+    {
+      "id": "B ECON 300",
+      "subject": "B ECON",
+      "number": "300",
+      "title": "Managerial Economics",
+      "minCredits": 4,
+      "maxCredits": 4,
+      "attributes": [],
+      "description": "Analysis of economic factors affecting decisions made by business firms. Demand and cost analysis, and alternative policies from the firm's point of view. Prerequisite: ACCTG 225; ECON 201; either MATH 112, MATH 124, MATH 125, MATH 127, MATH 134, or Q SCI 291; either IND E 315, QMETH 201, Q SCI 381, PSYCH 315, PSYCH 318, STAT 220, STAT 221/SOC 221/CS&SS 221, STAT 311, or STAT 390; may not be repeated.",
+      "rawPrerequisite": "ACCTG 225; ECON 201; either MATH 112, MATH 124, MATH 125, MATH 127, MATH 134, or Q SCI 291; either IND E 315, QMETH 201, Q SCI 381, PSYCH 315, PSYCH 318, STAT 220, STAT 221/SOC 221/CS&SS 221, STAT 311, or STAT 390; may not be repeated.",
+      "prerequisite": {
+        "type": "RAW_UNSUPPORTED",
+        "text": "ACCTG 225; ECON 201; either MATH 112, MATH 124, MATH 125, MATH 127, MATH 134, or Q SCI 291; either IND E 315, QMETH 201, Q SCI 381, PSYCH 315, PSYCH 318, STAT 220, STAT 221/SOC 221/CS&SS 221, STAT 311, or STAT 390; may not be repeated."
+      },
+      "parseStatus": "NEEDS_REVIEW",
+      "recommended": "",
+      "offeringPattern": "",
+      "sourceUrl": "https://www.washington.edu/students/crscat/busecon.html",
+      "retrievedAt": "2026-09-15T05:47:20.408Z",
+      "overlaps": []
+    }
+  ],
+  "programs": [
+    {
+      "id": "uw-seattle-business",
+      "name": "Business",
+      "degreeType": "B.A.B.A.",
+      "catalogId": "uw-seattle-business-2026-09",
+      "catalogLabel": "Business source snapshot · September 2026 (review required)",
+      "sourceUrl": "https://www.washington.edu/students/gencat/program/S/Business-300.html",
+      "retrievedAt": "2026-09-15T05:47:05.473Z",
+      "status": "NEEDS_REVIEW",
+      "requirements": {
+        "id": "uw-business-root",
+        "title": "Business Administration degree",
+        "type": "ALL_OF",
+        "parseStatus": "PARSED",
+        "sourceUrl": "https://www.washington.edu/students/gencat/program/S/Business-300.html",
+        "rawText": "Business Administration degree",
+        "allowDoubleCount": true,
+        "children": [
+          {
+            "id": "uw-business-foundation",
+            "title": "Business foundations",
+            "type": "ALL_OF",
+            "parseStatus": "PARSED",
+            "sourceUrl": "https://www.washington.edu/students/gencat/program/S/Business-300.html",
+            "rawText": "Business foundations",
+            "children": [
+              {
+                "id": "uw-business-calculus",
+                "title": "Calculus · one approved course",
+                "type": "ANY_OF",
+                "parseStatus": "PARSED",
+                "sourceUrl": "https://www.washington.edu/students/gencat/program/S/Business-300.html",
+                "rawText": "Catalog calculus alternatives; Foster curriculum also lists additional alternatives. Adviser review required for substitutions.",
+                "courseIds": [
+                  "MATH 112",
+                  "MATH 124",
+                  "MATH 134"
+                ],
+                "chooseCount": 1
+              },
+              {
+                "id": "uw-business-ECON 200",
+                "title": "ECON 200",
+                "type": "COURSE",
+                "parseStatus": "PARSED",
+                "sourceUrl": "https://www.washington.edu/students/gencat/program/S/Business-300.html",
+                "rawText": "ECON 200",
+                "courseIds": [
+                  "ECON 200"
+                ]
+              },
+              {
+                "id": "uw-business-ECON 201",
+                "title": "ECON 201",
+                "type": "COURSE",
+                "parseStatus": "PARSED",
+                "sourceUrl": "https://www.washington.edu/students/gencat/program/S/Business-300.html",
+                "rawText": "ECON 201",
+                "courseIds": [
+                  "ECON 201"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "uw-business-lower",
+            "title": "Lower-division Business core",
+            "type": "ALL_OF",
+            "parseStatus": "PARSED",
+            "sourceUrl": "https://www.washington.edu/students/gencat/program/S/Business-300.html",
+            "rawText": "Core courses (55-57 credits): ACCTG 215, ACCTG 225; QMETH 201; MGMT 200; B ECON 300; MKTG 301; I S 300; I BUS 300; OPMGT 301; FIN 350; MGMT 300; MGMT 320; MGMT 430.",
+            "children": [
+              {
+                "id": "uw-business-ACCTG 215",
+                "title": "ACCTG 215",
+                "type": "COURSE",
+                "parseStatus": "PARSED",
+                "sourceUrl": "https://www.washington.edu/students/gencat/program/S/Business-300.html",
+                "rawText": "ACCTG 215",
+                "courseIds": [
+                  "ACCTG 215"
+                ]
+              },
+              {
+                "id": "uw-business-ACCTG 225",
+                "title": "ACCTG 225",
+                "type": "COURSE",
+                "parseStatus": "PARSED",
+                "sourceUrl": "https://www.washington.edu/students/gencat/program/S/Business-300.html",
+                "rawText": "ACCTG 225",
+                "courseIds": [
+                  "ACCTG 225"
+                ]
+              },
+              {
+                "id": "uw-business-QMETH 201",
+                "title": "QMETH 201",
+                "type": "COURSE",
+                "parseStatus": "PARSED",
+                "sourceUrl": "https://www.washington.edu/students/gencat/program/S/Business-300.html",
+                "rawText": "QMETH 201",
+                "courseIds": [
+                  "QMETH 201"
+                ]
+              },
+              {
+                "id": "uw-business-MGMT 200",
+                "title": "MGMT 200",
+                "type": "COURSE",
+                "parseStatus": "PARSED",
+                "sourceUrl": "https://www.washington.edu/students/gencat/program/S/Business-300.html",
+                "rawText": "MGMT 200",
+                "courseIds": [
+                  "MGMT 200"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "uw-business-upper",
+            "title": "Upper-division Business core",
+            "type": "ALL_OF",
+            "parseStatus": "PARSED",
+            "sourceUrl": "https://www.washington.edu/students/gencat/program/S/Business-300.html",
+            "rawText": "Core courses (55-57 credits): ACCTG 215, ACCTG 225; QMETH 201; MGMT 200; B ECON 300; MKTG 301; I S 300; I BUS 300; OPMGT 301; FIN 350; MGMT 300; MGMT 320; MGMT 430.",
+            "children": [
+              {
+                "id": "uw-business-B ECON 300",
+                "title": "B ECON 300",
+                "type": "COURSE",
+                "parseStatus": "PARSED",
+                "sourceUrl": "https://www.washington.edu/students/gencat/program/S/Business-300.html",
+                "rawText": "B ECON 300",
+                "courseIds": [
+                  "B ECON 300"
+                ]
+              },
+              {
+                "id": "uw-business-MKTG 301",
+                "title": "MKTG 301",
+                "type": "COURSE",
+                "parseStatus": "PARSED",
+                "sourceUrl": "https://www.washington.edu/students/gencat/program/S/Business-300.html",
+                "rawText": "MKTG 301",
+                "courseIds": [
+                  "MKTG 301"
+                ]
+              },
+              {
+                "id": "uw-business-I S 300",
+                "title": "I S 300",
+                "type": "COURSE",
+                "parseStatus": "PARSED",
+                "sourceUrl": "https://www.washington.edu/students/gencat/program/S/Business-300.html",
+                "rawText": "I S 300",
+                "courseIds": [
+                  "I S 300"
+                ]
+              },
+              {
+                "id": "uw-business-I BUS 300",
+                "title": "I BUS 300",
+                "type": "COURSE",
+                "parseStatus": "PARSED",
+                "sourceUrl": "https://www.washington.edu/students/gencat/program/S/Business-300.html",
+                "rawText": "I BUS 300",
+                "courseIds": [
+                  "I BUS 300"
+                ]
+              },
+              {
+                "id": "uw-business-OPMGT 301",
+                "title": "OPMGT 301",
+                "type": "COURSE",
+                "parseStatus": "PARSED",
+                "sourceUrl": "https://www.washington.edu/students/gencat/program/S/Business-300.html",
+                "rawText": "OPMGT 301",
+                "courseIds": [
+                  "OPMGT 301"
+                ]
+              },
+              {
+                "id": "uw-business-FIN 350",
+                "title": "FIN 350",
+                "type": "COURSE",
+                "parseStatus": "PARSED",
+                "sourceUrl": "https://www.washington.edu/students/gencat/program/S/Business-300.html",
+                "rawText": "FIN 350",
+                "courseIds": [
+                  "FIN 350"
+                ]
+              },
+              {
+                "id": "uw-business-MGMT 300",
+                "title": "MGMT 300",
+                "type": "COURSE",
+                "parseStatus": "PARSED",
+                "sourceUrl": "https://www.washington.edu/students/gencat/program/S/Business-300.html",
+                "rawText": "MGMT 300",
+                "courseIds": [
+                  "MGMT 300"
+                ]
+              },
+              {
+                "id": "uw-business-MGMT 320",
+                "title": "MGMT 320",
+                "type": "COURSE",
+                "parseStatus": "PARSED",
+                "sourceUrl": "https://www.washington.edu/students/gencat/program/S/Business-300.html",
+                "rawText": "MGMT 320",
+                "courseIds": [
+                  "MGMT 320"
+                ]
+              },
+              {
+                "id": "uw-business-MGMT 430",
+                "title": "MGMT 430",
+                "type": "COURSE",
+                "parseStatus": "PARSED",
+                "sourceUrl": "https://www.washington.edu/students/gencat/program/S/Business-300.html",
+                "rawText": "MGMT 430",
+                "courseIds": [
+                  "MGMT 430"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "uw-business-credits",
+            "title": "180 total credits · applicability requires review",
+            "type": "MINIMUM_TOTAL_CREDITS",
+            "parseStatus": "PARSED",
+            "sourceUrl": "https://www.washington.edu/students/gencat/program/S/Business-300.html",
+            "rawText": "180 total credits · applicability requires review",
+            "minCredits": 180
+          },
+          {
+            "id": "uw-business-electives",
+            "title": "16 upper-division Business elective credits and specialization",
+            "type": "MANUAL_REVIEW",
+            "parseStatus": "NEEDS_REVIEW",
+            "sourceUrl": "https://www.washington.edu/students/gencat/program/S/Business-300.html",
+            "rawText": "General BABA allows upper-division business electives; named majors have additional curricula. Elective applicability and specialization requirements are not modeled."
+          },
+          {
+            "id": "uw-business-general",
+            "title": "General education, composition, and writing",
+            "type": "MANUAL_REVIEW",
+            "parseStatus": "NEEDS_REVIEW",
+            "sourceUrl": "https://www.washington.edu/students/gencat/program/S/Business-300.html",
+            "rawText": "English composition, additional writing, diversity, and Areas of Inquiry require adviser review. Foster and catalog writing totals need reconciliation."
+          },
+          {
+            "id": "uw-business-policy",
+            "title": "GPA, residency, admission, and credit restrictions",
+            "type": "MANUAL_REVIEW",
+            "parseStatus": "NEEDS_REVIEW",
+            "sourceUrl": "https://www.washington.edu/students/gencat/program/S/Business-300.html",
+            "rawText": "Minimum cumulative GPA, six upper-division core courses including MGMT 430 in residence, 40 of 53 upper-division business credits at UW Seattle, final-credit residency, and credit caps require review. Selecting Business does not establish Foster admission."
+          },
+          {
+            "id": "uw-business-substitutions",
+            "title": "Calculus and statistics substitutions",
+            "type": "MANUAL_REVIEW",
+            "parseStatus": "NEEDS_REVIEW",
+            "sourceUrl": "https://www.washington.edu/students/gencat/program/S/Business-300.html",
+            "rawText": "Additional calculus alternatives on Foster curriculum and approved QMETH 201 substitutions require adviser review. Unknown substitutions are not automatically counted."
+          }
+        ]
+      }
+    }
+  ],
+  "sources": [
+    {
+      "name": "UW Business Administration catalog",
+      "url": "https://www.washington.edu/students/gencat/program/S/Business-300.html",
+      "retrievedAt": "2026-09-15T05:47:05.473Z",
+      "status": "PARSED",
+      "notes": "Official source; selected shared-core courses imported. No Business offering data. Unsupported prerequisites remain under review."
+    },
+    {
+      "name": "UW acctg course catalog",
+      "url": "https://www.washington.edu/students/crscat/acctg.html",
+      "retrievedAt": "2026-09-15T05:47:06.929Z",
+      "status": "PARSED",
+      "notes": "Official source; selected shared-core courses imported. No Business offering data. Unsupported prerequisites remain under review."
+    },
+    {
+      "name": "UW econ course catalog",
+      "url": "https://www.washington.edu/students/crscat/econ.html",
+      "retrievedAt": "2026-09-15T05:47:08.497Z",
+      "status": "PARSED",
+      "notes": "Official source; selected shared-core courses imported. No Business offering data. Unsupported prerequisites remain under review."
+    },
+    {
+      "name": "UW finance course catalog",
+      "url": "https://www.washington.edu/students/crscat/finance.html",
+      "retrievedAt": "2026-09-15T05:47:09.923Z",
+      "status": "PARSED",
+      "notes": "Official source; selected shared-core courses imported. No Business offering data. Unsupported prerequisites remain under review."
+    },
+    {
+      "name": "UW infosys course catalog",
+      "url": "https://www.washington.edu/students/crscat/infosys.html",
+      "retrievedAt": "2026-09-15T05:47:11.456Z",
+      "status": "PARSED",
+      "notes": "Official source; selected shared-core courses imported. No Business offering data. Unsupported prerequisites remain under review."
+    },
+    {
+      "name": "UW intlbus course catalog",
+      "url": "https://www.washington.edu/students/crscat/intlbus.html",
+      "retrievedAt": "2026-09-15T05:47:12.958Z",
+      "status": "PARSED",
+      "notes": "Official source; selected shared-core courses imported. No Business offering data. Unsupported prerequisites remain under review."
+    },
+    {
+      "name": "UW mgmt course catalog",
+      "url": "https://www.washington.edu/students/crscat/mgmt.html",
+      "retrievedAt": "2026-09-15T05:47:14.469Z",
+      "status": "PARSED",
+      "notes": "Official source; selected shared-core courses imported. No Business offering data. Unsupported prerequisites remain under review."
+    },
+    {
+      "name": "UW mktg course catalog",
+      "url": "https://www.washington.edu/students/crscat/mktg.html",
+      "retrievedAt": "2026-09-15T05:47:15.951Z",
+      "status": "PARSED",
+      "notes": "Official source; selected shared-core courses imported. No Business offering data. Unsupported prerequisites remain under review."
+    },
+    {
+      "name": "UW opmgmt course catalog",
+      "url": "https://www.washington.edu/students/crscat/opmgmt.html",
+      "retrievedAt": "2026-09-15T05:47:17.430Z",
+      "status": "PARSED",
+      "notes": "Official source; selected shared-core courses imported. No Business offering data. Unsupported prerequisites remain under review."
+    },
+    {
+      "name": "UW qmeth course catalog",
+      "url": "https://www.washington.edu/students/crscat/qmeth.html",
+      "retrievedAt": "2026-09-15T05:47:18.908Z",
+      "status": "PARSED",
+      "notes": "Official source; selected shared-core courses imported. No Business offering data. Unsupported prerequisites remain under review."
+    },
+    {
+      "name": "UW busecon course catalog",
+      "url": "https://www.washington.edu/students/crscat/busecon.html",
+      "retrievedAt": "2026-09-15T05:47:20.408Z",
+      "status": "PARSED",
+      "notes": "Official source; selected shared-core courses imported. No Business offering data. Unsupported prerequisites remain under review."
+    }
+  ]
+}

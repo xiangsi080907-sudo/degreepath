@@ -49,7 +49,7 @@ export default function Home() {
               </Link>
             </div>
             <p className="hero-note">
-              Starting with UW Seattle Computer Science.
+              UW Seattle · Computer Science and Business.
               <br />
               Official source data. Clear review flags. No AI required.
             </p>

@@ -1,4 +1,41 @@
 @import "tailwindcss";
+.major-selector {
+  border: 0;
+  padding: 0;
+  margin: 20px 0;
+  min-width: 0;
+}
+.major-selector legend {
+  font-weight: 600;
+  font-size: 20px;
+}
+.major-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: 16px;
+}
+.major-option {
+  padding: 20px;
+  border: 1px solid var(--school-border);
+  border-radius: 10px;
+  background: var(--school-surface);
+  cursor: pointer;
+}
+.major-option.selected {
+  border-color: var(--school-primary);
+  background: var(--school-primary-soft);
+}
+.major-option input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--school-primary);
+}
+.major-option .pill {
+  align-self: flex-start;
+}
+.major-switcher .button {
+  margin: 0 10px 8px 0;
+}
 :root {
   --ink: var(--school-primary-dark);
   --deep: var(--school-primary-dark);

@@ -56,6 +56,8 @@ import {
 import { validatePlan, whatIf, Violation } from "@/domain/planner";
 import { termLabel, termKey } from "@/domain/calendar";
 import { Brand, Disclaimer } from "./brand";
+import { MajorSelector } from "./major-selector";
+import { majorForKey, programKey, savedProgramKey } from "@/data/majors";
 const navigation = [
   ["dashboard", "Overview", LayoutDashboard],
   ["audit", "Degree audit", GraduationCap],
@@ -92,10 +94,16 @@ export function Workspace({
   view: string;
   onboarded: boolean;
   name: string;
-  savedPlans?: { id: string; name: string }[];
+  savedPlans?: { id: string; name: string; programCatalogId: string }[];
   initialPlans?: Plan[];
 }) {
   const router = useRouter();
+  const [pendingMajor, setPendingMajor] = useState("");
+  const [loadedSnapshot, setLoadedSnapshot] = useState<{
+    name: string;
+    programCatalogId: string;
+    plan: Plan;
+  } | null>(null);
   const [state, setState] = useState(initialState),
     [plans, setPlans] = useState<Plan[]>(initialPlans),
     [activePlan, setActivePlan] = useState("balanced"),
@@ -129,6 +137,8 @@ export function Workspace({
   const update = (next: StudentState) => {
     setState(next);
     setPlans([]);
+    setChangeIssues(null);
+    setLoadedSnapshot(null);
     setMessage("Unsaved changes");
     if (demo)
       sessionStorage.setItem(
@@ -136,6 +146,33 @@ export function Workspace({
         JSON.stringify({ state: next, plans: [] }),
       );
   };
+  async function changeMajor() {
+    if (!pendingMajor || pendingMajor === state.programCatalogId) return;
+    setBusy(true);
+    setError("");
+    try {
+      if (!demo) {
+        await persist();
+        const response = await fetch("/api/state", {
+          method: "PATCH",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ programCatalogId: pendingMajor }),
+        });
+        const result = await response.json();
+        if (!response.ok) throw Error(result.error);
+      }
+      update({ ...state, programCatalogId: pendingMajor });
+      setActivePlan("balanced");
+      setPendingMajor("");
+      setMessage(
+        `Switched to ${majorForKey(pendingMajor)?.displayName}. Academic history and saved plans are preserved. Generate a new plan when ready.`,
+      );
+    } catch (e) {
+      setError(e instanceof Error ? e.message : "Could not switch major");
+    } finally {
+      setBusy(false);
+    }
+  }
   const record = useMemo(
     () => ({ courses: state.courses, programs: state.programs }),
     [state.courses, state.programs],
@@ -164,6 +201,9 @@ export function Workspace({
           getCoursesUnlockedBy(a.course.id, data.courses).length ||
         a.course.id.localeCompare(b.course.id),
     );
+  const featuredCourse = data.courses.find(
+    (c) => c.id === majorForKey(state.programCatalogId)?.featuredCourseId,
+  );
   const plan = plans.find((p) => p.id === activePlan) ?? plans[0];
   async function persist() {
     setError("");
@@ -226,6 +266,7 @@ export function Workspace({
         body: JSON.stringify({
           name: `${plan?.name ?? "Balanced"} · ${termLabel(state.preferences.start)}`,
           workload: activePlan,
+          programCatalogId: state.programCatalogId,
           ...(changeIssues !== null && plan
             ? {
                 terms: plan.terms.map((t) => ({
@@ -238,7 +279,14 @@ export function Workspace({
       });
       const result = await r.json();
       if (!r.ok) throw Error(result.error);
-      setSaved([{ id: result.id, name: result.name }, ...saved]);
+      setSaved([
+        {
+          id: result.id,
+          name: result.name,
+          programCatalogId: savedProgramKey(result.config),
+        },
+        ...saved,
+      ]);
       setMessage("Plan saved to your account");
     } catch (e) {
       setError(e instanceof Error ? e.message : "Could not save");
@@ -416,6 +464,42 @@ export function Workspace({
               </p>
             )}
           </div>
+          {step >= 6 && program && (
+            <details className="panel compact major-switcher">
+              <summary>Active major: {program.name} · Change major</summary>
+              <MajorSelector
+                value={pendingMajor || state.programCatalogId}
+                available={data.programs.map(programKey)}
+                onChange={setPendingMajor}
+                disabled={busy}
+              />
+              {pendingMajor && pendingMajor !== state.programCatalogId && (
+                <div>
+                  <p>
+                    Your academic history and saved plans will not be deleted.
+                    Requirement progress and recommendations will use{" "}
+                    {majorForKey(pendingMajor)?.displayName}. Current unsaved
+                    plan edits will be cleared; save your plan first if you want
+                    to keep them.
+                  </p>
+                  <button
+                    className="button primary"
+                    disabled={busy}
+                    onClick={changeMajor}
+                  >
+                    Switch to {majorForKey(pendingMajor)?.displayName}
+                  </button>
+                  <button
+                    className="button outline"
+                    disabled={busy}
+                    onClick={() => setPendingMajor("")}
+                  >
+                    Cancel
+                  </button>
+                </div>
+              )}
+            </details>
+          )}
           {!program ? (
             <div className="empty">
               <ShieldCheck />
@@ -462,45 +546,48 @@ export function Workspace({
                 }
               </h2>
               {step === 0 && (
-                <label>
-                  Institution
-                  <select defaultValue={data.institution.id}>
-                    <option value={data.institution.id}>
-                      {data.institution.name}
-                    </option>
-                  </select>
-                </label>
+                <p>
+                  University of Washington · Seattle. Build a course plan around
+                  your academic history and the program you choose.
+                </p>
               )}
               {step === 1 && (
-                <label>
-                  Campus
-                  <select defaultValue={data.campus.id}>
-                    <option value={data.campus.id}>
-                      Seattle · quarter system
-                    </option>
-                  </select>
-                </label>
+                <p>
+                  Plan in quarters: Autumn, Winter, Spring, and optional Summer.
+                  Both supported majors share the UW calendar. More UW programs
+                  coming.
+                </p>
               )}
-              {(step === 2 || step === 3) && (
+              {step === 2 && (
+                <MajorSelector
+                  value={state.programCatalogId}
+                  available={data.programs.map(programKey)}
+                  onChange={(key) =>
+                    update({ ...state, programCatalogId: key })
+                  }
+                  disabled={busy}
+                />
+              )}
+              {step === 3 && (
                 <>
                   <label>
-                    {step === 2 ? "Program" : "Catalog version"}
+                    Catalog version
                     <select
                       value={state.programCatalogId}
                       onChange={(e) =>
                         update({ ...state, programCatalogId: e.target.value })
                       }
                     >
-                      {data.programs.map((p) => (
-                        <option
-                          key={p.catalogId}
-                          value={`${p.id}:${p.catalogId}`}
-                        >
-                          {step === 2
-                            ? `${p.name} · ${p.degreeType}`
-                            : p.catalogLabel}
-                        </option>
-                      ))}
+                      {data.programs
+                        .filter((p) => p.id === program.id)
+                        .map((p) => (
+                          <option
+                            key={programKey(p)}
+                            value={`${p.id}:${p.catalogId}`}
+                          >
+                            {p.catalogLabel}
+                          </option>
+                        ))}
                     </select>
                   </label>
                   <p className="notice">
@@ -636,23 +723,21 @@ export function Workspace({
                         Prerequisites shape your path. See what a course makes
                         possible before you decide.
                       </p>
-                      {data.courses.find((c) => c.id === "CSE 311") && (
+                      {featuredCourse && (
                         <button
                           className="unlock-preview"
-                          onClick={() =>
-                            setDetail(
-                              data.courses.find((c) => c.id === "CSE 311")!,
-                            )
-                          }
+                          onClick={() => setDetail(featuredCourse)}
                         >
                           <GitBranch size={22} />
                           <span>
-                            <strong>CSE 311</strong>
+                            <strong>{featuredCourse.id}</strong>
                             <small>
                               Referenced by{" "}
                               {
-                                getCoursesUnlockedBy("CSE 311", data.courses)
-                                  .length
+                                getCoursesUnlockedBy(
+                                  featuredCourse.id,
+                                  data.courses,
+                                ).length
                               }{" "}
                               course rules
                             </small>
@@ -1076,6 +1161,51 @@ export function Workspace({
                   {saved.length > 0 && (
                     <section className="panel">
                       <h2>Saved plans</h2>
+                      {loadedSnapshot && (
+                        <section
+                          className="panel saved-snapshot"
+                          aria-label="Saved plan snapshot"
+                        >
+                          <h3>
+                            {loadedSnapshot.name} ·{" "}
+                            {majorForKey(loadedSnapshot.programCatalogId)
+                              ?.displayName ?? "Archived program"}
+                          </h3>
+                          <p>
+                            Read-only saved snapshot. Your active major and
+                            current academic history have not changed. To edit
+                            or regenerate, select this plan’s major and generate
+                            from your current history.
+                          </p>
+                          {loadedSnapshot.programCatalogId !==
+                            state.programCatalogId && (
+                            <p className="notice">
+                              This plan belongs to a different major. Use
+                              “Change major” above to switch before generating a
+                              new plan.
+                            </p>
+                          )}
+                          {loadedSnapshot.plan.terms.map((t) => (
+                            <div key={termKey(t.term)}>
+                              <strong>
+                                {termLabel(t.term)} · {t.credits} credits
+                              </strong>
+                              <p>{t.courseIds.join(", ") || "No courses"}</p>
+                            </div>
+                          ))}
+                          {loadedSnapshot.plan.warnings.map((w, i) => (
+                            <p className="notice" key={i}>
+                              {w}
+                            </p>
+                          ))}
+                          <button
+                            className="button outline"
+                            onClick={() => setLoadedSnapshot(null)}
+                          >
+                            Close saved snapshot
+                          </button>
+                        </section>
+                      )}
                       {saved.map((s) => (
                         <button
                           className="saved-row"
@@ -1086,8 +1216,11 @@ export function Workspace({
                             );
                             if (r.ok) {
                               const p = await r.json();
-                              setPlans([p.result]);
-                              setActivePlan(p.result.id);
+                              setLoadedSnapshot({
+                                name: p.name,
+                                programCatalogId: savedProgramKey(p.config),
+                                plan: p.result,
+                              });
                               setMessage(
                                 "Loaded saved snapshot. Current course history may differ.",
                               );
@@ -1095,7 +1228,9 @@ export function Workspace({
                               setError("This saved plan could not be loaded.");
                           }}
                         >
-                          {s.name}
+                          {s.name} ·{" "}
+                          {majorForKey(s.programCatalogId)?.displayName ??
+                            "Archived program"}
                           <ArrowUpRight size={16} />
                         </button>
                       ))}
@@ -1126,11 +1261,13 @@ export function Workspace({
                     <div>
                       <h2>Official information. Visible limitations.</h2>
                       <p>
-                        Only UW Seattle is populated. Computer Science supports
-                        partial course planning using the September 2026 source
-                        snapshot. No fully verified historical catalog year or
-                        complete degree audit is currently supported. Computer
-                        Engineering is not selectable.
+                        UW Seattle supports Computer Science and Business with
+                        partial coverage. Business includes Foster’s shared BABA
+                        core and selected foundations; electives,
+                        specializations, writing, GPA, residency, and
+                        substitutions require review. Business offerings have
+                        not been imported. No complete degree audit or verified
+                        historical catalog year is supported.
                       </p>
                     </div>
                   </section>
@@ -1833,7 +1970,7 @@ function Explorer({
           ·{" "}
           {nextOnly
             ? "Eligible does not guarantee registration access."
-            : "Only imported undergraduate CSE and MATH courses are shown."}
+            : "Only imported UW courses are shown; department coverage is partial."}
         </span>
       </p>
       <div className="course-grid">

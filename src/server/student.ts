@@ -1,6 +1,6 @@
 import { Prisma } from "@prisma/client";
 import { db } from "./db";
-import { StudentState, stateSchema } from "./validation";
+import { StudentState, stateSchema, programKeySchema } from "./validation";
 import { getAcademicData } from "./academic";
 import { PublicRequestError } from "./http";
 import { StudentCourse } from "../domain/types";
@@ -40,7 +40,13 @@ export async function readStudent(userId: string) {
       where: { userId },
       orderBy: { createdAt: "desc" },
       take: 20,
-      select: { id: true, name: true, result: true, createdAt: true },
+      select: {
+        id: true,
+        name: true,
+        result: true,
+        config: true,
+        createdAt: true,
+      },
     }),
   ]);
   const state = {
@@ -131,4 +137,19 @@ export async function readSavedPlan(userId: string, id: string) {
 }
 export async function deleteSavedPlan(userId: string, id: string) {
   return db.savedPlan.deleteMany({ where: { id, userId } });
+}
+
+export async function switchMajor(userId: string, input: unknown) {
+  const key = programKeySchema.parse(input);
+  const catalog = await db.programCatalog.findUnique({ where: { id: key } });
+  if (!catalog)
+    throw new PublicRequestError(
+      "This major's academic data has not been imported yet.",
+    );
+  // Only active curriculum/drafts change. Academic history and saved plans are untouched.
+  await db.studentProfile.update({
+    where: { userId },
+    data: { programCatalogId: key, draftPlans: Prisma.DbNull },
+  });
+  return { programCatalogId: key };
 }

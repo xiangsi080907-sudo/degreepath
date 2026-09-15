@@ -150,6 +150,18 @@ test("account onboarding, saved plan persistence, ownership and sign in/out", as
   expect((await page.request.get(`/api/plans?id=${savedId}`)).status()).toBe(
     200,
   );
+  const majorAttack = await otherPage.request.patch("/api/state", {
+    headers: { Origin: "http://127.0.0.1:3000" },
+    data: {
+      userId: state.userId ?? "victim",
+      programCatalogId: "uw-seattle-business:uw-seattle-business-2026-09",
+    },
+  });
+  expect(majorAttack.status()).toBe(400);
+  expect(
+    (await (await page.request.get("/api/state")).json()).state
+      .programCatalogId,
+  ).toBe(state.state.programCatalogId);
   await other.close();
   await page.getByRole("button", { name: "Sign out", exact: true }).click();
   await expect(page).toHaveURL("/");

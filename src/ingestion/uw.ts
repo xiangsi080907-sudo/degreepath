@@ -67,6 +67,7 @@ export function parseCourseCatalog(
   subject: string,
   sourceUrl: string,
   retrievedAt: string,
+  minimumRecords = 5,
 ): Course[] {
   const $ = load(html);
   const courses: Course[] = [];
@@ -133,7 +134,7 @@ export function parseCourseCatalog(
       restrictions,
     });
   });
-  if (courses.length < 5)
+  if (courses.length < minimumRecords)
     throw Error(`Catalog format changed or empty: ${sourceUrl}`);
   const seen = new Set<string>();
   for (const c of courses) {

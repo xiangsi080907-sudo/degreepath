@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "data:import:business": "tsx scripts/import-business.ts",
+    "data:capture:business": "tsx scripts/capture-business.ts",
+    "data:normalize:business": "tsx scripts/normalize-business.ts",
     "dev": "next dev --hostname 127.0.0.1 --port 3000",
     "build": "next build",
     "start": "next start --hostname 127.0.0.1 --port 3000",

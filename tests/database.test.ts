@@ -7,6 +7,7 @@ import {
   deleteSavedPlan,
   readStudent,
   saveStudent,
+  switchMajor,
 } from "../src/server/student";
 import { importAcademicData } from "../src/ingestion/import";
 import { demoData } from "../src/server/academic";
@@ -17,6 +18,57 @@ afterAll(async () => {
   await db.$disconnect();
 });
 describe("database integration (requires local migrated PostgreSQL)", () => {
+  it("switches majors both ways without changing history or old saved snapshots", async () => {
+    const user = await db.user.create({
+      data: {
+        email: `switch-${Date.now()}@example.com`,
+        passwordHash: "unused",
+      },
+    });
+    created.push(user.id);
+    await saveStudent(user.id, demoState);
+    const before = await db.studentCourse.findMany({
+      where: { userId: user.id },
+      orderBy: { courseId: "asc" },
+    });
+    const plan = await db.savedPlan.create({
+      data: {
+        userId: user.id,
+        name: "Original CS",
+        score: 0,
+        config: { programCatalogId: demoState.programCatalogId },
+        result: { terms: [] },
+      },
+    });
+    await switchMajor(
+      user.id,
+      "uw-seattle-business:uw-seattle-business-2026-09",
+    );
+    expect((await readStudent(user.id)).state.programCatalogId).toContain(
+      "business",
+    );
+    expect(
+      await db.studentCourse.findMany({
+        where: { userId: user.id },
+        orderBy: { courseId: "asc" },
+      }),
+    ).toEqual(before);
+    expect((await readStudent(user.id)).plans).toHaveLength(1);
+    expect((await readSavedPlan(user.id, plan.id))?.config).toEqual(
+      plan.config,
+    );
+    await switchMajor(user.id, demoState.programCatalogId);
+    expect((await readStudent(user.id)).state.programCatalogId).toBe(
+      demoState.programCatalogId,
+    );
+    await expect(switchMajor(user.id, "invalid")).rejects.toThrow();
+    expect(
+      await db.studentCourse.findMany({
+        where: { userId: user.id },
+        orderBy: { courseId: "asc" },
+      }),
+    ).toEqual(before);
+  });
   it("hashes with independent salts and rejects wrong passwords", async () => {
     const a = await hashPassword("a sufficiently long password"),
       b = await hashPassword("a sufficiently long password");

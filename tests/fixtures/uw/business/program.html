@@ -1,0 +1,1074 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed:wght@400;600;800&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+body {
+  font-family: 'Open Sans', Helvetica, Arial, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 17px;
+  line-height: 1.72222;
+  background-color: #eee;
+  margin: 0;
+  padding: 0;
+}
+
+.uw-thinstrip a,
+.uw-footer a {
+  text-decoration: none;
+}
+/* https://github.com/uweb/UW-Header-Templates/blob/master/css/structure.css */
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/* https://github.com/uweb/UW-Header-Templates/blob/master/css/full.css */
+.uw-thinstrip {
+  height: 90px;
+  width: 100%;
+  background: #4b2e83;
+  padding-top: 22px;
+  position: relative;
+  z-index: 2;
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+}
+.uw-thinstrip .container {
+  position: relative;
+}
+.uw-thinstrip .align-right{
+  float: right;
+}
+.uw-thinstrip nav {
+  margin-top: 8px;
+  display: inline-block;
+}
+.uw-thinstrip .uw-patch {
+  display: block;
+  text-indent: -9999px;
+  width: 163px;
+  height: 110px;
+  background: url('https://www.washington.edu/static/home/wp-content/themes/uw-2014/assets/svg/uw-sprite.svg') no-repeat 0 0 transparent;
+  position: absolute;
+  top: -22px;
+  left: 0;
+  z-index: 1;
+}
+.uw-thinstrip .uw-wordmark {
+  display: block;
+  position: absolute;
+  top: 12px;
+  left: 150px;
+  text-indent: -9999px;
+  width: 330px;
+  height: 24px;
+  background: url('https://www.washington.edu/static/home/wp-content/themes/uw-2014/assets/svg/uw-sprite.svg') no-repeat 0 -431px transparent;
+}
+.uw-thinstrip ul.uw-thin-links {
+  margin: 0;
+  position: relative;
+  z-index: 1;
+  font-weight: 700;
+  padding: 0;
+}
+.uw-thinstrip ul.uw-thin-links li {
+  display:inline-block;
+  list-style: none;
+}
+.uw-thinstrip ul.uw-thin-links li:last-child a:after {
+  display: none;
+}
+.uw-thinstrip ul.uw-thin-links li a {
+  font-family: "Encode Sans Condensed", sans-serif;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 600;
+  position: relative;
+  padding: 8px 25px 10px 0;
+  letter-spacing: .01em;
+}
+.uw-thinstrip ul.uw-thin-links li a:after{
+  position: absolute;
+  right: 6px;
+  height: 32px;
+  width: 12px;
+  top: 3px;
+  content: "";
+  background: url('https://www.washington.edu/static/home/wp-content/themes/uw-2014/assets/svg/uw-sprite.svg') no-repeat -696px 0;
+}
+.uw-thinstrip ul.uw-thin-links li a:hover,
+.uw-thinstrip ul.uw-thin-links li a:focus {
+  color: #b7a57a;
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width: 767px) {
+  .uw-thinstrip {
+    padding: 0;
+    height: 45px;
+  }
+  .uw-thinstrip .container {
+    position: static;
+  }
+  .uw-thinstrip .uw-patch {
+    width: 73px;
+    height: 45px;
+    top: 0;
+    left: 0;
+    background-size: 470px;
+  }
+  .uw-thinstrip .uw-wordmark {
+    width: 155px;
+    height: 34px;
+    background: url('https://www.washington.edu/static/home/wp-content/themes/uw-2014/assets/svg/uw-sprite.svg') no-repeat 0 -185px transparent;
+    margin: 0;
+    float: none;
+    position: absolute;
+    left: 78px;
+    top: 4px;
+    background-size: 397px;
+  }
+  .uw-thinstrip ul.uw-thin-links {
+    height: 50px;
+  }
+  .uw-thinstrip ul.uw-thin-links li {
+    float: none;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .uw-thinstrip ul.uw-thin-links li {
+    display: none;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .uw-thinstrip {
+    height: 140px;
+  }
+  .uw-thinstrip ul.uw-thin-links li {
+    float: none;
+  }
+  .uw-thinstrip ul.uw-thin-links:before {
+    position: absolute;
+    top: 0;
+    height: 50px;
+    width: 100%;
+    content: "";
+  }
+  .uw-thinstrip ul.uw-thin-links li a,
+  .uw-thinstrip button {
+    font-size: 16px;
+    padding: 10px 25px 10px 0;
+    color: white;
+  }
+  .uw-thinstrip li {
+    margin-top: 68px;
+  }
+  .uw-thinstrip .align-right {
+    position: relative;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  .uw-thinstrip ul.uw-thin-links li a,
+  .uw-thinstrip ul.uw-thin-links li button {
+    font-size: 16px;
+    padding: 10px 25px 10px 0;
+  }
+  .uw-thinstrip .uw-wordmark {
+    background-size: 670px;
+    background-position: 0 -331px;
+  }
+}
+
+/* https://github.com/uweb/uw-footer/blob/master/css/footer.css */
+.uw-footer {
+  background: url('https://www.washington.edu/static/home/wp-content/themes/uw-2014/assets/images/footer.jpg') center bottom;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding: 0 0 30px 0;
+  background-color: #4b2e83;
+  border-top: 7px solid #d1d1d1;
+  text-align: center;
+  position: relative;
+}
+
+.uw-footer .footer-wordmark {
+  display: inline-block;
+  width: 335px;
+  background: url('https://www.washington.edu/static/home/wp-content/themes/uw-2014/assets/svg/uw-sprite.svg') no-repeat 0 -434px transparent;
+  text-indent: -9999px;
+  overflow: hidden;
+  margin-top: 50px;
+}
+
+.uw-footer .footer-wordmark:focus,.uw-footer .footer-wordmark:hover {
+  background: url('https://www.washington.edu/static/home/wp-content/themes/uw-2014/assets/svg/uw-sprite-focus.svg') no-repeat 0 -434px transparent
+}
+
+.uw-footer .be-boundless {
+  color: #fff;
+  line-height: 24px;
+  background: url('https://www.washington.edu/static/home/wp-content/themes/uw-2014/assets/images/boundless.png') no-repeat center top transparent;
+  display: block;
+  text-indent: -99999px;
+  margin: 10px 0 60px;
+  opacity: 1;
+  -o-transition: opacity .25s;
+  -webkit-transition: opacity .25s;
+  transition: opacity .25s;
+}
+
+.uw-footer .be-boundless:hover,.uw-footer .be-boundless:focus {
+  opacity: .6
+}
+
+.uw-footer h4 {
+  font-family: "Encode Sans Condensed",sans-serif;
+  color: #fff;
+  font-weight: 400;
+  font-size: 20px;
+  position: relative;
+  margin: 41px 0 11px 0;
+}
+
+.uw-footer h4:before,.uw-footer h4:after {
+  content: "";
+  position: absolute;
+  width: 85px;
+  height: 1px;
+  background-color: #9184aa;
+  left: 50%;
+  margin-left: -40px
+}
+
+.uw-footer h4:before {
+  top: -27px
+}
+
+.uw-footer h4:after {
+  bottom: -85px
+}
+
+.uw-footer ul.footer-social li {
+  list-style: none;
+  display: inline-block
+}
+
+.uw-footer ul.footer-social li a {
+  color: #fff;
+  text-indent: -9999px;
+  overflow: hidden;
+  display: inline-block;
+  background: url('https://www.washington.edu/static/home/wp-content/themes/uw-2014/assets/svg/uw-sprite.svg') no-repeat 0 -185px transparent;
+  padding: 8px 21px
+}
+
+.uw-footer ul.footer-social li a.facebook {
+  background-position: 0 -185px
+}
+
+.uw-footer ul.footer-social li a.twitter {
+  background-position: -46px -185px
+}
+
+.uw-footer ul.footer-social li a.youtube {
+  background-position: -138px -185px
+}
+
+.uw-footer ul.footer-social li a.linkedin {
+  background-position: -184px -185px
+}
+
+.uw-footer ul.footer-social li a.pinterest {
+  background-position: -92px -185px
+}
+
+.uw-footer ul.footer-social li a.instagram {
+  background-position: -322px -185px
+}
+
+.uw-footer ul.footer-social li a:hover.facebook,.uw-footer ul.footer-social li a:focus.facebook {
+  background-position: 0 -225px
+}
+
+.uw-footer ul.footer-social li a:hover.twitter,.uw-footer ul.footer-social li a:focus.twitter {
+  background-position: -46px -225px
+}
+
+.uw-footer ul.footer-social li a:hover.youtube,.uw-footer ul.footer-social li a:focus.youtube {
+  background-position: -138px -225px
+}
+
+.uw-footer ul.footer-social li a:hover.linkedin,.uw-footer ul.footer-social li a:focus.linkedin {
+  background-position: -184px -225px
+}
+
+.uw-footer ul.footer-social li a:hover.pinterest,.uw-footer ul.footer-social li a:focus.pinterest {
+  background-position: -92px -225px
+}
+
+.uw-footer ul.footer-social li a:hover.instagram,.uw-footer ul.footer-social li a:focus.instagram {
+  background-position: -322px -225px
+}
+
+.uw-footer ul.footer-links {
+  margin: 45px 0 0 0
+}
+
+.uw-footer ul.footer-links li {
+  list-style: none;
+  display: inline-block
+}
+
+.uw-footer ul.footer-links li:last-child a:after {
+  display: none
+}
+
+.uw-footer ul.footer-links li a {
+  color: #fff;
+  position: relative;
+  margin-right: 20px
+}
+
+.uw-footer ul.footer-links li a:after {
+  content: "/";
+  opacity: .5;
+  position: relative;
+  right: -14px;
+}
+
+.uw-footer ul.footer-links li a:focus,.uw-footer ul.footer-links li a:hover {
+  color: #b7a57a;
+  text-decoration: none
+}
+
+.uw-footer ul.footer-links li a:focus:after,.uw-footer ul.footer-links li a:hover:after {
+  color: #fff
+}
+
+.uw-footer p {
+  color: #fff;
+  font-size: .8em;
+  margin-top: 15px
+}
+
+@media only screen and (max-width: 767px) {
+  .uw-footer .footer-wordmark {
+    background-position: 25px -338px;
+    background-size: 690px;
+  }
+  .uw-footer h4:after {
+    display: none;
+  }
+}
+
+h1 {
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+span#top {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 1.6rem;
+  font-weight: normal !important;
+}
+h1, h2 {
+  margin: 0px;
+}
+h3 {
+  margin: 10px 0px 10px 0px;
+}
+div.expandableGroup {
+  display: inline-block;
+}
+
+.collapsed span, .expanded span {
+  background-image: url('https://www.washington.edu/static/home/wp-content/themes/uw-2014/assets/svg/uw-sprite.svg');
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 24px;
+  height:24px;
+}
+
+.collapsed span {
+  background-position: -287px 1px;
+}
+
+.collapsed span:hover {
+  background-position: -314px 1px;
+  cursor: pointer;
+}
+
+.expanded span {
+  background-position: -287px -24px
+}
+
+.expanded span:hover {
+  background-position: -314px -24px;
+  cursor: pointer;
+}
+
+ul.toc {
+  list-style-type: none;
+}
+.page-wrapper {
+  max-width: 1200px;
+  min-width: 320px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 20px;
+}
+.inner-block {
+  padding: 0px 10px 10px 10px;
+}
+.socialMediaList {
+  list-style: none;
+  padding-left: 0px;
+}
+.socialMediaList li {
+  display: inline;
+}
+.svg-inline {
+  width: 44;
+  margin: 0px 10px 0px 10px;
+}
+</style>
+</head>
+<body>
+<header class="uw-thinstrip">
+  <div class="container">
+    <a class="uw-patch" href="https://uw.edu" tabindex="-1" title="University of Washington Home">Home</a>
+    <a class="uw-wordmark" href="https://uw.edu" title="University of Washington Home">Home</a>
+  </div>
+  <div class='align-right'>
+    <nav class="uw-thin-strip-nav">
+      <ul class="uw-thin-links">
+        <li><a href="https://uw.edu/studentlife" title="Students">Students</a></li>
+        <li><a href="https://uw.edu/parents" title="Parents">Parents</a></li>
+        <li><a href="https://uw.edu/facultystaff" title="Faculty &amp; Staff">Faculty &amp; Staff</a></li>
+        <li><a href="https://uw.edu/alumni" title="Alumni">Alumni</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<div class='page-wrapper'>
+
+<span id="top">Foster School of Business</span>
+<div>
+<h1>Business</h1>
+202 <a href="http://uw.edu/maps/?DEM">Dempsey Hall</a><br/>
+206-685-3400<br/>
+<a href="https://foster.uw.edu/">Website</a><br/>
+<a href="https://foster.uw.edu/faculty-research/directory/">Faculty Website</a><br/>
+<a href="mailto:bizinfo@uw.edu">bizinfo@uw.edu</a><br/>
+</div>
+<p>A Business Administration degree provides a liberal arts curriculum along with a full spectrum of the many areas of business. Students can take a variety of upper division electives or choose to specialize in an area of business by declaring a major. </p>
+<nav>
+<ul class="toc">
+<li><a class="toc-link" href="#undergradPrograms" data-expand="undergradPrograms-block">Undergraduate Programs</a></li>
+<ul class="toc">
+<li><a class="toc-link" data-expand="undergradPrograms|program-UG-BUS-MAJOR" href="#program-UG-BUS-MAJOR">Program of Study: Major:  Business Administration</a></li>
+<ul class="toc">
+<li><a class="toc-link" data-expand="undergradPrograms|program-UG-BUS-MAJOR|credential-6283fdddf6447f45c95dffa5" href="#credential-6283fdddf6447f45c95dffa5">Bachelor of Arts in Business Administration degree</a></li>
+<li><a class="toc-link" data-expand="undergradPrograms|program-UG-BUS-MAJOR|credential-624f4ab7a3e96d4c1b871da0" href="#credential-624f4ab7a3e96d4c1b871da0">Bachelor of Arts in Business Administration degree with a major in Accounting</a></li>
+<li><a class="toc-link" data-expand="undergradPrograms|program-UG-BUS-MAJOR|credential-6283fd92c0f8af54fc29274a" href="#credential-6283fd92c0f8af54fc29274a">Bachelor of Arts in Business Administration degree with a major in Accounting for Business Professionals</a></li>
+<li><a class="toc-link" data-expand="undergradPrograms|program-UG-BUS-MAJOR|credential-6283fa9118cdefc9bf9468fc" href="#credential-6283fa9118cdefc9bf9468fc">Bachelor of Arts in Business Administration degree with a major in Entrepreneurship</a></li>
+<li><a class="toc-link" data-expand="undergradPrograms|program-UG-BUS-MAJOR|credential-6283fcb8f6447fbbe65dff99" href="#credential-6283fcb8f6447fbbe65dff99">Bachelor of Arts in Business Administration degree with a major in Finance</a></li>
+<li><a class="toc-link" data-expand="undergradPrograms|program-UG-BUS-MAJOR|credential-676dd4365772f18cb3a8f838" href="#credential-676dd4365772f18cb3a8f838">Bachelor of Arts in Business Administration degree with a major in Human Resources Management</a></li>
+<li><a class="toc-link" data-expand="undergradPrograms|program-UG-BUS-MAJOR|credential-6283fb8af6447f1ac35dff8e" href="#credential-6283fb8af6447f1ac35dff8e">Bachelor of Arts in Business Administration degree with a major in Information Systems</a></li>
+<li><a class="toc-link" data-expand="undergradPrograms|program-UG-BUS-MAJOR|credential-63925a6d915688593801b5dc" href="#credential-63925a6d915688593801b5dc">Bachelor of Arts in Business Administration degree with a major in Marketing</a></li>
+<li><a class="toc-link" data-expand="undergradPrograms|program-UG-BUS-MAJOR|credential-6283fc652cf11bc1c3621f72" href="#credential-6283fc652cf11bc1c3621f72">Bachelor of Arts in Business Administration degree with a major in Operations and Supply Chain Management</a></li>
+</ul>
+<li><a class="toc-link" data-expand="undergradPrograms|program-UG-B A-MINOR" href="#program-UG-B A-MINOR">Program of Study: Minor:  Business</a></li>
+<ul class="toc">
+<li><a class="toc-link" data-expand="undergradPrograms|program-UG-B A-MINOR|credential-611ea765b465aa32527dbbdb" href="#credential-611ea765b465aa32527dbbdb">Minor in Business</a></li>
+</ul>
+<li><a class="toc-link" data-expand="undergradPrograms|program-UG-BUS-MINOR" href="#program-UG-BUS-MINOR">Program of Study: Minor:  Business Administration</a></li>
+<ul class="toc">
+<li><a class="toc-link" data-expand="undergradPrograms|program-UG-BUS-MINOR|credential-6a28957637e830c4753d3869" href="#credential-6a28957637e830c4753d3869">Minor in Business Administration: Entrepreneurship</a></li>
+</ul>
+<li><a class="toc-link" data-expand="undergradPrograms|program-UG-BUS-CERT" href="#program-UG-BUS-CERT">Program of Study: Certificate:  Business Administration</a></li>
+<ul class="toc">
+<li><a class="toc-link" data-expand="undergradPrograms|program-UG-BUS-CERT|credential-ea123ade-7e1e-43dd-91c3-6e1bb249cc7c" href="#credential-ea123ade-7e1e-43dd-91c3-6e1bb249cc7c">Certificate in International Business</a></li>
+</ul>
+</ul>
+<li><a class="toc-link" href="#gradPrograms" data-expand="gradPrograms-block">Graduate Programs</a></li>
+<ul class="toc">
+<li><a class="toc-link" data-expand="gradPrograms|program-GR-BUS AD-41" href="#program-GR-BUS AD-41">Program of Study:  Doctor Of Philosophy (Business Administration)</a></li>
+<ul class="toc">
+<li><a class="toc-link" data-expand="gradPrograms|program-GR-BUS AD-41|credential-5dd1b3eaaa22422400714945" href="#credential-5dd1b3eaaa22422400714945">Doctor Of Philosophy (Business Administration)</a></li>
+</ul>
+<li><a class="toc-link" data-expand="gradPrograms|program-GR-AIB-35" href="#program-GR-AIB-35">Program of Study:  Graduate Certificate in Artificial Intelligence in Business</a></li>
+<ul class="toc">
+<li><a class="toc-link" data-expand="gradPrograms|program-GR-AIB-35|credential-6a4d46f2b4c6a0f32e0d135b" href="#credential-6a4d46f2b4c6a0f32e0d135b">Graduate Certificate in Artificial Intelligence in Business (fee-based)</a></li>
+</ul>
+<li><a class="toc-link" data-expand="gradPrograms|program-GR-MBA-27" href="#program-GR-MBA-27">Program of Study:  Master Of Business Administration</a></li>
+<ul class="toc">
+<li><a class="toc-link" data-expand="gradPrograms|program-GR-MBA-27|credential-6a7e4b05dcde4ea4d0dddfbb" href="#credential-6a7e4b05dcde4ea4d0dddfbb">Master Of Business Administration</a></li>
+<li><a class="toc-link" data-expand="gradPrograms|program-GR-MBA-27|credential-5b8ed1ded09d102e0002776d" href="#credential-5b8ed1ded09d102e0002776d">Master Of Business Administration (evening) (fee-based)</a></li>
+<li><a class="toc-link" data-expand="gradPrograms|program-GR-MBA-27|credential-5b8ed1dca76a282e00726165" href="#credential-5b8ed1dca76a282e00726165">Master Of Business Administration (Executive Master of Business Administration) (fee-based)</a></li>
+<li><a class="toc-link" data-expand="gradPrograms|program-GR-MBA-27|credential-603ea535c314890027b5f3f1" href="#credential-603ea535c314890027b5f3f1">Master Of Business Administration (Global Executive Master of Business Administration) (fee-based)</a></li>
+<li><a class="toc-link" data-expand="gradPrograms|program-GR-MBA-27|credential-6422021adcd1aaa2970b739d" href="#credential-6422021adcd1aaa2970b739d">Master Of Business Administration (Global Executive Master of Business Administration: Management Science) (fee based)</a></li>
+<li><a class="toc-link" data-expand="gradPrograms|program-GR-MBA-27|credential-5b8ed1ddf3739c2e00e02708" href="#credential-5b8ed1ddf3739c2e00e02708">Master Of Business Administration (Global Master of Business Administration) (fee-based)</a></li>
+<li><a class="toc-link" data-expand="gradPrograms|program-GR-MBA-27|credential-5b8ed1e0a76a282e00726167" href="#credential-5b8ed1e0a76a282e00726167">Master Of Business Administration (Hybrid) (fee-based)</a></li>
+<li><a class="toc-link" data-expand="gradPrograms|program-GR-MBA-27|credential-6a7e4def3f98e9bd26a20966" href="#credential-6a7e4def3f98e9bd26a20966">Master Of Business Administration (Management Science)</a></li>
+</ul>
+<li><a class="toc-link" data-expand="gradPrograms|program-GR-BUS AD-26" href="#program-GR-BUS AD-26">Program of Study:  Master Of Science In Business Administration</a></li>
+<ul class="toc">
+<li><a class="toc-link" data-expand="gradPrograms|program-GR-BUS AD-26|credential-5e39a5c477bf5926003fa450" href="#credential-5e39a5c477bf5926003fa450">Master Of Science In Business Administration</a></li>
+</ul>
+<li><a class="toc-link" data-expand="gradPrograms|program-GR-MSBA-26" href="#program-GR-MSBA-26">Program of Study:  Master of Science in Business Analytics</a></li>
+<ul class="toc">
+<li><a class="toc-link" data-expand="gradPrograms|program-GR-MSBA-26|credential-5c475996ee77472400e41367" href="#credential-5c475996ee77472400e41367">Master of Science in Business Analytics (fee-based)</a></li>
+</ul>
+<li><a class="toc-link" data-expand="gradPrograms|program-GR-ENTRE-26" href="#program-GR-ENTRE-26">Program of Study:  Master Of Science In Entrepreneurship</a></li>
+<ul class="toc">
+<li><a class="toc-link" data-expand="gradPrograms|program-GR-ENTRE-26|credential-5b8ed116d09d102e000276e3" href="#credential-5b8ed116d09d102e000276e3">Master Of Science In Entrepreneurship (fee-based)</a></li>
+</ul>
+<li><a class="toc-link" data-expand="gradPrograms|program-GR-FINANC-26" href="#program-GR-FINANC-26">Program of Study:  Master Of Science In Finance</a></li>
+<ul class="toc">
+<li><a class="toc-link" data-expand="gradPrograms|program-GR-FINANC-26|credential-6a20aa87b469999ccc3c6a3a" href="#credential-6a20aa87b469999ccc3c6a3a">Master Of Science In Finance (Applied Learning) (fee-based)</a></li>
+<li><a class="toc-link" data-expand="gradPrograms|program-GR-FINANC-26|credential-6a20a9270857df80e29a52a9" href="#credential-6a20a9270857df80e29a52a9">Master Of Science In Finance (fee-based)</a></li>
+</ul>
+<li><a class="toc-link" data-expand="gradPrograms|program-GR-I S X-26" href="#program-GR-I S X-26">Program of Study:  Master Of Science In Information Systems</a></li>
+<ul class="toc">
+<li><a class="toc-link" data-expand="gradPrograms|program-GR-I S X-26|credential-5b8ed445f3739c2e00e0288f" href="#credential-5b8ed445f3739c2e00e0288f">Master Of Science In Information Systems (fee-based)</a></li>
+</ul>
+<li><a class="toc-link" data-expand="gradPrograms|program-GR-SCM-27" href="#program-GR-SCM-27">Program of Study:  Master Of Supply Chain Management</a></li>
+<ul class="toc">
+<li><a class="toc-link" data-expand="gradPrograms|program-GR-SCM-27|credential-5b8ed317d09d102e00027848" href="#credential-5b8ed317d09d102e00027848">Master Of Supply Chain Management (fee-based)</a></li>
+</ul>
+</ul>
+</ul>
+</nav>
+<div class="expandableGroup" data-expand="undergradPrograms">
+<h2 class="expanded" id="undergradPrograms"><span></span>&nbsp;Undergraduate Programs</h2>
+</div><br/>
+<div id="undergradPrograms-block" class="inner-block" style="display:block">
+
+<div>
+<h1>Business</h1>
+202 <a href="http://uw.edu/maps/?DEM">Dempsey Hall</a><br/>
+206-685-3400<br/>
+<a href="mailto:bizinfo@uw.edu">bizinfo@uw.edu</a><br/>
+</div>
+<br/>
+<div class="expandableGroup" data-expand="program-UG-BUS-MAJOR">
+<h3 class="expanded" id="program-UG-BUS-MAJOR"><span></span>&nbsp;Program of Study: Major:  Business Administration</h3>
+</div><br/>
+<div id="program-UG-BUS-MAJOR-block" class="inner-block" style="display:block">
+<div class="programOverview"><b>Program Overview</b><br/><p>A Business Administration degree provides a liberal arts curriculum along with a full spectrum of the many areas of business. Students can take a variety of upper division electives or choose to specialize in an area of business by declaring a major. </p></div>
+<div class="programsOfStudy"><span>This program of study leads to the following credentials:</span>
+<ul class="credentialsList">
+<li>Bachelor of Arts in Business Administration degree</li>
+<li>Bachelor of Arts in Business Administration degree with a major in Accounting</li>
+<li>Bachelor of Arts in Business Administration degree with a major in Accounting for Business Professionals</li>
+<li>Bachelor of Arts in Business Administration degree with a major in Entrepreneurship</li>
+<li>Bachelor of Arts in Business Administration degree with a major in Finance</li>
+<li>Bachelor of Arts in Business Administration degree with a major in Human Resources Management</li>
+<li>Bachelor of Arts in Business Administration degree with a major in Information Systems</li>
+<li>Bachelor of Arts in Business Administration degree with a major in Marketing</li>
+<li>Bachelor of Arts in Business Administration degree with a major in Operations and Supply Chain Management</li>
+</ul>
+</div>
+<div class="programRecommendedPrep"><b>Recommended Preparation</b><br/><p><em>Suggested First- and Second-Year College Courses:</em> English composition, calculus, ECON 200, ECON 201. In addition, classes to fulfill general education requirements which develop strong writing and analytic skills. ACCTG 215, ACCTG 225, MGMT 200, and Q METH 201 are suggested second-year college work.</p></div>
+<div class="programAdmissionRequirements"><b>Admission Requirements</b><br/><p>The Foster School offers admission to upper division applicants for autumn and winter quarters. Students admitted for autumn may elect to take classes during the prior summer quarter.</p> <p>Applicants are considered in two admission groups: the Freshman Direct Admission Program and the Upper-Division Admission Group (UAG), described below. The following requirements apply to the Upper-Division Admission Group:</p> <ol> <li>A minimum 2.00 cumulative GPA for all college coursework</li> <li>A minimum 2.00 cumulative GPA for all required business courses</li> <li>Since eligible applicants exceed the space available, acceptance is competitive. Admission is based on evaluation of four factors:</li> <ol style="list-style-type: lower-alpha;"> <li>overall scholastic record</li> <li>grades in pre-application courses, described below</li> <li>written communication skills</li> <li>evidence of leadership skills, community activities, and the promise of achievement in a business or professional career.</li> </ol> </ol> <p>Consideration is also given to such factors as economic and educational disadvantage, significantly higher recent grades, and exceptional extracurricular activities or work experience.</p> <p>Admission for UAG is offered twice a year, for autumn and winter quarters. A Foster School application, together with all supporting materials, must be on file by April 5 for autumn quarter admission or October 5 for winter quarter admission. Records of all coursework completed by the deadline must be submitted at the time of application. Admission for Freshman Direct is offered once a year, for autumn quarter only.</p> <p>Freshman Direct Admission Program</p> <p>The Foster School enrolls a limited number of students each year directly out of high school, prior to completion of any university-level prerequisites. Freshmen applicants to the University listing Business Administration as their intended major are automatically considered. Admission is offered to students with exceptionally competitive academic records.</p> <p>Upper-Division Admission Group (UAG)</p> <p>Students must present a minimum of 60 graded academic credits at the time of application including the following course: ACCTG 215; ECON 200 or ECON 201; MATH 112, MATH 124, or MATH 134; an approved English composition course, chosen from C LIT 240, ENGL 109-ENGL 110, ENGL 111, ENGL 121, ENGL 131, ENGL 197, ENGL 198, ENGL 199, or ENGL 281, ENGL 297, ENGL 298, or ENGL 299. In addition, the following courses must be completed prior to admission in autumn quarter: ACCTG 225; ECON 200 and ECON 201; MGMT 200; QMETH 201. Applicants should take general education or elective courses to complete the minimum 60 graded credits.</p> <p>Students admitted to the UW as freshmen are expected to take ACCTG 215, ACCTG 225; MGMT 200; and QMETH 201 in residence.</p> <p>Qualified applicants with at least 45 credits and a minimum 2.85 GPA who meet University admission requirements, but not Foster School requirements, are eligible to be placed in the College of Arts and Sciences as pre-business majors.</p></div>
+<div class="continuationPolicy"><b>Continuation Policy</b><br/><p>All students must make satisfactory academic progress in the major. Failure to do so results in major-level academic notification, major-level warning, and major-level alerts, which can lead to dismissal from the major and being precluded from subsequently declaring the major in a future quarter. For the complete continuation policy, contact the departmental adviser or refer to the School website.</p></div>
+<div class="expandableGroup" data-expand="credential-6283fdddf6447f45c95dffa5">
+<h4 class="expanded" id="credential-6283fdddf6447f45c95dffa5"><span></span>&nbsp;Bachelor of Arts in Business Administration degree</h4>
+</div><br/>
+<div id="credential-6283fdddf6447f45c95dffa5-block" class="inner-block" style="display:block">
+<div class="credentialOverview"><b>Credential Overview</b><br/><p>The Bachelor or Arts in Business Administration is a general business degree that allows students to customize their business specializations to fit their own interests.  Students have the opportunity to choose upper-division business courses to complete the general version of the degree.</p></div>
+<div class="programCompletionRequirements"><b>Completion Requirements</b><br/><p>180 credits</p> <p>General Education Requirements</p> <p>Basic Skills</p> <ol> <li>English Composition (5 credits)</li> <li>Additional Writing (8-10 credits): <ol style="list-style-type: lower-alpha;"> <li>one from B CMU 301, ENGL 281, or ENGL 381 (4-5 credits)</li> <li>one additional composition or writing course from approved list</li> </ol> </li> <li>Reasoning (RSN) (5 credits): met by program requirements</li> <li>Diversity (DIV) (5 credits). <i>Of Special Note:</i> For students admitted to the University prior to autumn quarter 2023, the DIV requirement is 3 credits.</li> </ol> <p>Areas of Inquiry</p> <ol> <li>Arts and Humanities (A&amp;H) (20 credits)</li> <li>Social Sciences (SSc) (20 credits): includes 10 credits in microeconomics and macroeconomics (ECON 200 and ECON 201)</li> <li>Natural Sciences (NSc) (19-20 credits): includes 5 credits in calculus (MATH 112, MATH 124, or MATH 134)</li> </ol></div>
+<div class="additionalCompletionRequirements"><b>Additional Completion Requirements</b><br/><p>Major requirements</p> <p>71-73 credits</p> <ol> <li><em>Core courses (55-57 credits):</em> ACCTG 215, ACCTG 225; QMETH 201; MGMT 200; B ECON 300; MKTG 301; I S 300; I BUS 300; OPMGT 301; FIN 350; MGMT 300; MGMT 320; MGMT 430. See adviser for list of approved courses which may substitute for QMETH 201.</li> <li><em>Business courses (16 credits):</em> 300- or 400-level business electives</li> <li><em>Other credit requirements and restrictions:</em> <ol style="list-style-type: lower-alpha;"> <li>No more than 6 lower-division business elective credits in addition to lower division core requirements</li> <li>No more than 15 credits of economics coursework may be applied to the degree</li> <li>No more than 8 credits of business independent research coursework may be applied to the degree and no more than 4 credits of business independent research coursework may be applied to upper-division business electives. No more than 8 credits of internship coursework is applicable to the degree. Business internship credit may not apply to the upper-division business elective requirement.</li> <li>The following courses cannot be applied to major requirements: MGMT 305; MKTG 305; I S 305</li> </ol> </li> <li><em>Residency requirement:</em> <ol style="list-style-type: lower-alpha;"> <li>Students must complete six of the nine upper-division core courses, including MGMT 430, and 40 of the 53 required upper-division business credits through the UW, Seattle.</li> <li>Students who have taken more than three of the nine upper-division core business courses at another school should consult an academic adviser in the Foster School Undergraduate Program Office prior to applying.</li> </ol> </li> <li><em>Grade requirements:</em> Minimum 2.00 cumulative GPA for all courses applied to major requirements. Minimum 2.00 cumulative GPA in all business credits taken at the UW, Seattle.</li> </ol></div>
+<div class="backToTop"><a href="#top">Back to Top</a></div>
+</div>
+<div class="expandableGroup" data-expand="credential-624f4ab7a3e96d4c1b871da0">
+<h4 class="expanded" id="credential-624f4ab7a3e96d4c1b871da0"><span></span>&nbsp;Bachelor of Arts in Business Administration degree with a major in Accounting</h4>
+</div><br/>
+<div id="credential-624f4ab7a3e96d4c1b871da0-block" class="inner-block" style="display:block">
+<div class="credentialOverview"><b>Credential Overview</b><br/><p>Accounting involves the development and communication of financial and operational information necessary for decision-making in both private industry and public sector organizations. Accounting practices are comprehensive, measuring the result of an organization&rsquo;s economic activities and conveying this information to others. The curriculum provides students with the tools to create and organize financial information, identify and apply accounting principles, and communicate the economic and legal implications of financial transactions. Utilizing research, interpersonal communication, and problem solving, accounting students will be equipped to think critically about financial transactions and the implications for an entire financial management system. </p></div>
+<div class="programCompletionRequirements"><b>Completion Requirements</b><br/><p>180 credits</p> <p>General Education Requirements</p> <p>Basic Skills</p> <ol> <li>English Composition (5 credits)</li> <li>Additional Writing (8-10 credits): <ol style="list-style-type: lower-alpha;"> <li>one from B CMU 301, ENGL 281, or ENGL 381 (4-5 credits)</li> <li>one additional composition or writing course from approved list</li> </ol> </li> <li>Reasoning (RSN) (5 credits): met by program requirements</li> <li>Diversity (DIV) (5 credits). <i>Of Special Note:</i> For students admitted to the University prior to autumn quarter 2023, the DIV requirement is 3 credits.</li> </ol> <p>Areas of Inquiry</p> <ol> <li>Arts and Humanities (A&amp;H) (20 credits)</li> <li>Social Sciences (SSc) (20 credits): includes 10 credits in microeconomics and macroeconomics (ECON 200 and ECON 201)</li> <li>Natural Sciences (NSc) (19-20 credits): includes 5 credits in calculus (MATH 112, MATH 124, or MATH 134)</li> </ol></div>
+<div class="additionalCompletionRequirements"><b>Additional Completion Requirements</b><br/><p>Major Requirements</p> <p>87-89 credits</p> <ol> <li><em>Core courses (55-57 credits):</em> ACCTG 215, ACCTG 225; QMETH 201; MGMT 200; B ECON 300; MKTG 301; I S 300; I BUS 300; OPMGT 301; FIN 350; MGMT 300, MGMT 320, MGMT 430. See adviser for list of approved courses which may substitute for QMETH 201.</li> <li><em>Accounting courses (32 credits):</em> ACCTG 301, ACCTG 311, ACCTG 320, ACCTG 321, ACCTG 402, ACCTG 403, ACCTG 411, and at least one 400-level accounting elective course (excluding ACCTG 490, ACCTG 495, and ACCTG 499). At least five of these courses must be completed through the Foster School.</li> <li><em>Other credit requirements and restrictions:</em> <ol style="list-style-type: lower-alpha;"> <li>No more than 6 lower-division business elective credits in addition to lower division core requirements</li> <li>No more than 15 credits of economics coursework may be applied to the degree</li> <li>No more than 8 credits of business independent research coursework may be applied to the degree and no more than 4 credits of business independent research coursework may be applied to upper-division business electives. No more than 8 credits of internship coursework is applicable to the degree. Business internship credit may not apply to the upper-division business elective requirement.</li> <li>The following courses cannot be applied to major requirements: ACCTG 505; MGMT 305; MKTG 305; I S 305.</li> </ol> </li> <li><em>Residency requirement:</em> <ol style="list-style-type: lower-alpha;"> <li>Students must complete six of the nine upper-division core courses, including MGMT 430, and 40 of the 53 required upper-division business credits through the UW, Seattle.</li> <li>Students who have taken more than three of the nine upper-division core business courses at another school should consult an academic adviser in the Foster School Undergraduate Program Office prior to applying.</li> </ol> </li> <li><em>Grade requirements:</em> Minimum 2.00 cumulative GPA for all courses applied to major requirements. Minimum 2.00 cumulative GPA in all business credits taken at the UW, Seattle.</li> </ol> <br /></div>
+<div class="backToTop"><a href="#top">Back to Top</a></div>
+</div>
+<div class="expandableGroup" data-expand="credential-6283fd92c0f8af54fc29274a">
+<h4 class="expanded" id="credential-6283fd92c0f8af54fc29274a"><span></span>&nbsp;Bachelor of Arts in Business Administration degree with a major in Accounting for Business Professionals</h4>
+</div><br/>
+<div id="credential-6283fd92c0f8af54fc29274a-block" class="inner-block" style="display:block">
+<div class="credentialOverview"><b>Credential Overview</b><br/><p>The Accounting for Business Professionals major provides a strong background in accounting for careers that are not focused solely on accounting. The design and application of accounting tools and methods play central roles in organizational planning, decision making, and control.  This major provides the flexibility for students to choose a set of courses that focus on the elements of accounting most relevant to their specific career without meeting the entire set of requirements necessary for a career as a certified public accountant.  </p></div>
+<div class="programCompletionRequirements"><b>Completion Requirements</b><br/><p>180 credits</p> <p>General Education Requirements</p> <p>Basic Skills</p> <ol> <li>English Composition (5 credits)</li> <li>Additional Writing (8-10 credits): <ol style="list-style-type: lower-alpha;"> <li>one from B CMU 301, ENGL 281, or ENGL 381 (4-5 credits)</li> <li>one additional composition or writing course from approved list</li> </ol> </li> <li>Reasoning (RSN) (5 credits): met by program requirements</li> <li>Diversity (DIV) (5 credits). <i>Of Special Note:</i> For students admitted to the University prior to autumn quarter 2023, the DIV requirement is 3 credits.</li> </ol> <p>Areas of Inquiry</p> <ol> <li>Arts and Humanities (A&amp;H) (20 credits)</li> <li>Social Sciences (SSc) (20 credits): includes 10 credits in microeconomics and macroeconomics (ECON 200 and ECON 201)</li> <li>Natural Sciences (NSc) (19-20 credits): includes 5 credits in calculus (MATH 112, MATH 124, or MATH 134)</li> </ol></div>
+<div class="additionalCompletionRequirements"><b>Additional Completion Requirements</b><br/><p>Major Requirements</p> <p>75-77 credits</p> <ol> <li><em>Core courses (55-57 credits):</em> ACCTG 215, ACCTG 225; QMETH 201; MGMT 200; B ECON 300; MKTG 301; I S 300; I BUS 300; OPMGT 301; FIN 350; MGMT 300, MGMT 320, MGMT 430. See adviser for list of approved courses which may substitute for QMETH 201.</li> <li><em>Major courses (20 credits):</em> ACCTG 301; minimum three additional 300-or 400-level ACCTG courses; either one additional 300- or 400-level ACCTG course or one of FIN 450, FIN 453, FIN 454, FIN 457/ENTRE 457, FIN 458. May not count ACCTG 490, ACCTG 495, or ACCTG 499 toward this requirement.</li> <li><em>Other credit requirements and restrictions:</em> <ol style="list-style-type: lower-alpha;"> <li>No more than 6 lower-division business elective credits in addition to lower division core requirements</li> <li>No more than 15 credits of economics coursework may be applied to the degree</li> <li>No more than 8 credits of business independent research coursework may be applied to the degree and no more than 4 credits of business independent research coursework may be applied to upper-division business electives. No more than 8 credits of internship coursework is applicable to the degree. Business internship credit may not apply to the upper-division business elective requirement.</li> <li> <p>The following courses cannot be applied to major requirements: ACCTG 505; MGMT 305; MKTG 305; I S 305.</p> </li> </ol> </li> <li><em>Residency requirement:</em> <ol style="list-style-type: lower-alpha;"> <li>Students must complete six of the nine upper-division core courses, including MGMT 430, and 40 of the 53 required upper-division business credits through the UW, Seattle.</li> <li>Students who have taken more than three of the nine upper-division core business courses at another school should consult an academic adviser in the Foster School Undergraduate Program Office prior to applying.</li> </ol> </li> <li><em>Grade requirements:</em> Minimum 2.00 cumulative GPA for all courses applied to major requirements. Minimum 2.00 cumulative GPA in all business credits taken at the UW, Seattle.</li> </ol></div>
+<div class="backToTop"><a href="#top">Back to Top</a></div>
+</div>
+<div class="expandableGroup" data-expand="credential-6283fa9118cdefc9bf9468fc">
+<h4 class="expanded" id="credential-6283fa9118cdefc9bf9468fc"><span></span>&nbsp;Bachelor of Arts in Business Administration degree with a major in Entrepreneurship</h4>
+</div><br/>
+<div id="credential-6283fa9118cdefc9bf9468fc-block" class="inner-block" style="display:block">
+<div class="credentialOverview"><b>Credential Overview</b><br/><p>Entrepreneurship focuses on entrepreneurial strategy, finance, management, and marketing. The curriculum offers real-world experience, with connections to Foster students, faculty, staff, and the greater UW and Seattle community. The Entrepreneurship major helps transform a vision of business ownership into a step-by-step achievable process. Students create business proposals, draft financial and marketing plans, and execute ideas through business clubs, case competitions, and real-world practice. Through a combination of hands-on learning, practical experience, and theory students gain valuable knowledge, skills, and connections.</p></div>
+<div class="programCompletionRequirements"><b>Completion Requirements</b><br/><p>180 credits</p> <p>General Education Requirements</p> <p>Basic Skills</p> <ol> <li>English Composition (5 credits)</li> <li>Additional Writing (8-10 credits): <ol style="list-style-type: lower-alpha;"> <li>one from B CMU 301, ENGL 281, or ENGL 381 (4-5 credits)</li> <li>one additional composition or writing course from approved list</li> </ol> </li> <li>Reasoning (RSN) (5 credits): met by program requirements</li> <li>Diversity (DIV) (5 credits). <i>Of Special Note:</i> For students admitted to the University prior to autumn quarter 2023, the DIV requirement is 3 credits.</li> </ol> <p>Areas of Inquiry</p> <ol> <li>Arts and Humanities (A&amp;H) (20 credits)</li> <li>Social Sciences (SSc) (20 credits): includes 10 credits in microeconomics and macroeconomics (ECON 200 and ECON 201)</li> <li>Natural Sciences (NSc) (19-20 credits): includes 5 credits in calculus (MATH 112, MATH 124, or MATH 134)</li> </ol></div>
+<div class="additionalCompletionRequirements"><b>Additional Completion Requirements</b><br/><p>Major Requirements</p> <p>75-77 credits</p> <ol> <li><em>Core courses (55-57 credits):</em> ACCTG 215, ACCTG 225; QMETH 201; MGMT 200; B ECON 300; MKTG 301; I S 300; I BUS 300; OPMGT 301; FIN 350; MGMT 300, MGMT 320, MGMT 430. See adviser for list of approved courses which may substitute for QMETH 201.</li> <li><em>Major courses</em> (<em>20 credits): </em>ENTRE 370, FIN 457/ENTRE 457, MKTG 455/ENTRE 455, and 8 credits from a list of approved courses. Refer to department website for list of approved courses.</li> <li><em>Other credit requirements and restrictions:</em> <ol style="list-style-type: lower-alpha;"> <li>No more than 6 lower-division business elective credits in addition to lower division core requirements</li> <li>No more than 15 credits of economics coursework may be applied to the degree</li> <li>No more than 8 credits of business independent research coursework may be applied to the degree and no more than 4 credits of business independent research coursework may be applied to upper-division business electives. No more than 8 credits of internship coursework is applicable to the degree. Business internship credit may not apply to the upper-division business elective requirement.</li> <li> <p>The following courses cannot be applied to major requirements: MGMT 305; MKTG 305; I S 305</p> </li> </ol> </li> <li><em>Residency requirement:</em> <ol style="list-style-type: lower-alpha;"> <li>Students must complete six of the nine upper-division core courses, including MGMT 430, and 40 of the 53 required upper-division business credits through the UW, Seattle.</li> <li>Students who have taken more than three of the nine upper-division core business courses at another school should consult an academic adviser in the Foster School Undergraduate Program Office prior to applying.</li> </ol> </li> <li><em>Grade requirements:</em> Minimum 2.00 cumulative GPA for all courses applied to major requirements. Minimum 2.00 cumulative GPA in all business credits taken at the UW, Seattle.</li> </ol></div>
+<div class="backToTop"><a href="#top">Back to Top</a></div>
+</div>
+<div class="expandableGroup" data-expand="credential-6283fcb8f6447fbbe65dff99">
+<h4 class="expanded" id="credential-6283fcb8f6447fbbe65dff99"><span></span>&nbsp;Bachelor of Arts in Business Administration degree with a major in Finance</h4>
+</div><br/>
+<div id="credential-6283fcb8f6447fbbe65dff99-block" class="inner-block" style="display:block">
+<div class="credentialOverview"><b>Credential Overview</b><br/><p>Finance and business economics covers four interrelated areas: corporate finance, investments, financial markets, and international finance. The curriculum provides students with the mathematical and valuation skills to understand the    economy&rsquo;s capital markets and investigate problems facing financial institutions. Finance studies the management of funds and how the flow of capital affects the management of firms and the decisions of investors. Through case studies and    critical analysis, students utilize business economic theory and financial management tools to succeed in making key managerial decisions.</p></div>
+<div class="programCompletionRequirements"><b>Completion Requirements</b><br/><p>180 credits</p> <p>General Education Requirements</p> <p>Basic Skills</p> <ol> <li>English Composition (5 credits)</li> <li>Additional Writing (8-10 credits): <ol style="list-style-type: lower-alpha;"> <li>one from B CMU 301, ENGL 281, or ENGL 381 (4-5 credits)</li> <li>one additional composition or writing course from approved list</li> </ol> </li> <li>Reasoning (RSN) (5 credits): met by program requirements</li> <li>Diversity (DIV) (5 credits). <i>Of Special Note:</i> For students admitted to the University prior to autumn quarter 2023, the DIV requirement is 3 credits.</li> </ol> <p>Areas of Inquiry</p> <ol> <li>Arts and Humanities (A&amp;H) (20 credits)</li> <li>Social Sciences (SSc) (20 credits): includes 10 credits in microeconomics and macroeconomics (ECON 200 and ECON 201)</li> <li>Natural Sciences (NSc) (19-20 credits): includes 5 credits in calculus (MATH 112, MATH 124, or MATH 134)</li> </ol></div>
+<div class="additionalCompletionRequirements"><b>Additional Completion Requirements</b><br/><p>Major requirements</p> <p>79-81 credits</p> <ol> <li><em>Core courses (55-57 credits):</em> ACCTG 215, ACCTG 225; QMETH 201; MGMT 200; B ECON 300; MKTG 301; I S 300; I BUS 300; OPMGT 301; FIN 350; MGMT 300, MGMT 320, MGMT 430. See adviser for list of approved courses which may substitute for QMETH 201.</li> <li><em>Major requirements (minimum 24 credits):</em> One course from FIN 450, FIN 453, FIN 454, or FIN 457/ENTRE 457; either FIN 460 or FIN 461; Four additional courses from any combination of B ECON 301 or ECON 301, 400-level FIN courses (excluding FIN 490, FIN 495, FIN 499), or 400-level B ECON courses (excluding B ECON 490, B ECON 499).</li> <li><em>Other credit requirements and restrictions:</em> <ol style="list-style-type: lower-alpha;"> <li>No more than 6 lower-division business elective credits in addition to lower division core requirements</li> <li>No more than 15 credits of economics coursework may be applied to the degree</li> <li>No more than 8 credits of business independent research coursework may be applied to the degree and no more than 4 credits of business independent research coursework may be applied to upper-division business electives. No more than 8 credits of internship coursework is applicable to the degree. Business internship credit may not apply to the upper-division business elective requirement.</li> <li> <p>The following courses cannot be applied to major requirements: MGMT 305; MKTG 305; I S 305</p> </li> </ol> </li> <li><em>Residency requirement:</em> <ol style="list-style-type: lower-alpha;"> <li>Students must complete six of the nine upper-division core courses, including MGMT 430, and 40 of the 53 required upper-division business credits through the UW, Seattle.</li> <li>Students who have taken more than three of the nine upper-division core business courses at another school should consult an academic adviser in the Foster School Undergraduate Program Office prior to applying.</li> </ol> </li> <li><em>Grade requirements:</em> Minimum 2.00 cumulative GPA for all courses applied to major requirements. Minimum 2.00 cumulative GPA in all business credits taken at the UW, Seattle.</li> </ol></div>
+<div class="backToTop"><a href="#top">Back to Top</a></div>
+</div>
+<div class="expandableGroup" data-expand="credential-676dd4365772f18cb3a8f838">
+<h4 class="expanded" id="credential-676dd4365772f18cb3a8f838"><span></span>&nbsp;Bachelor of Arts in Business Administration degree with a major in Human Resources Management</h4>
+</div><br/>
+<div id="credential-676dd4365772f18cb3a8f838-block" class="inner-block" style="display:block">
+<div class="credentialOverview"><b>Credential Overview</b><br/><p>Human Resource Management draws on the study and practice in psychology, sociology, and organizational behavior to thoughtfully examine human performance within organizations. Students gain skills in recruiting and retaining talented people, understanding corporate responsibility and ethics, and building effective negotiation and decision-making practices. The Human Resource Management major provides students with opportunities to explore the laws and regulations surrounding the employee structure and performance. Students learn to develop selection systems and criteria to recruit and retain successful hires. Human resources is a critical business function in managing people and work satisfaction for employees in all types of organizations.</p></div>
+<div class="programCompletionRequirements"><b>Completion Requirements</b><br/><p>180 credits</p> <p>General Education Requirements</p> <p>Basic Skills</p> <ol> <li>English Composition (5 credits)</li> <li>Additional Writing (8-10 credits): <ol style="list-style-type: lower-alpha;"> <li>one from B CMU 301, ENGL 281, or ENGL 381 (4-5 credits)</li> <li>one additional composition or writing course from approved list</li> </ol> </li> <li>Reasoning (RSN) (5 credits): met by program requirements</li> <li>Diversity (DIV) (5 credits). <i>Of Special Note:</i> For students admitted to the University prior to autumn quarter 2023, the DIV requirement is 3 credits.</li> </ol> <p>Areas of Inquiry</p> <ol> <li>Arts and Humanities (A&amp;H) (20 credits)</li> <li>Social Sciences (SSc) (20 credits): includes 10 credits in microeconomics and macroeconomics (ECON 200 and ECON 201)</li> <li>Natural Sciences (NSc) (19-20 credits): includes 5 credits in calculus (MATH 112, MATH 124, or MATH 134)</li> </ol></div>
+<div class="additionalCompletionRequirements"><b>Additional Completion Requirements</b><br/><p>Major requirements</p> <p>75-77 credits</p> <ol> <li><em>Core courses (55-57 credits):</em> ACCTG 215, ACCTG 225; QMETH 201; MGMT 200; B ECON 300; MKTG 301; I S 300; I BUS 300; OPMGT 301; FIN 350; MGMT 300, MGMT 320, MGMT 430. See adviser for list of approved courses which may substitute for QMETH 201.</li> <li><em>Major requirements (20 credits):</em> MGMT 311, MGMT 411, MGMT 412, and two of the following courses: MGMT 400, MGMT 401, MGMT 402, MGMT 403, MGMT 404, or MGMT 407</li> <li><em>Other credit requirements and restrictions:</em> <ol style="list-style-type: lower-alpha;"> <li>No more than 6 lower-division business elective credits in addition to lower division core requirements</li> <li>No more than 15 credits of economics may be applied to the degree</li> <li>No more than 8 credits of business independent research coursework may be applied to the degree and no more than 4 credits of business independent research coursework may be applied to upper-division business electives. No more than 8 credits of internship coursework is applicable to the degree. Business internship credit may not apply to the upper-division business elective requirement.</li> <li> <p>The following courses cannot be applied to major requirements: MGMT 305; MKTG 305; I S 305</p> </li> </ol> </li> <li><em>Residency requirement:</em> <ol style="list-style-type: lower-alpha;"> <li>Students must complete six of the nine upper-division core courses, including MGMT 430, and 40 of the 53 required upper-division business credits through the UW, Seattle.</li> <li>Students who have taken more than three of the nine upper-division core business courses at another school should consult an academic adviser in the Foster School Undergraduate Program Office prior to applying.</li> </ol> </li> <li><em>Grade requirements:</em> Minimum 2.00 cumulative GPA for all courses applied to major requirements. Minimum 2.00 cumulative GPA in all business credits taken at the UW, Seattle.</li> </ol></div>
+<div class="backToTop"><a href="#top">Back to Top</a></div>
+</div>
+<div class="expandableGroup" data-expand="credential-6283fb8af6447f1ac35dff8e">
+<h4 class="expanded" id="credential-6283fb8af6447f1ac35dff8e"><span></span>&nbsp;Bachelor of Arts in Business Administration degree with a major in Information Systems</h4>
+</div><br/>
+<div id="credential-6283fb8af6447f1ac35dff8e-block" class="inner-block" style="display:block">
+<div class="credentialOverview"><b>Credential Overview</b><br/><p>Information Systems provides students with coursework emphasizing technical tools to design, develop, and manage information technologies. Students learn to interact and interface with various business applications and assess which program or information technology meets the organization&rsquo;s tactical and strategic needs. Information Systems allows students to be innovative, assess information technology needs in an organization, and strategically plan and coordinate websites or new systems. The curriculum focuses on computer programming and database management as well as managing the development and use of information technology.  Students learn database design and administration, examine data mining concepts and techniques, and develop solutions for problems in interactive business programs.  </p></div>
+<div class="programCompletionRequirements"><b>Completion Requirements</b><br/><p>180 credits</p> <p>General Education Requirements</p> <p>Basic Skills</p> <ol> <li>English Composition (5 credits)</li> <li>Additional Writing (8-10 credits): <ol style="list-style-type: lower-alpha;"> <li>one from B CMU 301, ENGL 281, or ENGL 381 (4-5 credits)</li> <li>one additional composition or writing course from approved list</li> </ol> </li> <li>Reasoning (RSN) (5 credits): met by program requirements</li> <li>Diversity (DIV) (5 credits). <i>Of Special Note:</i> For students admitted to the University prior to autumn quarter 2023, the DIV requirement is 3 credits.</li> </ol> <p>Areas of Inquiry</p> <ol> <li>Arts and Humanities (A&amp;H) (20 credits)</li> <li>Social Sciences (SSc) (20 credits): includes 10 credits in microeconomics and macroeconomics (ECON 200 and ECON 201)</li> <li>Natural Sciences (NSc) (19-20 credits): includes 5 credits in calculus (MATH 112, MATH 124, or MATH 134)</li> </ol></div>
+<div class="additionalCompletionRequirements"><b>Additional Completion Requirements</b><br/><p>Major requirements</p> <p>75-77 credits</p> <ol> <li><em>Core courses (55-57 credits):</em> ACCTG 215, ACCTG 225; QMETH 201; MGMT 200; B ECON 300; MKTG 301; I S 300; I BUS 300; OPMGT 301; FIN 350; MGMT 300, MGMT 320, MGMT 430. See adviser for list of approved courses which may substitute for QMETH 201.</li> <li><em>Major requirements (20 credits):</em> I S 320, I S 410, I S 445, I S 451, I S 460</li> <li><em>Other credit requirements and restrictions:</em> <ol style="list-style-type: lower-alpha;"> <li>No more than 6 lower-division business elective credits in addition to lower division core requirements</li> <li>No more than 15 credits of economics coursework may be applied to the degree</li> <li>No more than 8 credits of business independent research coursework may be applied to the degree and no more than 4 credits of business independent research coursework may be applied to upper-division business electives. No more than 8 credits of internship coursework is applicable to the degree. Business internship credit may not apply to the upper-division business elective requirement.</li> <li> <p>The following courses cannot be applied to major requirements: MGMT 305; MKTG 305; I S 305</p> </li> </ol> </li> <li><em>Residency requirement:</em> <ol style="list-style-type: lower-alpha;"> <li>Students must complete six of the nine upper-division core courses, including MGMT 430, and 40 of the 53 required upper-division business credits through the UW, Seattle.</li> <li>Students who have taken more than three of the nine upper-division core business courses at another school should consult an academic adviser in the Foster School Undergraduate Program Office prior to applying.</li> </ol> </li> <li><em>Grade requirements:</em> Minimum 2.00 cumulative GPA for all courses applied to major requirements. Minimum 2.00 cumulative GPA in all business credits taken at the UW, Seattle.</li> </ol></div>
+<div class="backToTop"><a href="#top">Back to Top</a></div>
+</div>
+<div class="expandableGroup" data-expand="credential-63925a6d915688593801b5dc">
+<h4 class="expanded" id="credential-63925a6d915688593801b5dc"><span></span>&nbsp;Bachelor of Arts in Business Administration degree with a major in Marketing</h4>
+</div><br/>
+<div id="credential-63925a6d915688593801b5dc-block" class="inner-block" style="display:block">
+<div class="credentialOverview"><b>Credential Overview</b><br/><p>Marketing studies advertising, consumer behavior, marketing management, product development, social media, and sales management. It focuses on the consumer and utilizes many creative skills in advertising, data collection, and communication. The curriculum is broad, providing opportunities for students to learn more about the buying and selling of products and services, learning how to think strategically and make a difference in any industry.  Marketing students explore theory and concepts from economics, sociology, psychology, and statistics to critically analyze case studies and use research data to come up with an achievable solution.</p></div>
+<div class="programCompletionRequirements"><b>Completion Requirements</b><br/><p>180 credits</p> <p>General Education Requirements</p> <p>Basic Skills</p> <ol> <li>English Composition (5 credits)</li> <li>Additional Writing (8-10 credits): <ol style="list-style-type: lower-alpha;"> <li>one from B CMU 301, ENGL 281, or ENGL 381 (4-5 credits)</li> <li>one additional composition or writing course from approved list</li> </ol> </li> <li>Reasoning (RSN) (5 credits): met by program requirements</li> <li>Diversity (DIV) (5 credits). <i>Of Special Note:</i> For students admitted to the University prior to autumn quarter 2023, the DIV requirement is 3 credits.</li> </ol> <p>Areas of Inquiry</p> <ol> <li>Arts and Humanities (A&amp;H) (20 credits)</li> <li>Social Sciences (SSc) (20 credits): includes 10 credits in microeconomics and macroeconomics (ECON 200 and ECON 201)</li> <li>Natural Sciences (NSc) (19-20 credits): includes 5 credits in calculus (MATH 112, MATH 124, or MATH 134)</li> </ol></div>
+<div class="additionalCompletionRequirements"><b>Additional Completion Requirements</b><br/><p>Major requirements</p> <p>75-77 credits</p> <ol> <li><em>Core courses (55-57 credits):</em> ACCTG 215, ACCTG 225; QMETH 201; MGMT 200; B ECON 300; MKTG 301; I S 300; I BUS 300; OPMGT 301; FIN 350; MGMT 300, MGMT 320, MGMT 430. See adviser for list of approved courses which may substitute for QMETH 201.</li> <li><em>Major requirements (20 credits):</em> Two courses from MKTG 450, MKTG 460, MKTG 462, or MKTG 466; and three additional upper-division MKTG electives (excluding MKTG 490, MKTG 495, and MKTG 499). It is recommended that students take two courses from MKTG 450, MKTG 460, MKTG 462, or MTKG 466, before they take the other MKTG electives.</li> <li><em>Other credit requirements and restrictions:</em> <ol style="list-style-type: lower-alpha;"> <li>No more than 6 lower-division business elective credits in addition to lower division core requirements</li> <li>No more than 15 credits of economics coursework may be applied to the degree</li> <li>No more than 8 credits of business independent research coursework may be applied to the degree and no more than 4 credits of business independent research coursework may be applied to upper-division business electives. No more than 8 credits of internship coursework is applicable to the degree. Business internship credit may not apply to the upper-division business elective requirement.</li> <li> <p>The following courses cannot be applied to major requirements: MGMT 305; MKTG 305; I S 305</p> </li> </ol> </li> <li><em>Residency requirement:</em> <ol style="list-style-type: lower-alpha;"> <li>Students must complete six of the nine upper-division core courses, including MGMT 430, and 40 of the 53 required upper-division business credits through the UW, Seattle.</li> <li>Students who have taken more than three of the nine upper-division core business courses at another school should consult an academic adviser in the Foster School Undergraduate Program Office prior to applying.</li> </ol> </li> <li><em>Grade requirements:</em> Minimum 2.00 cumulative GPA for all courses applied to major requirements. Minimum 2.00 cumulative GPA in all business credits taken at the UW, Seattle.</li> </ol> <br /></div>
+<div class="backToTop"><a href="#top">Back to Top</a></div>
+</div>
+<div class="expandableGroup" data-expand="credential-6283fc652cf11bc1c3621f72">
+<h4 class="expanded" id="credential-6283fc652cf11bc1c3621f72"><span></span>&nbsp;Bachelor of Arts in Business Administration degree with a major in Operations and Supply Chain Management</h4>
+</div><br/>
+<div id="credential-6283fc652cf11bc1c3621f72-block" class="inner-block" style="display:block">
+<div class="credentialOverview"><b>Credential Overview</b><br/><p>Operations and Supply Chain Management covers the design, planning, control, and improvement of manufacturing and service operations. It improves the efficiency and effectiveness of both large- and small-scale operations. Using analytical and empirical strategies, students gain skills in project and database management, managing logistical systems to control how goods and services are moved within an organization, and determine if these transactions add or subtract value. The curriculum highlights methods and tools to effectively plan and implement complex projects with operations research, programming, and analysis of production and inventory models in the U.S. and abroad.</p></div>
+<div class="programCompletionRequirements"><b>Completion Requirements</b><br/><p>180 credits</p> <p>General Education Requirements</p> <p>Basic Skills</p> <ol> <li>English Composition (5 credits)</li> <li>Additional Writing (8-10 credits): <ol style="list-style-type: lower-alpha;"> <li>one from B CMU 301, ENGL 281, or ENGL 381 (4-5 credits)</li> <li>one additional composition or writing course from approved list</li> </ol> </li> <li>Reasoning (RSN) (5 credits): met by program requirements</li> <li>Diversity (DIV) (5 credits). <i>Of Special Note:</i> For students admitted to the University prior to autumn quarter 2023, the DIV requirement is 3 credits.</li> </ol> <p>Areas of Inquiry</p> <ol> <li>Arts and Humanities (A&amp;H) (20 credits)</li> <li>Social Sciences (SSc) (20 credits): includes 10 credits in microeconomics and macroeconomics (ECON 200 and ECON 201)</li> <li>Natural Sciences (NSc) (19-20 credits): includes 5 credits in calculus (MATH 112, MATH 124, or MATH 134)</li> </ol></div>
+<div class="additionalCompletionRequirements"><b>Additional Completion Requirements</b><br/><p>Major Requirements</p> <p>71-73 credits</p> <ol> <li><em>Core courses (55-57 credits):</em> ACCTG 215, ACCTG 225; QMETH 201; MGMT 200; B ECON 300; MKTG 301; I S 300; I BUS 300; OPMGT 301; FIN 350; MGMT 300, MGMT 320, MGMT 430. See adviser for list of approved courses which may substitute for QMETH 201.</li> <li><em>Major requirements (16 credits): </em>QMETH 450; OPMGT 443, OPMGT 450; I S 451</li> <li><em>Other credit requirements and restrictions:</em> <ol style="list-style-type: lower-alpha;"> <li>No more than 6 lower-division business elective credits in addition to lower division core requirements</li> <li>No more than 15 credits of economics coursework may be applied to the degree</li> <li>No more than 8 credits of business independent research coursework may be applied to the degree and no more than 4 credits of business independent research coursework may be applied to upper-division business electives. No more than 8 credits of internship coursework is applicable to the degree. Business internship credit may not apply to the upper-division business elective requirement.</li> <li> <p>The following courses cannot be applied to major requirements: MGMT 305; MKTG 305; I S 305</p> </li> </ol> </li> <li><em>Residency requirement:</em> <ol style="list-style-type: lower-alpha;"> <li>Students must complete six of the nine upper-division core courses, including MGMT 430, and 40 of the 53 required upper-division business credits through the UW, Seattle.</li> <li>Students who have taken more than three of the nine upper-division core business courses at another school should consult an academic adviser in the Foster School Undergraduate Program Office prior to applying.</li> </ol> </li> <li><em>Grade requirements:</em> Minimum 2.00 cumulative GPA for all courses applied to major requirements. Minimum 2.00 cumulative GPA in all business credits taken at the UW, Seattle.</li> </ol></div>
+<div class="backToTop"><a href="#top">Back to Top</a></div>
+</div>
+</div>
+<div class="expandableGroup" data-expand="program-UG-B A-MINOR">
+<h3 class="expanded" id="program-UG-B A-MINOR"><span></span>&nbsp;Program of Study: Minor:  Business</h3>
+</div><br/>
+<div id="program-UG-B A-MINOR-block" class="inner-block" style="display:block">
+<div class="programOverview"><b>Program Overview</b><br/><p> Open to all undergraduate students not majoring in business, the Minor in Business offers students the opportunity to build a diverse set of career and life skills. Students learn from Foster School of Business faculty members in courses related to financial literacy, accounting, management, entrepreneurship, marketing, sales, and information systems. Coursework for the Minor in Business is delivered mostly online with periodic in-person events.</p></div>
+<div class="programsOfStudy"><span>This program of study leads to the following credential:</span>
+<ul class="credentialsList">
+<li>Minor in Business</li>
+</ul>
+</div>
+<div class="expandableGroup" data-expand="credential-611ea765b465aa32527dbbdb">
+<h4 class="expanded" id="credential-611ea765b465aa32527dbbdb"><span></span>&nbsp;Minor in Business</h4>
+</div><br/>
+<div id="credential-611ea765b465aa32527dbbdb-block" class="inner-block" style="display:block">
+<div class="credentialOverview"><b>Credential Overview</b><br/><p>Open to all undergraduate students not majoring in business, the Minor in Business offers students the opportunity to build a diverse set of career and life skills. Students learn from Foster School of Business faculty members in courses related to financial literacy, accounting, management, entrepreneurship, marketing, sales, and information systems. Coursework for the Minor in Business is delivered mostly online with periodic in-person events.</p></div>
+<div class="programCompletionRequirements"><b>Completion Requirements</b><br/><p>Minimum 27 credits</p> <ol> <li><em>Core Courses (23-24 credits):</em> ACCTG 219 or ACCTG 225; FIN 205; MGMT 305; MKTG 305; I S 305</li> <li><em>Electives: </em>Refer to Foster School of Business website for list of approved courses (to reach minimum 27 credits)</li> <li>Minimum 2.00 cumulative GPA in courses applied to the minor</li> <li>Minimum of 15 credits at the 300-400 level</li> <li>Minimum 15 credits completed in residence at UW Seattle</li> </ol></div>
+<div class="backToTop"><a href="#top">Back to Top</a></div>
+</div>
+</div>
+<div class="expandableGroup" data-expand="program-UG-BUS-MINOR">
+<h3 class="expanded" id="program-UG-BUS-MINOR"><span></span>&nbsp;Program of Study: Minor:  Business Administration</h3>
+</div><br/>
+<div id="program-UG-BUS-MINOR-block" class="inner-block" style="display:block">
+<div class="programOverview"><b>Program Overview</b><br/><p>Entrepreneurship focuses on entrepreneurial strategy, finance, management, and marketing. The curriculum offers real-world experience, with connections to Foster students, faculty, staff, and the greater UW and Seattle community. Entrepreneurship is an all-encompassing minor, transforming a vision of business ownership into a step-by-step achievable process. Students create business proposals, draft financial and marketing plans, and execute ideas through business clubs, case competitions, and real-world practice. Students take the lead or partner with others to utilize expertise in finance, marketing, accounting, information systems, management, or operations. The combination of hands-on learning and practical experience ensures students in the Entrepreneurship minor graduate with the knowledge, skills, and connections to achieve entrepreneurial goals.</p></div>
+<div class="programsOfStudy"><span>This program of study leads to the following credential:</span>
+<ul class="credentialsList">
+<li>Minor in Business Administration: Entrepreneurship</li>
+</ul>
+</div>
+<div class="expandableGroup" data-expand="credential-6a28957637e830c4753d3869">
+<h4 class="expanded" id="credential-6a28957637e830c4753d3869"><span></span>&nbsp;Minor in Business Administration: Entrepreneurship</h4>
+</div><br/>
+<div id="credential-6a28957637e830c4753d3869-block" class="inner-block" style="display:block">
+<div class="programCompletionRequirements"><b>Completion Requirements</b><br/><p>29 credits</p> <ol> <li><em>Core courses (21 credits): </em> <ol style="list-style-type: lower-alpha;"> <li>ACCTG 219</li> <li>ECON 200</li> <li>ENTRE 370, ENTRE 472, ENTRE 473</li> </ol> </li> <li><em>Electives (minimum 8 credits):</em> see Foster School of Business website for list of approved courses</li> <li>Minimum 2.00 cumulative GPA in courses applied to the minor</li> <li>Minimum 15 credits of upper-division courses</li> <li>Minimum 15 credits completed in residence at UW Seattle</li> </ol></div>
+<div class="backToTop"><a href="#top">Back to Top</a></div>
+</div>
+</div>
+<div class="expandableGroup" data-expand="program-UG-BUS-CERT">
+<h3 class="expanded" id="program-UG-BUS-CERT"><span></span>&nbsp;Program of Study: Certificate:  Business Administration</h3>
+</div><br/>
+<div id="program-UG-BUS-CERT-block" class="inner-block" style="display:block">
+<div class="programOverview"><b>Program Overview</b><br/><p>The nationally-ranked, award-winning Certificate of International Studies in Business Program (CISB) helps Foster students hone the competitive edge needed to succeed in the global marketplace. CISB, an intensive supplement to the BA BA, combines international business courses with advanced language training, study or work abroad, regional specialization and real- world experience. This package of knowledge and skills is ideal preparation for a career in global business.
+
+CISB graduates work in a wide range of fields, including international trade, logistics, global marketing, international finance, management consulting and public/nonprofit management in the U.S. and abroad.</p></div>
+<div class="programsOfStudy"><span>This program of study leads to the following credential:</span>
+<ul class="credentialsList">
+<li>Certificate in International Business</li>
+</ul>
+</div>
+<div class="programAdmissionRequirements"><b>Admission Requirements</b><br/><p>Contact department for requirements.</p></div>
+<div class="expandableGroup" data-expand="credential-ea123ade-7e1e-43dd-91c3-6e1bb249cc7c">
+<h4 class="expanded" id="credential-ea123ade-7e1e-43dd-91c3-6e1bb249cc7c"><span></span>&nbsp;Certificate in International Business</h4>
+</div><br/>
+<div id="credential-ea123ade-7e1e-43dd-91c3-6e1bb249cc7c-block" class="inner-block" style="display:block">
+<div class="programCompletionRequirements"><b>Completion Requirements</b><br/><p>Contact department for requirements.</p></div>
+<div class="backToTop"><a href="#top">Back to Top</a></div>
+</div>
+</div>
+<div id="undergradDepartmentAdditionalInfo"><b>Additional Information</b><br/>
+<p><p>Formerly the Foster School of Business offered seven option credentials: (1) Accounting; (2) Entrepreneurship; (3) Finance; (4) Human Resource Management; (5) Information Systems; (6) Marketing; and (7) Operations and Supply Chain Management. As of winter quarter 2022, however, these option credentials are no longer offered. Please refer to the <a href="https://www.washington.edu/students/gencat/archive/">UW Seattle General Catalog Archive</a> for information about the option credentials.</p> <p>Student Outcomes and Opportunities</p> <ul> <li><em>Learning Objectives and Expected Outcomes:</em> A business education develops important communication and interpersonal skills. The ability to express an idea, negotiate a settlement, motivate others, manage time, and build collaborative networks distinguishes the most successful business people. UW Foster School students learn to recognize and define problems, examine data, and persuasively communicate their ideas to achieve results in organizations and people's lives. Regardless of post-graduation path - be it climbing up the corporate ladder, starting a company, joining the Peace Corps, entering law school, or becoming a doctor - a business education helps immeasurably.</li> <li><em>Instructional and Research Facilities:</em> Paccar and Dempsey Halls boast a wide range of technology enhancements including web-linked digital monitors and distance conference capabilities as well as 25 team rooms for student use, and direct access to the library. The Foster Business Library houses an extensive collection of books, reference tools, and journals necessary to the study of business. The Buerk Center Innovation Laboratory represents a new paradigm for integrating entrepreneurial education with technology development and hands-on experience.</li> <li><em>Honors Options Available:</em> Honors students benefit from a sense of community generated by Honors seminars, as well as from the academic challenge associated with more rigorous study. The program requirements are flexible, challenging students to explore business topics in greater depth. Students entering the Honors program become candidates for the degree &quot;With College Honors&quot; or &quot;With Honors.&quot;</li> <li><em>Research, Internships, and Service Learning:</em> The Foster School encourages student participation in internships to supplement in-class learning experiences. For more information about internship guidelines and a list of undergraduate internship opportunities, visit the School website</li> <li><em>Department Scholarships:</em> The Foster School awards approximately 90 undergraduate scholarships. Some are general scholarships while others are specific to options or areas of concentration. Only students admitted to both the UW and the Foster School are eligible to receive awards. Applicants are considered for all scholarships for which they meet the minimum qualifications and specific criteria. Although financial need is not a requirement for all business scholarships, most are awarded on the basis of need. (The FAFSA must be filed with the Office of Student Financial Aid.) The Foster School scholarship application is due April 5.</li> <li><em>Student Organizations/Associations:</em> Chapters of Alpha Kappa Psi, Association of Black Business Students, Beta Alpha Psi, Business Ethics Association, Delta Sigma Pi, International Association of Students in Economics and Business (AIESEC), American Marketing Association, Business Information Technology Society, Hispanic Business Association, Husky Sales Club, Husky Traders, Latino Professional in Finance and Accounting, National Association of Black Accountants, Society for Human Resources Management, Startup UW, Undergraduate Management Consulting Association, University Sales Club, and Undergraduate Women in Business provide opportunities for undergraduate students to meet informally and to participate in a variety of projects and events.</li> </ul> <p>Double Baccalaureate and Second Baccalaureate</p> <p>Students who wish to earn more than one baccalaureate degree should consult an academic adviser in the Foster School Undergraduate Program Office, either during or before their junior year. Persons seeking a second baccalaureate should apply at the University's Office of Undergraduate Admissions. To be considered, applicants must complete by quarter of entry the same prerequisites for admission as applicants for the first baccalaureate degree. Since the number of eligible applicants exceeds available space, acceptance is competitive, based on the criteria listed above for selection of first baccalaureate degree applicants. The Foster School uses the GPA for the last 90 credits earned.</p> <p>Undergraduate Diversity Services</p> <p>Recruitment, admission counseling, advising, and support services are available for minority students underrepresented at the University, and students from educationally and economically disadvantaged backgrounds. Special scholarships are also available for underrepresented minority students. Academic advisers have information on this program.</p></p></div>
+
+</div>
+
+<div class="expandableGroup" data-expand="gradPrograms">
+<h2 class="expanded" id="gradPrograms"><span></span>&nbsp;Graduate Programs</h2>
+</div><br/>
+<div id="gradPrograms-block" class="inner-block" style="display:block">
+<div>
+<h1>Business</h1>
+</div>
+<br/>
+<div class="expandableGroup" data-expand="program-GR-BUS AD-41">
+<h3 class="expanded" id="program-GR-BUS AD-41"><span></span>&nbsp;Program of Study:  Doctor Of Philosophy (Business Administration)</h3>
+</div><br/>
+<div id="program-GR-BUS AD-41-block" class="inner-block" style="display:block">
+<div class="programsOfStudy"><span>This program of study leads to the following credential:</span>
+<ul class="credentialsList">
+<li>Doctor Of Philosophy (Business Administration)</li>
+</ul>
+</div>
+<div class="programAdmissionRequirements"><b>Admission Requirements</b><br/><p>Contact department for requirements.</p></div>
+<div class="expandableGroup" data-expand="credential-5dd1b3eaaa22422400714945">
+<h4 class="expanded" id="credential-5dd1b3eaaa22422400714945"><span></span>&nbsp;Doctor Of Philosophy (Business Administration)</h4>
+</div><br/>
+<div id="credential-5dd1b3eaaa22422400714945-block" class="inner-block" style="display:block">
+<div class="programCompletionRequirements"><b>Completion Requirements</b><br/><p>Contact department for requirements.</p></div>
+<div class="backToTop"><a href="#top">Back to Top</a></div>
+</div>
+</div>
+<div class="expandableGroup" data-expand="program-GR-AIB-35">
+<h3 class="expanded" id="program-GR-AIB-35"><span></span>&nbsp;Program of Study:  Graduate Certificate in Artificial Intelligence in Business</h3>
+</div><br/>
+<div id="program-GR-AIB-35-block" class="inner-block" style="display:block">
+<div class="programOverview"><b>Program Overview</b><br/><p> The Graduate Certificate in AI in Business is a part-time evening program built for working professionals who want to lead in the next era of business. As AI reshapes industries, organizations need leaders who can evaluate, implement, and apply AI strategically. This certificate is designed for people who want to stay competitive, create immediate value at work, and build new in-demand skills and AI fluency. </p></div>
+<div class="programsOfStudy"><span>This program of study leads to the following credential:</span>
+<ul class="credentialsList">
+<li>Graduate Certificate in Artificial Intelligence in Business (fee-based)</li>
+</ul>
+</div>
+<div class="programAdmissionRequirements"><b>Admission Requirements</b><br/><p>Contact department for requirements.</p></div>
+<div class="expandableGroup" data-expand="credential-6a4d46f2b4c6a0f32e0d135b">
+<h4 class="expanded" id="credential-6a4d46f2b4c6a0f32e0d135b"><span></span>&nbsp;Graduate Certificate in Artificial Intelligence in Business (fee-based)</h4>
+</div><br/>
+<div id="credential-6a4d46f2b4c6a0f32e0d135b-block" class="inner-block" style="display:block">
+<div class="programCompletionRequirements"><b>Completion Requirements</b><br/><p>Total credits: 16</p> <ol> <li><i>Core courses</i> (4 credits): FIN 579, MGMT 579</li> <li><i>Electives</i> (12 credits from): OPMGT 565, MKTG 565, ISOM 579</li> </ol></div>
+<div class="backToTop"><a href="#top">Back to Top</a></div>
+</div>
+</div>
+<div class="expandableGroup" data-expand="program-GR-MBA-27">
+<h3 class="expanded" id="program-GR-MBA-27"><span></span>&nbsp;Program of Study:  Master Of Business Administration</h3>
+</div><br/>
+<div id="program-GR-MBA-27-block" class="inner-block" style="display:block">
+<div class="programsOfStudy"><span>This program of study leads to the following credentials:</span>
+<ul class="credentialsList">
+<li>Master Of Business Administration</li>
+<li>Master Of Business Administration (evening) (fee-based)</li>
+<li>Master Of Business Administration (Executive Master of Business Administration) (fee-based)</li>
+<li>Master Of Business Administration (Global Executive Master of Business Administration) (fee-based)</li>
+<li>Master Of Business Administration (Global Executive Master of Business Administration: Management Science) (fee based)</li>
+<li>Master Of Business Administration (Global Master of Business Administration) (fee-based)</li>
+<li>Master Of Business Administration (Hybrid) (fee-based)</li>
+<li>Master Of Business Administration (Management Science)</li>
+</ul>
+</div>
+<div class="programAdmissionRequirements"><b>Admission Requirements</b><br/><p>Contact department for requirements.</p></div>
+<div class="expandableGroup" data-expand="credential-6a7e4b05dcde4ea4d0dddfbb">
+<h4 class="expanded" id="credential-6a7e4b05dcde4ea4d0dddfbb"><span></span>&nbsp;Master Of Business Administration</h4>
+</div><br/>
+<div id="credential-6a7e4b05dcde4ea4d0dddfbb-block" class="inner-block" style="display:block">
+<div class="additionalCompletionRequirements"><b>Additional Completion Requirements</b><br/><p>Total credits: 88</p> <ol> <li><i>Core courses </i>(46 credits): BA 500 (15 cr), BA 501 (15 cr), BA 502 (10 cr), MGMT 504, BECON 501</li> <li>Electives (42 credits)</li> </ol></div>
+<div class="backToTop"><a href="#top">Back to Top</a></div>
+</div>
+<div class="expandableGroup" data-expand="credential-5b8ed1ded09d102e0002776d">
+<h4 class="expanded" id="credential-5b8ed1ded09d102e0002776d"><span></span>&nbsp;Master Of Business Administration (evening) (fee-based)</h4>
+</div><br/>
+<div id="credential-5b8ed1ded09d102e0002776d-block" class="inner-block" style="display:block">
+<div class="programCompletionRequirements"><b>Completion Requirements</b><br/><p>Contact department for requirements.</p></div>
+<div class="backToTop"><a href="#top">Back to Top</a></div>
+</div>
+<div class="expandableGroup" data-expand="credential-5b8ed1dca76a282e00726165">
+<h4 class="expanded" id="credential-5b8ed1dca76a282e00726165"><span></span>&nbsp;Master Of Business Administration (Executive Master of Business Administration) (fee-based)</h4>
+</div><br/>
+<div id="credential-5b8ed1dca76a282e00726165-block" class="inner-block" style="display:block">
+<div class="programCompletionRequirements"><b>Completion Requirements</b><br/><p>Contact department for requirements.</p></div>
+<div class="backToTop"><a href="#top">Back to Top</a></div>
+</div>
+<div class="expandableGroup" data-expand="credential-603ea535c314890027b5f3f1">
+<h4 class="expanded" id="credential-603ea535c314890027b5f3f1"><span></span>&nbsp;Master Of Business Administration (Global Executive Master of Business Administration) (fee-based)</h4>
+</div><br/>
+<div id="credential-603ea535c314890027b5f3f1-block" class="inner-block" style="display:block">
+<div class="programCompletionRequirements"><b>Completion Requirements</b><br/><p>Contact department for requirements.</p></div>
+<div class="backToTop"><a href="#top">Back to Top</a></div>
+</div>
+<div class="expandableGroup" data-expand="credential-6422021adcd1aaa2970b739d">
+<h4 class="expanded" id="credential-6422021adcd1aaa2970b739d"><span></span>&nbsp;Master Of Business Administration (Global Executive Master of Business Administration: Management Science) (fee based)</h4>
+</div><br/>
+<div id="credential-6422021adcd1aaa2970b739d-block" class="inner-block" style="display:block">
+<div class="programCompletionRequirements"><b>Completion Requirements</b><br/><p>Contact department for requirements.</p></div>
+<div class="backToTop"><a href="#top">Back to Top</a></div>
+</div>
+<div class="expandableGroup" data-expand="credential-5b8ed1ddf3739c2e00e02708">
+<h4 class="expanded" id="credential-5b8ed1ddf3739c2e00e02708"><span></span>&nbsp;Master Of Business Administration (Global Master of Business Administration) (fee-based)</h4>
+</div><br/>
+<div id="credential-5b8ed1ddf3739c2e00e02708-block" class="inner-block" style="display:block">
+<div class="programCompletionRequirements"><b>Completion Requirements</b><br/><p>Contact department for requirements.</p></div>
+<div class="backToTop"><a href="#top">Back to Top</a></div>
+</div>
+<div class="expandableGroup" data-expand="credential-5b8ed1e0a76a282e00726167">
+<h4 class="expanded" id="credential-5b8ed1e0a76a282e00726167"><span></span>&nbsp;Master Of Business Administration (Hybrid) (fee-based)</h4>
+</div><br/>
+<div id="credential-5b8ed1e0a76a282e00726167-block" class="inner-block" style="display:block">
+<div class="programCompletionRequirements"><b>Completion Requirements</b><br/><p>Contact department for requirements.</p></div>
+<div class="backToTop"><a href="#top">Back to Top</a></div>
+</div>
+<div class="expandableGroup" data-expand="credential-6a7e4def3f98e9bd26a20966">
+<h4 class="expanded" id="credential-6a7e4def3f98e9bd26a20966"><span></span>&nbsp;Master Of Business Administration (Management Science)</h4>
+</div><br/>
+<div id="credential-6a7e4def3f98e9bd26a20966-block" class="inner-block" style="display:block">
+<div class="additionalCompletionRequirements"><b>Additional Completion Requirements</b><br/><p>Total credits: 88</p> <ol> <li><i>Core courses </i>(46 credits): BA 500 (15 cr), BA 501 (15 cr), BA 502 (10 cr), MGMT 504, BECON 501</li> <li>Electives (42 credits)</li> </ol></div>
+<div class="backToTop"><a href="#top">Back to Top</a></div>
+</div>
+</div>
+<div class="expandableGroup" data-expand="program-GR-BUS AD-26">
+<h3 class="expanded" id="program-GR-BUS AD-26"><span></span>&nbsp;Program of Study:  Master Of Science In Business Administration</h3>
+</div><br/>
+<div id="program-GR-BUS AD-26-block" class="inner-block" style="display:block">
+<div class="programsOfStudy"><span>This program of study leads to the following credential:</span>
+<ul class="credentialsList">
+<li>Master Of Science In Business Administration</li>
+</ul>
+</div>
+<div class="programAdmissionRequirements"><b>Admission Requirements</b><br/><p>Contact department for requirements.</p></div>
+<div class="expandableGroup" data-expand="credential-5e39a5c477bf5926003fa450">
+<h4 class="expanded" id="credential-5e39a5c477bf5926003fa450"><span></span>&nbsp;Master Of Science In Business Administration</h4>
+</div><br/>
+<div id="credential-5e39a5c477bf5926003fa450-block" class="inner-block" style="display:block">
+<div class="programCompletionRequirements"><b>Completion Requirements</b><br/><p>Contact department for requirements.</p></div>
+<div class="backToTop"><a href="#top">Back to Top</a></div>
+</div>
+</div>
+<div class="expandableGroup" data-expand="program-GR-MSBA-26">
+<h3 class="expanded" id="program-GR-MSBA-26"><span></span>&nbsp;Program of Study:  Master of Science in Business Analytics</h3>
+</div><br/>
+<div id="program-GR-MSBA-26-block" class="inner-block" style="display:block">
+<div class="programsOfStudy"><span>This program of study leads to the following credential:</span>
+<ul class="credentialsList">
+<li>Master of Science in Business Analytics (fee-based)</li>
+</ul>
+</div>
+<div class="programAdmissionRequirements"><b>Admission Requirements</b><br/><p>Contact department for requirements.</p></div>
+<div class="expandableGroup" data-expand="credential-5c475996ee77472400e41367">
+<h4 class="expanded" id="credential-5c475996ee77472400e41367"><span></span>&nbsp;Master of Science in Business Analytics (fee-based)</h4>
+</div><br/>
+<div id="credential-5c475996ee77472400e41367-block" class="inner-block" style="display:block">
+<div class="programCompletionRequirements"><b>Completion Requirements</b><br/><p>Total credits: 44</p> <br /> <p>Required coursework (42 credits): BUS AN 503, 507, 510, 511, 512, 550, 506, 513, 517, 514, 515, 516, 579, 500, 502</p> <br /> <p>Practicum (2 credits): BUS AN 599</p> <br /> <p>Optional electives: BUS AN 501, 505, 504</p></div>
+<div class="backToTop"><a href="#top">Back to Top</a></div>
+</div>
+</div>
+<div class="expandableGroup" data-expand="program-GR-ENTRE-26">
+<h3 class="expanded" id="program-GR-ENTRE-26"><span></span>&nbsp;Program of Study:  Master Of Science In Entrepreneurship</h3>
+</div><br/>
+<div id="program-GR-ENTRE-26-block" class="inner-block" style="display:block">
+<div class="programsOfStudy"><span>This program of study leads to the following credential:</span>
+<ul class="credentialsList">
+<li>Master Of Science In Entrepreneurship (fee-based)</li>
+</ul>
+</div>
+<div class="programAdmissionRequirements"><b>Admission Requirements</b><br/><p>Contact department for requirements.</p></div>
+<div class="expandableGroup" data-expand="credential-5b8ed116d09d102e000276e3">
+<h4 class="expanded" id="credential-5b8ed116d09d102e000276e3"><span></span>&nbsp;Master Of Science In Entrepreneurship (fee-based)</h4>
+</div><br/>
+<div id="credential-5b8ed116d09d102e000276e3-block" class="inner-block" style="display:block">
+<div class="programCompletionRequirements"><b>Completion Requirements</b><br/><p>Contact department for requirements.</p></div>
+<div class="backToTop"><a href="#top">Back to Top</a></div>
+</div>
+</div>
+<div class="expandableGroup" data-expand="program-GR-FINANC-26">
+<h3 class="expanded" id="program-GR-FINANC-26"><span></span>&nbsp;Program of Study:  Master Of Science In Finance</h3>
+</div><br/>
+<div id="program-GR-FINANC-26-block" class="inner-block" style="display:block">
+<div class="programOverview"><b>Program Overview</b><br/><p> </p></div>
+<div class="programsOfStudy"><span>This program of study leads to the following credentials:</span>
+<ul class="credentialsList">
+<li>Master Of Science In Finance (Applied Learning) (fee-based)</li>
+<li>Master Of Science In Finance (fee-based)</li>
+</ul>
+</div>
+<div class="programAdmissionRequirements"><b>Admission Requirements</b><br/><p>Contact department for requirements.</p></div>
+<div class="expandableGroup" data-expand="credential-6a20aa87b469999ccc3c6a3a">
+<h4 class="expanded" id="credential-6a20aa87b469999ccc3c6a3a"><span></span>&nbsp;Master Of Science In Finance (Applied Learning) (fee-based)</h4>
+</div><br/>
+<div id="credential-6a20aa87b469999ccc3c6a3a-block" class="inner-block" style="display:block">
+<div class="programCompletionRequirements"><b>Completion Requirements</b><br/><p>Contact department for requirements.</p></div>
+<div class="backToTop"><a href="#top">Back to Top</a></div>
+</div>
+<div class="expandableGroup" data-expand="credential-6a20a9270857df80e29a52a9">
+<h4 class="expanded" id="credential-6a20a9270857df80e29a52a9"><span></span>&nbsp;Master Of Science In Finance (fee-based)</h4>
+</div><br/>
+<div id="credential-6a20a9270857df80e29a52a9-block" class="inner-block" style="display:block">
+<div class="programCompletionRequirements"><b>Completion Requirements</b><br/><p>Contact department for requirements.</p></div>
+<div class="backToTop"><a href="#top">Back to Top</a></div>
+</div>
+</div>
+<div class="expandableGroup" data-expand="program-GR-I S X-26">
+<h3 class="expanded" id="program-GR-I S X-26"><span></span>&nbsp;Program of Study:  Master Of Science In Information Systems</h3>
+</div><br/>
+<div id="program-GR-I S X-26-block" class="inner-block" style="display:block">
+<div class="programsOfStudy"><span>This program of study leads to the following credential:</span>
+<ul class="credentialsList">
+<li>Master Of Science In Information Systems (fee-based)</li>
+</ul>
+</div>
+<div class="programAdmissionRequirements"><b>Admission Requirements</b><br/><p>Contact department for requirements.</p></div>
+<div class="expandableGroup" data-expand="credential-5b8ed445f3739c2e00e0288f">
+<h4 class="expanded" id="credential-5b8ed445f3739c2e00e0288f"><span></span>&nbsp;Master Of Science In Information Systems (fee-based)</h4>
+</div><br/>
+<div id="credential-5b8ed445f3739c2e00e0288f-block" class="inner-block" style="display:block">
+<div class="programCompletionRequirements"><b>Completion Requirements</b><br/><p>Contact department for requirements.</p></div>
+<div class="backToTop"><a href="#top">Back to Top</a></div>
+</div>
+</div>
+<div class="expandableGroup" data-expand="program-GR-SCM-27">
+<h3 class="expanded" id="program-GR-SCM-27"><span></span>&nbsp;Program of Study:  Master Of Supply Chain Management</h3>
+</div><br/>
+<div id="program-GR-SCM-27-block" class="inner-block" style="display:block">
+<div class="programsOfStudy"><span>This program of study leads to the following credential:</span>
+<ul class="credentialsList">
+<li>Master Of Supply Chain Management (fee-based)</li>
+</ul>
+</div>
+<div class="programAdmissionRequirements"><b>Admission Requirements</b><br/><p>Contact department for requirements.</p></div>
+<div class="expandableGroup" data-expand="credential-5b8ed317d09d102e00027848">
+<h4 class="expanded" id="credential-5b8ed317d09d102e00027848"><span></span>&nbsp;Master Of Supply Chain Management (fee-based)</h4>
+</div><br/>
+<div id="credential-5b8ed317d09d102e00027848-block" class="inner-block" style="display:block">
+<div class="programCompletionRequirements"><b>Completion Requirements</b><br/><p>Total credits: 44</p> <ol> <li><i>Required coursework </i>(41 credits): SCM 504, 500, 501, 512, 523, 550, 502, 511, 513, 530, 532, 510, 520, 522, 534, 503, 521, 533</li> <li><i>Supply Chain Practicum</i> (3 credits): SCM 599</li> <li><i>Optional Electives</i>: SCM 531, 600</li> </ol></div>
+<div class="backToTop"><a href="#top">Back to Top</a></div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="uw-footer" role="contentinfo">
+  <a class="footer-wordmark" href="https://www.washington.edu">University of Washington</a>
+  <a href="https://www.washington.edu/boundless/"><h3 class="be-boundless">Be boundless</h3></a>
+  <h4>Connect with us:</h4>
+  <nav aria-label="social networking">
+    <ul class="footer-social">
+      <li><a class="facebook" href="https://www.facebook.com/UofWA">Facebook</a></li>
+      <li><a class="twitter" href="https://x.com/UW">Twitter</a></li>
+      <li><a class="instagram" href="https://instagram.com/uofwa">Instagram</a></li>
+      <li><a class="youtube" href="https://www.youtube.com/user/uwhuskies">YouTube</a></li>
+      <li><a class="linkedin" href="https://www.linkedin.com/school/university-of-washington/posts/">LinkedIn</a></li>
+      <li><a class="pinterest" href="https://www.pinterest.com/uofwa/">Pinterest</a></li>
+    </ul>
+  </nav>
+  <nav aria-label="footer navigation">
+    <ul class="footer-links">
+      <li><a href="https://www.uw.edu/accessibility">Accessibility</a></li>
+      <li><a href="https://uw.edu/contact">Contact Us</a></li>
+      <li><a href="https://www.washington.edu/jobs">Jobs</a></li>
+      <li><a href="https://www.washington.edu/safety">Campus Safety</a></li>
+      <li><a href="https://my.uw.edu/">My UW</a></li>
+      <li><a href="https://www.washington.edu/rules/wac">Rules Docket</a></li>
+      <li><a href="https://www.washington.edu/online/privacy/">Privacy</a></li>
+      <li><a href="https://www.washington.edu/online/terms/">Terms</a></li>
+      <li><a href="https://www.washington.edu/newsletter/">Newsletter</a></li>
+    </ul>
+  </nav>
+  <p>&copy; <script>document.write(new Date().getFullYear())</script> University of Washington | Seattle, WA</p>
+</div>
+<script>
+  const expandElement = function(elementId) {
+    let toExpand = document.getElementById(elementId);
+    if (toExpand.style.display === 'none') {
+      toExpand.style.display = 'block';
+    }
+  }
+
+  const toggleElement = function(elementId) {
+    let toToggle = document.getElementById(elementId);
+    if (toToggle.style.display === 'none') {
+      toToggle.style.display = 'block';
+    }
+    else {
+      toToggle.style.display = 'none';
+    }
+  }
+
+  let linkElements = document.getElementsByClassName('toc-link');
+  let i = 0;
+  for (i = 0; i < linkElements.length; i++) {
+    linkElements[i].addEventListener('click', function() {
+      let namesToExpand = this.getAttribute('data-expand').split('|');
+      let j = 0;
+      for ( j = 0; j < namesToExpand.length; j++) {
+        let baseName = namesToExpand[j];
+
+        let titleElement = document.getElementById(baseName);
+
+        if (titleElement.classList.contains('collapsed')) {
+          titleElement.classList.toggle('collapsed');
+          titleElement.classList.toggle('expanded');
+          expandElement(`${baseName}-block`);
+        }
+      }
+    });
+  }
+
+  let expandIcons = document.getElementsByClassName('expandableGroup');
+  for (i = 0; i < expandIcons.length; i++) {
+    expandIcons[i].addEventListener('click', function() {
+      let baseName = this.getAttribute('data-expand');
+
+      let titleElement = document.getElementById(baseName);
+      titleElement.classList.toggle('collapsed');
+      titleElement.classList.toggle('expanded');
+      toggleElement(`${baseName}-block`);
+    });
+  }</script>
+</body>
+</html>

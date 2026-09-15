@@ -2,7 +2,7 @@
 
 An independent college course planner built with Next.js, TypeScript, PostgreSQL, Prisma, Auth.js, Zod, React and Tailwind. It evaluates structured prerequisites and searches for quarter-by-quarter course plans without an LLM or a paid API.
 
-**Current status: functional full-stack MVP with partial UW Seattle Computer Science academic coverage. This is not a verified end-to-end graduation planner yet.** The application deliberately returns partial plans when degree rules, grades or academic data cannot be verified.
+**Current status: functional full-stack MVP with partial UW Seattle Computer Science and Business academic coverage. This is not a verified end-to-end graduation planner yet.** The application deliberately returns partial plans when degree rules, grades or academic data cannot be verified.
 
 ## What you can use
 
@@ -22,11 +22,11 @@ An independent college course planner built with Next.js, TypeScript, PostgreSQL
 | ------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------- |
 | Institution / campus                       | University of Washington / Seattle                                                                                            |
 | Calendar                                   | Quarter system: Winter, Spring, Summer, Autumn; optional summer                                                               |
-| Program                                    | Computer Science, B.S.; **partial planning**                                                                                  |
+| Programs                                   | Computer Science, B.S., and Business, B.A.B.A.; **partial planning**                                                          |
 | Catalog selection                          | `uw-seattle-current-2026-09`, labeled “Current source snapshot · September 2026 (review required)”                            |
 | Verified historical catalog years          | **None**. A retrieval date is not proof of a student's governing catalog year.                                                |
-| Course data                                | 172 undergraduate descriptions: 93 CSE and 79 MATH                                                                            |
-| Prerequisite parser                        | 145 PARSED records; 27 NEEDS_REVIEW records, including one course with no description                                         |
+| Course data                                | 187 undergraduate descriptions: 93 CSE, 79 MATH, 15 Business core/foundation courses                                          |
+| Prerequisite parser                        | CS/MATH: 145 PARSED, 27 NEEDS_REVIEW; Business: 11 PARSED, 4 NEEDS_REVIEW                                                     |
 | Confirmed offerings                        | 54 imported undergraduate CSE course presences in Autumn 2026                                                                 |
 | CS rules normalized                        | Fundamental-course alternatives, minimum grades and standard/honors mathematics alternatives                                  |
 | Degree-wide rules                          | 180-credit threshold represented; science, elective allocation, general education, language, GPA and residency require review |
@@ -36,6 +36,38 @@ An independent college course planner built with Next.js, TypeScript, PostgreSQL
 The official 2023 checklist linked by the department lists MATH 208 as 3 credits; the current course catalog and CS catalog requirements reflect a 4-credit MATH 208. The app uses the current course catalog for course credits, preserves the conflict in source-health notes and does **not** assert that the current snapshot applies to earlier students.
 
 The initial major-level requirements are based on the current CS catalog, not the older PDF. Minimum grades are enforced; an unknown grade is not assumed to be 2.0 or higher. Planned coursework never creates a fabricated future grade. Therefore grade-dependent degree completion can remain under review even when a useful course sequence is generated.
+
+## Multiple majors
+
+University of Washington · Seattle currently supports **Computer Science** and **Business**. University identity controls the shared purple/gold theme; the selected major controls curriculum. Future majors belong in `src/data/majors.ts`, with a source-backed program definition and import, rather than a separate planner.
+
+Onboarding offers cards for both programs. After onboarding, **Active major · Change major** is available in every workspace view, including the unauthenticated demo. A brief confirmation explains recalculation. Authenticated selection persists in `StudentProfile.programCatalogId`; demo selection persists in session storage.
+
+Academic history remains user-scoped. Switching preserves completed, transferred, and in-progress entries, grades, preferences, and saved plans. Transfer equivalencies still require review. Generated drafts are cleared and the active curriculum is reevaluated. Saved plans retain their original `config.programCatalogId`, appear with a major label, and open as read-only snapshots. Opening a different-major snapshot does not change the active major. Legacy snapshots without a key are interpreted as CS, the only previously supported program.
+
+### Business coverage
+
+Verified from the [UW Business catalog](https://www.washington.edu/students/gencat/program/S/Business-300.html) and cross-checked against [Foster curriculum](https://foster.uw.edu/academics/degree-programs/undergraduate-programs/curriculum/) and [major options](https://foster.uw.edu/academics/degree-programs/undergraduate-programs/curriculum/options/):
+
+- Foundations: ECON 200, ECON 201, and one catalog-listed calculus alternative, MATH 112 / 124 / 134.
+- Lower core: ACCTG 215, ACCTG 225, QMETH 201, MGMT 200.
+- Upper core: B ECON 300, MKTG 301, I S 300, I BUS 300, OPMGT 301, FIN 350, MGMT 300, MGMT 320, MGMT 430.
+- A 180-credit threshold, with applicability requiring review.
+
+Foster supports a general BABA plus named majors. This release models the shared core, not complete specialization curricula. The 16 upper-division elective credits, specialization requirements, composition/writing/general education, GPA, residency, admissions, repeat/credit restrictions, and substitutions remain explicit manual-review items. Foster lists broader calculus alternatives than the catalog; these are disclosed rather than automatically approved. Writing totals also require reconciliation.
+
+Fifteen new course descriptions and prerequisites come from official UW ACCTG, ECON, FIN, I S, I BUS, MGMT, MKTG, OPMGT, QMETH and B ECON catalog pages. Four complex prerequisite descriptions (B ECON 300, I S 300, OPMGT 301, FIN 350) remain unsupported and block automatic scheduling; raw evidence is retained. No Business quarter offerings were invented or imported. Unknown availability is warned about. Business plans remain partial and never claim a graduation date.
+
+Capture and normalization are separate, reviewable steps:
+
+```sh
+npm run data:capture:business
+npm run data:normalize:business
+# Review source/JSON diffs before importing into your intended database.
+npm run data:import:business
+```
+
+The Business import is additive and repeatable, reuses the transactional importer, and does not update CS courses/offerings or student records. Source HTML, URLs, retrieval timestamps and hashes are retained. No schema migration, dependency, or environment variable was added. See [release instructions and verification](docs/BUSINESS_RELEASE.md).
 
 ## Screenshots
 
@@ -65,6 +97,7 @@ Leave that terminal running. In another terminal:
 npm run db:generate
 npm run db:migrate
 npm run data:seed
+npm run data:import:business
 npm run dev
 ```
 
@@ -207,10 +240,10 @@ npm test
 npm run build
 npm run test:e2e
 npx prisma validate
-npm audit
+npm audit --omit=dev --json
 ```
 
-The E2E config starts the production server when port 3000 is free. Stop an old server before testing a new build. Reports and traces are ignored under `playwright-report/` and `test-results/`.
+The E2E config starts an isolated local production server and refuses to reuse an existing server. Stop an old server before testing a new build. Reports and traces are ignored under `playwright-report/` and `test-results/`.
 
 Tests cover prerequisite Boolean logic, grade/permission uncertainty, concurrency, recommendations, graph algorithms, requirement allocation, eligibility, term calendars, constraints, deterministic plans, impossible targets, preferences, what-if changes, official HTML parsing and changed-source rejection. Database tests cover hashes, user isolation and transaction rollback. E2E covers demo, signup/onboarding, course entry, planning, audit, graph inspection, what-if, save, sign out/in, persistence, cross-user access and mobile overflow.
 
@@ -220,7 +253,7 @@ A 60-course synthetic benchmark is included with a four-second budget; synthetic
 
 Before the first production update, confirm that the existing Vercel project has `DATABASE_URL`, `AUTH_SECRET`, `AUTH_URL` set to the final HTTPS domain, and `AUTH_TRUST_HOST=true`. Use a TLS PostgreSQL connection string supported by the database provider; the embedded local PostgreSQL server must never run on Vercel.
 
-For each release, run the checks below locally, push the reviewed changes to the connected Git repository, then use Vercel's deployment preview before promoting it. Apply `npm run db:migrate` only when a new committed migration is present, and run it once against the intended database as a controlled release step. This polish pass adds no migration. The UW importer is an explicit operational task, not an application-startup action; review the Source Status page and unsupported rules after any production import.
+For each release, run the checks below locally, push the reviewed changes to the connected Git repository, then use Vercel's deployment preview before promoting it. Apply `npm run db:migrate` only when a new committed migration is present, and run it once against the intended database as a controlled release step. This multi-major release adds no migration. See [Business release instructions](docs/BUSINESS_RELEASE.md) for the required additive catalog import. The UW importer is an explicit operational task, not an application-startup action; review the Source Status page and unsupported rules after any production import.
 
 ```sh
 npm ci
@@ -237,7 +270,7 @@ Scheduled refresh can later call the same importer from a protected job runner w
 ## Limitations and next milestones
 
 1. Verify a specific governing UW catalog year and fully normalize its degree rules, elective lists, science alternatives, general education, residency and repeat/grade policy. Until then, do not advertise complete graduation planning.
-2. Import approved science/general-education departments and additional public offering terms; expand per-term enrollment restrictions. Only CSE and MATH are currently available for course entry.
+2. Import approved science/general-education departments and additional public offering terms; expand per-term enrollment restrictions. Course entry includes CSE, MATH, and 15 imported Business core/foundation courses; other departments remain incomplete.
 3. Validate and add Computer Engineering separately, including engineering science totals, systems electives and capstones.
 4. Expand prerequisite grammar only with reviewed fixtures and regression tests. Add structured AP/transfer evidence and adviser-approved exception workflows.
 5. Improve globally consistent elective allocation, alternative-branch search and large-program search coverage. Current bounds can miss valid schedules.

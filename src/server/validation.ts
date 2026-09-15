@@ -1,4 +1,9 @@
 import { z } from "zod";
+import { majorForKey } from "../data/majors";
+export const programKeySchema = z
+  .string()
+  .max(100)
+  .refine((key) => Boolean(majorForKey(key)), "Unsupported major/catalog");
 export const termSchema = z
   .object({
     year: z.number().int().min(2000).max(2100),
@@ -35,7 +40,7 @@ export const studentCourseSchema = z
   );
 export const stateSchema = z
   .object({
-    programCatalogId: z.string().max(100),
+    programCatalogId: programKeySchema,
     courses: z.array(studentCourseSchema).max(300),
     preferences: preferencesSchema,
     programs: z.array(z.string().max(100)).max(10),
